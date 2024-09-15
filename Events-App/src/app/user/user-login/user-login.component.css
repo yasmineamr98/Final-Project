@@ -13,12 +13,28 @@ body {
 }
 
 .login-container {
-  background: rgb(252, 186, 173);
+  /* background: rgb(252, 186, 173);
   background: linear-gradient(
     270deg,
     rgba(252, 186, 173, 1) 0%,
     rgba(228, 133, 102, 1) 63%,
     rgba(145, 109, 179, 1) 100%
+  ); */
+
+  background-image: linear-gradient(
+    to right top,
+    #d6d2d4,
+    #d3b6c1,
+    #d29aa9,
+    #ce7e8c,
+    #c8616b,
+    #c9565e,
+    #ca4c50,
+    #c94141,
+    #d64747,
+    #e44c4c,
+    #f15252,
+    #ff5858
   );
   display: flex;
   justify-content: center;
@@ -98,17 +114,17 @@ h3:after {
 }
 
 .btn-primary:hover {
-  background-color: #916db3;
-  border-color: #916db3;
+  background-color: #ff5858;
+  border-color: white;
 }
 
 .forget-password-btn:focus {
-  color: #5a5a5a;
+  color: black;
   text-decoration: none;
   background-color: #e48586;
 }
 
 button.btn.btn-primary.forget-password-btn:active {
   background-color: #e48586;
-  color: #5a5a5a;
+  color: black;
 }
