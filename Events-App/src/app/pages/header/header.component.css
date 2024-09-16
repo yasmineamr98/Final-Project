@@ -1,0 +1,16 @@
+.search-field {
+  width: 70vh;
+}
+body {
+  display: flex;
+  align-items: center;
+}
+.search-btn {
+  color: red;
+  border-color: black;
+}
+
+.search-btn:hover {
+  background-color: black;
+  color: white;
+}
