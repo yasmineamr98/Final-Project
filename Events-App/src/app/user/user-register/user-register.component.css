@@ -9,11 +9,10 @@
   padding-top: 50px; /* Space above the form */
   padding-bottom: 50px; /* Space below the form to ensure it's above the footer */
   background: rgb(204, 213, 174);
-  background: linear-gradient(
-    270deg,
-    rgba(204, 213, 174, 1) 0%,
-    rgba(224, 229, 182, 1) 63%,
-    rgba(254, 250, 224, 1) 100%
+ radial-gradient(
+    circle,
+    rgba(255, 144, 168, 1) 0%,
+    rgba(180, 3, 14, 1) 100%
   );
   display: flex;
   justify-content: center;

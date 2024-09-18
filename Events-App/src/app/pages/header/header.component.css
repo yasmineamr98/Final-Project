@@ -14,3 +14,23 @@ body {
   background-color: black;
   color: white;
 }
+
+.navbar {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.nav-link {
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.search-field {
+  width: 300px;
+  margin-right: 1rem;
+}
