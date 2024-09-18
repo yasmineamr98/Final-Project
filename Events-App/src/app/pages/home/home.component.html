@@ -1,1 +1,45 @@
-<p>home works!</p>
+<div
+  id="eventCarousel"
+  class="carousel slide"
+  data-bs-ride="carousel"
+  data-bs-interval="5000"
+>
+  <!-- Indicators (3 points) -->
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#eventCarousel"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#eventCarousel"
+      data-bs-slide-to="1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#eventCarousel"
+      data-bs-slide-to="2"
+    ></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div
+      class="carousel-item"
+      *ngFor="let event of events; let i = index"
+      [class.active]="i === 0"
+    >
+      <img [src]="event.image" class="d-block w-100" alt="{{ event.name }}" />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ event.name }}</h5>
+        <p>
+          <button class="btn btn-book" (click)="bookEvent(event)">
+            Book Event
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

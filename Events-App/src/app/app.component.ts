@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { FooterComponent } from './pages/footer/footer.component';
@@ -38,8 +38,8 @@ import { BrowserModule } from '@angular/platform-browser';
   styleUrl: './app.component.css',
 })
 
-// @module({
-//   declarations: [AppComponent, HeaderComponent, HomeComponent, UserLoginComponent, FooterComponent, EventsComponent, EventDetailsComponent, SearchComponent, UserLoginComponent, UserRegisterComponent, UserProfileComponent],
+// @NgModule ({
+//   declarations: [AppComponent, AdminLoginComponent, UserHomepageComponent, UserNotificationComponent, UserSettingsComponent, HeaderComponent, HomeComponent, FooterComponent, EventsComponent, EventDetailsComponent, SearchComponent, UserLoginComponent, UserRegisterComponent, UserProfileComponent],
 //   imports: [BrowserModule, RouterModule],
 //   bootstrap: [AppComponent],
 // })

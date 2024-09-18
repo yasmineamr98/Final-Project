@@ -7,8 +7,9 @@ import { UserProfileComponent } from '../../user/user-profile/user-profile.compo
 import { Component } from '@angular/core';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '/home', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+
   { path: '/user-login', component: UserLoginComponent },
   { path: '/user-register', component: UserRegisterComponent },
   { path: '/user-profile', component: UserProfileComponent },

@@ -1,36 +1,91 @@
-.search-field {
-  width: 70vh;
-}
-body {
-  display: flex;
-  align-items: center;
-}
-.search-btn {
-  color: red;
-  border-color: black;
-}
-
-.search-btn:hover {
-  background-color: black;
-  color: white;
-}
-
+/* Blurred baby blue background for navbar */
 .navbar {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(
+    173,
+    216,
+    230,
+    0.6
+  ); /* Light baby blue color with transparency */
+  backdrop-filter: blur(10px); /* Blurring effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 1rem;
+  transition: background-color 0.3s ease-in-out,
+    backdrop-filter 0.3s ease-in-out;
 }
 
+/* When navbar is hovered */
+.navbar:hover {
+  background-color: rgba(173, 216, 230, 0.8); /* Slightly darker on hover */
+  backdrop-filter: blur(12px); /* Increase blur effect on hover */
+}
+
+/* Centering the search input and button */
+.search-container {
+  width: 50%;
+}
+
+.search-field {
+  flex: 1;
+  width: 100%;
+  margin-right: 0.5rem;
+}
+
+/* Dark grey background with white text for the search button */
+.search-btn {
+  color: #fff; /* White text */
+  background-color: grey; /* Dark grey background */
+  border-color: #343a40; /* Dark grey border */
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* On hover, make the background white with black text */
+.search-btn:hover {
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  border-color: #343a40; /* Keep the dark grey border */
+}
+
+/* Navbar links */
 .nav-link {
-  margin-right: 1rem;
   font-size: 1rem;
+  margin-right: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Smooth hover effect for links */
+.nav-link:hover {
+  /* color: #007bff; */
+  text-decoration: underline;
+  transform: translateY(-2px); /* Adds slight elevation on hover */
+  cursor: pointer;
+}
+
+/* Navbar dropdown */
+.nav-item .dropdown-menu {
+  transition: opacity 0.3s ease;
+}
+
+.nav-item .dropdown-menu.show {
+  opacity: 1;
+}
+
+/* Navbar brand styling */
 .navbar-brand {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.search-field {
-  width: 300px;
-  margin-right: 1rem;
+.navbar-brand:hover {
+  color: grey;
+  transform: scale(1.1); /* Scale the brand text slightly on hover */
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+  .search-container {
+    width: 100%;
+    margin-top: 1rem;
+  }
 }
