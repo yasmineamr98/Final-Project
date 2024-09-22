@@ -1,10 +1,11 @@
 body {
   /* background: rgb(255, 144, 168); */
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle,
     rgba(255, 144, 168, 1) 0%,
     rgba(180, 3, 14, 1) 100%
-  );
+  ); */
+  background-color: #ff4d4d;
   height: 400vh;
   display: flex;
   justify-content: center;
@@ -21,7 +22,7 @@ body {
     rgba(145, 109, 179, 1) 100%
   ); */
 
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right top,
     #d6d2d4,
     #d3b6c1,
@@ -35,7 +36,9 @@ body {
     #e44c4c,
     #f15252,
     #ff5858
-  );
+  ); */
+
+  background-color: #ff4d4d;
   display: flex;
   justify-content: center;
   align-items: center;

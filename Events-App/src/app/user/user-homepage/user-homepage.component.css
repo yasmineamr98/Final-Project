@@ -1,0 +1,16 @@
+.event-card {
+  transition: transform 0.3s ease-in-out;
+}
+.event-card.hover {
+  transform: scale(1.03);
+}
+.event-card button {
+  transition: background-color 0.3s ease;
+}
+.event-card:hover .btn-outline-primary {
+  background-color: #007bff; /* Change color on hover */
+  color: white;
+}
+.event-card:hover .btn-primary {
+  background-color: #0056b3; /* Darker shade for contrast on hover */
+}

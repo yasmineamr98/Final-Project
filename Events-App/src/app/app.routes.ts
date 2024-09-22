@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { UserLoginComponent } from '../app/user/user-login/user-login.component';
 import { UserRegisterComponent } from '../app/user/user-register/user-register.component';
-import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { UserHomepageComponent } from './user/user-homepage/user-homepage.component';
 import { UserNotificationComponent } from './user/user-notification/user-notification.component';
 import { UserSettingsComponent } from './user/user-settings/user-settings.component';
@@ -18,7 +17,6 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'user-register', component: UserRegisterComponent },
 
-  { path: 'admin-login', component: AdminLoginComponent },
   { path: 'user-homepage', component: UserHomepageComponent },
   { path: 'user-notification', component: UserNotificationComponent },
   { path: 'user-profile', component: UserRegisterComponent },

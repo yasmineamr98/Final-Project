@@ -1,11 +1,14 @@
+/* .header-container {
+  background-color:  important;
+} */
+
 /* Blurred baby blue background for navbar */
+body {
+  background-color: grey;
+}
 .navbar {
-  background-color: rgba(
-    173,
-    216,
-    230,
-    0.6
-  ); /* Light baby blue color with transparency */
+  background-color: grey;
+  /* Light baby blue color with transparency */
   backdrop-filter: blur(10px); /* Blurring effect */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 1rem;
@@ -73,8 +76,15 @@
 /* Navbar brand styling */
 .navbar-brand {
   font-weight: bold;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   transition: color 0.3s ease, transform 0.3s ease;
+  background-color: grey;
+  border-radius: 2rem;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  padding-button: 4rem;
 }
 
 .navbar-brand:hover {

@@ -8,8 +8,8 @@
   margin: 0; /* Remove default margin */
   padding-top: 50px; /* Space above the form */
   padding-bottom: 50px; /* Space below the form to ensure it's above the footer */
-  background: rgb(204, 213, 174);
- radial-gradient(
+  background: #800020;
+  radial-gradient: (
     circle,
     rgba(255, 144, 168, 1) 0%,
     rgba(180, 3, 14, 1) 100%
@@ -155,9 +155,9 @@ small {
 }
 
 .register-btn {
-  background-color: #ccd5ae;
+  background-color: #5a5a5a;
   border-color: #ccd5ae;
-  color: #5a5a5a;
+  color: white;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -173,6 +173,29 @@ small {
 }
 
 .register-btn:hover {
-  background-color: #e0e5b6;
+  background-color: #800020;
   border-color: #e0e5b6;
+  color: White;
+}
+
+.categories h1 {
+  font-size: 2.5rem; /* Bigger font size */
+  color: #ff4d4d; /* Red color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+}
+
+.category-btn {
+  font-size: 1.25rem; /* Larger button text */
+  border-radius: 20px; /* Rounded borders */
+  border: 2px solid black; /* Black border */
+  padding: 10px 20px; /* Bigger buttons */
+  margin: 10px; /* Space between buttons */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  background-color: #ff4d4d;
+}
+
+.category-btn:hover {
+  background-color: #ff4d4d; /* Red background on hover */
+  color: white; /* White text on hover */
+  border-color: black; /* Ensure the border stays black */
 }

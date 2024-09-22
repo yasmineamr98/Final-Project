@@ -1,45 +1,92 @@
-<div
-  id="eventCarousel"
-  class="carousel slide"
-  data-bs-ride="carousel"
-  data-bs-interval="5000"
->
-  <!-- Indicators (3 points) -->
-  <div class="carousel-indicators">
-    <button
-      type="button"
-      data-bs-target="#eventCarousel"
-      data-bs-slide-to="0"
-      class="active"
-      aria-current="true"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#eventCarousel"
-      data-bs-slide-to="1"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#eventCarousel"
-      data-bs-slide-to="2"
-    ></button>
-  </div>
-
-  <div class="carousel-inner">
-    <div
-      class="carousel-item"
-      *ngFor="let event of events; let i = index"
-      [class.active]="i === 0"
+<div class="slider">
+  <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div
+        *ngFor="let category of categories; let i = index"
+        class="carousel-item"
+        [class.active]="i === 0"
+      >
+        <div class="d-flex justify-content-center">
+          <div class="text-center">
+            <img
+              [src]="category.image"
+              class="d-block w-100"
+              [alt]="category.name"
+            />
+            <h3>{{ category.name }}</h3>
+            <p>{{ category.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#categoryCarousel"
+      role="button"
+      data-bs-slide="prev"
     >
-      <img [src]="event.image" class="d-block w-100" alt="{{ event.name }}" />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{ event.name }}</h5>
-        <p>
-          <button class="btn btn-book" (click)="bookEvent(event)">
-            Book Event
-          </button>
-        </p>
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#categoryCarousel"
+      role="button"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="all-events-cards d-flex justify-content-center flex-wrap">
+  <div
+    *ngFor="let event of events"
+    class="event-card rounded shadow m-2"
+    [ngClass]="{ hover: event.hover }"
+    (mouseenter)="setHoverState(event, true)"
+    (mouseleave)="setHoverState(event, false)"
+    style="width: 300px; height: 700px"
+  >
+    <img
+      src="{{ event.image }}"
+      class="img-fluid rounded-top"
+      style="height: 400px; object-fit: cover"
+      alt="Event Image"
+    />
+    <div class="p-3">
+      <h5>{{ event.name }}</h5>
+      <p>{{ event.place }}</p>
+      <p>{{ event.date }}</p>
+      <div class="d-flex justify-content-between">
+        <button
+          class="btn btn-outline-primary"
+          (click)="navigateToEventDetails(event.id)"
+        >
+          Show Details
+        </button>
+        <button class="btn btn-primary">Get Tickets</button>
       </div>
     </div>
   </div>
+</div>
+
+<div class="categories text-center">
+  <h1>Events Categories</h1>
+  <button type="button" class="btn btn-outline-primary category-btn">
+    🏅 Sports
+  </button>
+  <button type="button" class="btn btn-outline-primary category-btn">
+    🧸 Kids
+  </button>
+  <button type="button" class="btn btn-outline-primary category-btn">
+    🎭 Adults
+  </button>
+  <button type="button" class="btn btn-outline-primary category-btn">
+    📚 Educational
+  </button>
+  <button type="button" class="btn btn-outline-primary category-btn">
+    🎉 Festivals
+  </button>
 </div>

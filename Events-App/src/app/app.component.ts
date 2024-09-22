@@ -4,7 +4,6 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { UserHomepageComponent } from './user/user-homepage/user-homepage.component';
 import { UserNotificationComponent } from './user/user-notification/user-notification.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
@@ -24,7 +23,6 @@ import { BrowserModule } from '@angular/platform-browser';
     FooterComponent,
     HeaderComponent,
     UserRegisterComponent,
-    AdminLoginComponent,
     UserHomepageComponent,
     UserNotificationComponent,
     UserProfileComponent,
