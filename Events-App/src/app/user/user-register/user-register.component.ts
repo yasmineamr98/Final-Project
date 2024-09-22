@@ -208,7 +208,7 @@ import {
   FormControl,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'; // Import HttpClient
+import { HttpClient, HttpErrorResponse , HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -217,7 +217,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   standalone: true,
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.css'],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule , HttpClientModule],
 })
 export class UserRegisterComponent implements OnInit {
   registerForm: FormGroup;
@@ -230,7 +230,7 @@ export class UserRegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private http: HttpClient // Inject HttpClient
+    private http: HttpClient
   ) {
     this.registerForm = this.fb.group(
       {
@@ -268,7 +268,7 @@ export class UserRegisterComponent implements OnInit {
       : { mustMatch: true };
   }
 
-  // Method to register user and send form data to Laravel backend
+  // Handle form submission
   register() {
     if (this.registerForm.valid) {
       const formData = new FormData();
@@ -276,52 +276,47 @@ export class UserRegisterComponent implements OnInit {
       formData.append('last_name', this.registerForm.get('lastName')?.value);
       formData.append('email', this.registerForm.get('email')?.value);
       formData.append('password', this.registerForm.get('password')?.value);
-      formData.append('profilePic', this.file!); // Assuming file is set in file upload logic
+      formData.append('profilePic', this.file!);
 
-      // Send form data to Laravel API
-      this.http.post('API_ENDPOINT', formData).subscribe(
-        (response: any) => {
-          // Handle success, e.g., navigate to another page
-          console.log('Registration successful:', response);
-          this.router.navigate(['/login']);
-        },
-        (error: HttpErrorResponse) => {
-          // Handle error, e.g., display error message
-          console.error('Error during registration:', error);
-        }
-      );
+      // This is where you make an API call, for now we'll log form values.
+      console.log('Form data ready to be sent:', formData);
     } else {
+      console.log('Form is invalid');
       Object.keys(this.registerForm.controls).forEach((controlName) => {
         const control = this.registerForm.get(controlName);
         if (control?.invalid) {
           console.log(`Control ${controlName} is invalid:`, control.errors);
         }
       });
-      console.log('Form is invalid');
     }
   }
 
-  // Method to handle file selection
+  // Handle file selection
   onFileSelected(event: any) {
     const file = event.target.files[0];
-    if (file) {
+    if (file && file.type.startsWith('image/')) {
       this.file = file;
 
-      // Preview image logic
+      // Preview image
       const reader = new FileReader();
       reader.onload = () => {
         this.imagePreviewUrl = reader.result;
       };
       reader.readAsDataURL(file);
+    } else {
+      console.error('Selected file is not an image');
     }
   }
 
+  // Remove image from preview and reset file
   removeImage() {
     this.imagePreviewUrl = null;
     this.file = null;
     this.registerForm.get('image')?.reset();
   }
 }
+
+
 
 //backend routes///////////////////////////////////////////////////////////////////////
 

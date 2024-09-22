@@ -10,6 +10,7 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { SearchComponent } from './pages/search/search.component';
 import { HomeComponent } from './pages/home/home.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
 export const routes: Routes = [
   { path: 'user-login', component: UserLoginComponent },
@@ -19,7 +20,7 @@ export const routes: Routes = [
 
   { path: 'user-homepage', component: UserHomepageComponent },
   { path: 'user-notification', component: UserNotificationComponent },
-  { path: 'user-profile', component: UserRegisterComponent },
+  { path: 'user-profile', component: UserProfileComponent },
   { path: 'user-settings', component: UserRegisterComponent },
   { path: 'event-details', component: EventDetailsComponent },
   { path: 'events', component: EventsComponent },
