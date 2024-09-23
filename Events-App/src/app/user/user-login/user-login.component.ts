@@ -22,7 +22,7 @@ export class UserLoginComponent {
 
     // Send data to the Laravel backend for authentication
     this.http
-      .post<any>('http://your-backend-url/api/login', { email, password })
+      .post<any>('http://127.0.0.1:8000/api/login', { email, password })
       .subscribe(
         (response) => {
           // Handle success response
@@ -39,35 +39,3 @@ export class UserLoginComponent {
       );
   }
 }
-
-//include in appController
-// namespace App\Http\Controllers;
-
-// use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Auth;
-
-// class AuthController extends Controller
-// {
-//     public function login(Request $request)
-//     {
-//         $credentials = $request->only('email', 'password');
-
-//         if (Auth::attempt($credentials)) {
-//             $user = Auth::user();
-//             $token = $user->createToken('API Token')->accessToken;
-
-//             return response()->json([
-//                 'token' => $token,
-//                 'user' => $user
-//             ], 200);
-//         }
-
-//         return response()->json(['error' => 'Invalid credentials'], 401);
-//     }
-// }
-
-//Ensure that your Laravel backend supports CORS, so your Angular frontend can communicate with it. You can configure CORS in app/Http/Middleware/VerifyCsrfToken.php.
-//route/api.php
-// use App\Http\Controllers\AuthController;
-
-// Route::post('/login', [AuthController::class, 'login']);
