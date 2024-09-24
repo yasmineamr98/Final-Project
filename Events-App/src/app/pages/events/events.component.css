@@ -1,0 +1,41 @@
+.card {
+    border-radius: 15px;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  .iti-color{
+    background-color: #901b20;
+  }
+
+  .event {
+    background-color: #1c1c1c;
+    color: #fff !important;
+    border: none;
+  }
+
+  .main-color{
+    color:#cc3333
+  }
+
+  .show-btn:hover{
+    background-color:#cc3333 ;
+    border-color: #cc3333;
+  }
+  .book{
+    color: #fff;
+    border-radius: 20px 20px 20px 20px;
+    border: 2px solid #fff;
+    transition: all .3s;
+  }
+  .book:hover{
+    color: #fff;
+    background-color: #cc3333;
+    border-color: #cc3333;
+  }
