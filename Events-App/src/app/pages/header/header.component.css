@@ -7,7 +7,7 @@ body {
   background-color: grey;
 }
 .navbar {
-  background-color: grey;
+  background-color: var(--dark) !important;
   /* Light baby blue color with transparency */
   backdrop-filter: blur(10px); /* Blurring effect */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -21,25 +21,33 @@ body {
   background-color: rgba(173, 216, 230, 0.8); /* Slightly darker on hover */
   backdrop-filter: blur(12px); /* Increase blur effect on hover */
 }
+.logo{
+  width: 15%;
+}
 
 /* Centering the search input and button */
 .search-container {
-  width: 50%;
+  width: 90%;
 }
 
 .search-field {
   flex: 1;
   width: 100%;
   margin-right: 0.5rem;
+  background-color: #ffffff1f;
+  color: #fff;
+  padding: 15px 30px !important;
+
 }
 
 /* Dark grey background with white text for the search button */
 .search-btn {
   color: #fff; /* White text */
-  background-color: grey; /* Dark grey background */
+  background-color: var(--red); /* Dark grey background */
   border-color: #343a40; /* Dark grey border */
   transition: background-color 0.3s ease, color 0.3s ease,
     border-color 0.3s ease;
+  padding: 15px 30px !important;
 }
 
 /* On hover, make the background white with black text */
@@ -51,17 +59,21 @@ body {
 
 /* Navbar links */
 .nav-link {
+  color: #ddd;
   font-size: 1rem;
-  margin-right: 1.5rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  margin-right: 0.5rem;
+  padding: 15px 30px !important;
 }
-
+.nav-item {
+  color: #ddd;
+  font-size: 1rem;
+}
 /* Smooth hover effect for links */
 .nav-link:hover {
-  /* color: #007bff; */
-  text-decoration: underline;
-  transform: translateY(-2px); /* Adds slight elevation on hover */
   cursor: pointer;
+  background-color: var(--red);
+  border-radius: 5px;
+  transition: color 0.8s ease, transform 0.3s ease;
 }
 
 /* Navbar dropdown */
