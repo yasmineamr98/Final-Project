@@ -1,43 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
-  FormGroup,
-  Validators,
   FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpClientModule,
-} from '@angular/common/http';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-user-register',
   standalone: true,
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.css'],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink,],
 })
 export class UserRegisterComponent implements OnInit {
   registerForm: FormGroup;
-  uploadInProgress: boolean = false;
-  file!: File | null;
-  uploadProgress: number = 0;
-  uploadDone: boolean = false;
-  imagePreviewUrl: string | ArrayBuffer | null = null;
-  backendUrl = 'http://127.0.0.1:8000/api/register'; // URL to your backend API
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private http: HttpClient
+    private authService: AuthService
   ) {
     this.registerForm = this.fb.group(
       {
-        firstName: new FormControl('', [
+        name: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
         ]),
@@ -45,11 +36,10 @@ export class UserRegisterComponent implements OnInit {
         password: new FormControl('', [
           Validators.required,
           Validators.pattern(
-            '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,}$'
+            '^(?=.*[a-zA-Z])(?=.*[0-9]).{8,}$'
           ),
         ]),
-        confirmPassword: new FormControl('', [Validators.required]),
-        image: new FormControl('', [Validators.required]),
+        password_confirmation: new FormControl('', [Validators.required]),
       },
       { validators: this.passwordMatchValidator }
     );
@@ -57,71 +47,47 @@ export class UserRegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm.get('password')?.valueChanges.subscribe(() => {
-      this.registerForm.get('confirmPassword')?.updateValueAndValidity();
+      this.registerForm.get('password_confirmation')?.updateValueAndValidity();
     });
   }
 
   passwordMatchValidator(group: FormGroup) {
     const password = group.get('password')?.value;
-    const confirmPassword = group.get('confirmPassword')?.value;
-    return password === confirmPassword ? null : { mustMatch: true };
+    const password_confirmation = group.get('password_confirmation')?.value;
+    return password === password_confirmation ? null : { mustMatch: true };
   }
 
   // Handle form submission
   async register() {
     if (this.registerForm.valid) {
-      const formData = new FormData();
-      formData.append('firstName', this.registerForm.value.firstName);
-      formData.append('email', this.registerForm.value.email);
-      formData.append('password', this.registerForm.value.password);
-      // if (this.file) {
-      //   formData.append('profilePic', this.file);
-      // }
+      const user = {
+        name: this.registerForm.value.name,
+        email: this.registerForm.value.email,
+        password: this.registerForm.value.password,
+        password_confirmation: this.registerForm.value.password_confirmation,
+      };
 
-      this.http.post(this.backendUrl, formData).subscribe(
-        (response) => {
-          this.router.navigate(['/user-profile']);
-          console.log('Registration successful', response);
-          this.router.navigate(['/login']); // Redirect to login page or another route after successful registration
-        },
-        (error: HttpErrorResponse) => {
-          console.error('Error during registration', error);
-          // Handle registration error, show error message, etc.
-        }
-      );
+      try {
+        const response = await this.authService
+          .userRegister(
+            user.name,
+            user.email,
+            user.password,
+            user.password_confirmation
+          )
+          .toPromise();
+        console.log('User registered successfully', response);
+        this.router.navigate(['/']);
+      } catch (error) {
+        console.error('Error during registration', error);
+      }
     } else {
       // Mark all controls as touched to show validation errors
       this.registerForm.markAllAsTouched();
     }
   }
 
-
-
-
-
-
-
-  // Handle file selection for image upload
-  // onFileSelected(event: any) {
-  //   const file = event.target.files[0];
-  //   if (file && file.type.startsWith('image/')) {
-  //     this.file = file;
-
-  // Image preview logic
-  //     const reader = new FileReader();
-  //     reader.onload = () => {
-  //       this.imagePreviewUrl = reader.result;
-  //     };
-  //     reader.readAsDataURL(file);
-  //   } else {
-  //     console.error('Selected file is not an image.');
-  //   }
-  // }
-
-  //   removeImage() {
-  //     this.imagePreviewUrl = null;
-  //     this.file = null;
-  //     this.registerForm.get('image')?.reset();
-  //   }
-  // }
+  alreadyHaveAccount() {
+    this.router.navigate(['/login']);
+  }
 }

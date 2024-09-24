@@ -35,15 +35,28 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/home" aria-label="Home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/user-profile" aria-label="Profile">Profile</a>
+        
+        <!-- Profile tab, visible only when logged in -->
+        <li *ngIf="isLoggedIn()" class="nav-item">
+          <a class="nav-link" [routerLink]="['/user-profile', getUserId()]" aria-label="Profile">Profile</a>
         </li>
-        <li class="nav-item">
+        
+
+        <!-- Login tab, visible only when NOT logged in -->
+        <li *ngIf="!isLoggedIn()" class="nav-item">
           <a class="nav-link" routerLink="/user-login" aria-label="Login">Login</a>
         </li>
-        <li class="nav-item">
+        
+        <!-- Register tab, visible only when NOT logged in -->
+        <li *ngIf="!isLoggedIn()" class="nav-item">
           <a class="nav-link" routerLink="/user-register" routerLinkActive="active" aria-label="Register">Register</a>
         </li>
+
+        <!-- Logout tab, visible only when logged in -->
+        <li *ngIf="isLoggedIn()" class="nav-item">
+          <a class="nav-link" (click)="logout()" aria-label="Logout">Logout</a>
+        </li>
+
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
