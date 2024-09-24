@@ -4,3 +4,13 @@
   --red: #901b20;
   --white: #ffffff;
 }
+body {
+  font-family: 'Cairo Play', sans-serif;
+}
+h1, a {
+  font-weight: 700 !important;
+}
+
+p {
+  font-weight: 400 !important;
+}
