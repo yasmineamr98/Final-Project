@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service'; // Adjust path if needed
 import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel binding
 import { CommonModule } from '@angular/common'; // CommonModule for standalone components
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common'; // CommonModule for standalone c
   standalone: true,
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css'],
-  imports: [FormsModule, CommonModule], // Import FormsModule and CommonModule
+  imports: [FormsModule, CommonModule, RouterLink], // Import FormsModule and CommonModule
 })
 export class UserLoginComponent {
   email: string = ''; // Bind to ngModel for email

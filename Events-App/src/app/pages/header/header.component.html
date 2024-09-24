@@ -39,6 +39,7 @@
         <li *ngIf="isLoggedIn()" class="nav-item">
           <a class="nav-link" [routerLink]="['/user-profile', getUserId()]" aria-label="Profile">Profile</a>
         </li>
+        
 
         <!-- Login tab, visible only when NOT logged in -->
         <li *ngIf="!isLoggedIn()" class="nav-item">
