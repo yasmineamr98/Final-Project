@@ -36,11 +36,7 @@ import { BrowserModule } from '@angular/platform-browser';
   styleUrl: './app.component.css',
 })
 
-// @NgModule ({
-//   declarations: [AppComponent, AdminLoginComponent, UserHomepageComponent, UserNotificationComponent, UserSettingsComponent, HeaderComponent, HomeComponent, FooterComponent, EventsComponent, EventDetailsComponent, SearchComponent, UserLoginComponent, UserRegisterComponent, UserProfileComponent],
-//   imports: [BrowserModule, RouterModule],
-//   bootstrap: [AppComponent],
-// })
+
 export class AppComponent {
   title = 'Events-App';
 }
