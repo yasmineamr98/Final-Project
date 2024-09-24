@@ -1,41 +1,41 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http'; // Import HttpClient
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service'; // Adjust path if needed
+import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel binding
+import { CommonModule } from '@angular/common'; // CommonModule for standalone components
 
 @Component({
   selector: 'app-user-login',
   standalone: true,
-  imports: [HttpClientModule], // Import HttpClientModule
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css'],
+  imports: [FormsModule, CommonModule], // Import FormsModule and CommonModule
 })
 export class UserLoginComponent {
-  // Inject HttpClient and Router in constructor
-  constructor(private http: HttpClient, private router: Router) {}
+  email: string = ''; // Bind to ngModel for email
+  password: string = ''; // Bind to ngModel for password
+  errorMessage: string = ''; // For showing error messages
 
-  // Handle form submission and send data to the backend
-  onSubmit($event: Event, form: HTMLFormElement) {
-    $event.preventDefault();
+  constructor(private authService: AuthService, private router: Router) {}
 
-    const email = form['email'].value;
-    const password = form['password'].value;
-
-    // Send data to the Laravel backend for authentication
-    this.http
-      .post<any>('http://127.0.0.1:8000/api/login', { email, password })
-      .subscribe(
-        (response) => {
-          // Handle success response
+  // Method to handle login
+  login() {
+    this.authService.userLogin(this.email, this.password).subscribe(
+      (response: any) => {
+        if (response.token) {
+          // Store token and user details
           sessionStorage.setItem('token', response.token);
           sessionStorage.setItem('User', JSON.stringify(response.user));
 
-          // Redirect to another page (e.g., user profile or dashboard)
-          this.router.navigate(['/user-profile']);
-        },
-        (error) => {
-          // Handle error response
-          console.error('Login failed:', error);
+          // Redirect to user profile page
+          this.router.navigate(['/user-profile', response.user.id]);
+        } else {
+          this.errorMessage = 'Invalid credentials or unauthorized access';
         }
-      );
+      },
+      (error: any) => {
+        this.errorMessage = 'Login failed. Please check your credentials.';
+      }
+    );
   }
 }
