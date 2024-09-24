@@ -22,7 +22,7 @@ body {
   backdrop-filter: blur(12px); /* Increase blur effect on hover */
 }
 .logo{
-  width: 15%;
+  width: 220px;
 }
 
 /* Centering the search input and button */
@@ -31,29 +31,28 @@ body {
 }
 
 .search-field {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
   flex: 1;
-  width: 100%;
-  margin-right: 0.5rem;
-  background-color: #ffffff1f;
-  color: #fff;
-  padding: 15px 30px !important;
-
+  border-radius: 50px;
 }
 
 /* Dark grey background with white text for the search button */
 .search-btn {
-  color: #fff; /* White text */
-  background-color: var(--red); /* Dark grey background */
-  border-color: #343a40; /* Dark grey border */
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
-  padding: 15px 30px !important;
+  background-color: var(--red);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-left: -40px;
 }
 
 /* On hover, make the background white with black text */
 .search-btn:hover {
-  background-color: #fff; /* White background */
-  color: #000; /* Black text */
+  background-color: #410606; /* White background */
+  color: #f0f0f0; /* Black text */
   border-color: #343a40; /* Keep the dark grey border */
 }
 
@@ -61,8 +60,10 @@ body {
 .nav-link {
   color: #ddd;
   font-size: 1rem;
-  margin-right: 0.5rem;
-  padding: 15px 30px !important;
+  margin-left: 0.5rem;
+  padding: 10px 30px !important;
+  border-radius: 50px;
+
 }
 .nav-item {
   color: #ddd;
@@ -72,7 +73,6 @@ body {
 .nav-link:hover {
   cursor: pointer;
   background-color: var(--red);
-  border-radius: 5px;
   transition: color 0.8s ease, transform 0.3s ease;
 }
 
@@ -96,7 +96,6 @@ body {
   height: 50px;
   display: flex;
   justify-content: center;
-  padding-button: 4rem;
 }
 
 .navbar-brand:hover {
