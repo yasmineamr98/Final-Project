@@ -11,6 +11,6 @@ export class EventsService {
 
   getEvents():Observable<any>
   { 
-     return this._HttpClient.get('https://dummyjson.com/c/7dd5-12ba-4996-a435')
+     return this._HttpClient.get('http://localhost:8000/api/events')
   }
 }
