@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 export class EventsService {
   constructor(private _HttpClient: HttpClient) {}
 
-  getEvents(): Observable<any> {
-    return this._HttpClient.get('http://localhost:8000/api/events');
+  getEvents():Observable<any>
+  { 
+     return this._HttpClient.get('http://localhost:8000/api/events')
   }
 }

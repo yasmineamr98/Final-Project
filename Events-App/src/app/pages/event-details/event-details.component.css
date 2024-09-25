@@ -1,0 +1,20 @@
+.event-details-container {
+    background-color: #1c1c1c;
+    color: #fff;
+    border-radius: 10px;
+  }
+  
+  .event-description {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  ul.list-unstyled i {
+    margin-right: 10px;
+  }
+  
+  h1.text-danger {
+    color: #ff0000;
+  }
+  
