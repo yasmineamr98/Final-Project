@@ -33,22 +33,21 @@ export class AuthService {
       password_confirmation,
     });
   }
-
-
   // Logout method
   logout(): void {
-    sessionStorage.clear(); // Clear session storage
+    sessionStorage.removeItem('authToken');
+    sessionStorage.removeItem('userId'); // Clear session storage
   }
-
   isLoggedIn(): boolean {
-    return !!sessionStorage.getItem('token'); // Check if the user is logged in
+    return !!sessionStorage.getItem('authToken'); // Check if the user is logged in
   }
-
   isRegistered(): boolean {
     const user = JSON.parse(sessionStorage.getItem('User') || '{}');
     return user?.isRegistered;
   }
+
+  getUserId(): string | null {
+    const user = JSON.parse(sessionStorage.getItem('User') || '{}');
+    return user?.id || null; // Safely retrieve user ID from the stored user object
+  }
 }
-
-
-

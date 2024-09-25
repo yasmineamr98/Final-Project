@@ -1,5 +1,13 @@
 <div class="container mt-5">
   <h1 class="text-center">User Profile</h1>
+  <button
+    [routerLink]="['/user-settings', userId]"
+    *ngIf="userId === user.id"
+    (click)="goToUserSettings()"
+  >
+    Edit Profile
+  </button>
+  
   <div class="card">
     <div class="card-header">
       <h5 class="card-title">{{ user.name }}</h5>

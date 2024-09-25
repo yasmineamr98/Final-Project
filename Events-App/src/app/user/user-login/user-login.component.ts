@@ -22,10 +22,10 @@ export class UserLoginComponent {
   login() {
     this.authService.userLogin(this.email, this.password).subscribe(
       (response: any) => {
-        if (response.token) {
-          // Store token and user details
-          sessionStorage.setItem('token', response.token);
-          sessionStorage.setItem('User', JSON.stringify(response.user));
+        if (response && response.token) {
+          // Store token and user details in sessionStorage
+          sessionStorage.setItem('authToken', response.token);
+          sessionStorage.setItem('User', JSON.stringify(response.user)); // Store user as JSON
 
           // Redirect to user profile page
           this.router.navigate(['/user-profile', response.user.id]);

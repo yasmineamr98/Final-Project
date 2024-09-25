@@ -10,18 +10,29 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { SearchComponent } from './pages/search/search.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AuthGuard } from './guards/auth.guard'; // Import the guard
+import { UserSettingsComponent } from './user/user-settings/user-settings.component';
 
 export const routes: Routes = [
-  { path: 'user-login', component: UserLoginComponent }, // Login route
+  { path: 'user-login', component: UserLoginComponent },
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'user-register', component: UserRegisterComponent },
   { path: 'user-homepage', component: UserHomepageComponent },
   { path: 'user-notification', component: UserNotificationComponent },
-  { path: 'user-profile/:id', component: UserProfileComponent }, // User profile route
+  {
+    path: 'user-profile/:id',
+    component: UserProfileComponent,
+    canActivate: [AuthGuard], // Protect this route
+  },
   { path: 'event-details', component: EventDetailsComponent },
   { path: 'events', component: EventsComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'search', component: SearchComponent },
+  {
+    path: 'user-settings/:id',
+    component: UserSettingsComponent,
+    canActivate: [AuthGuard],
+  },
 ];

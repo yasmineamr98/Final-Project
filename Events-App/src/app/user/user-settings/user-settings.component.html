@@ -1,1 +1,26 @@
-<p>user-settings works!</p>
+<h1>Edit Profile</h1>
+
+<!-- User Profile -->
+<form >
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="user.name" name="name" />
+    </div>
+        
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="user.email" name="email" />
+    </div>
+
+    <div>
+        <label for="profile_image">Upload Profile Image:</label>
+        <input type="file" id="profile_image" (change)="handleProfileImageUpload($event)" name="profile_image"
+            accept="image/*" />
+    </div>
+
+    <button type="submit" (click)="updateUserProfile()">Save Changes</button>
+</form>
+
+<div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+</div>

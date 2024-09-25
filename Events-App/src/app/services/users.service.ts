@@ -16,4 +16,15 @@ export class UsersService {
   getUserById(id: string): Observable<any> {
     return this.http.get<any>(`${this.userApiUrl}/${id}`);
   }
+
+  updateUserById(id: string, user: any): Observable<any> {
+    return this.http.put<any>(`${this.userApiUrl}/${id}`, user);
+  }
+
+  uploadProfileImage(userId: string, formData: FormData): Observable<any> {
+    return this.http.post<any>(
+      `${this.userApiUrl}/${userId}/profile-image`,
+      formData
+    );
+  }
 }
