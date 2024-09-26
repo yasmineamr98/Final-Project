@@ -7,9 +7,14 @@
 body {
   font-family: 'Cairo Play', sans-serif;
   transition: color 0.9s ease !important;
+  overflow-x: hidden;
+  width: 100.5%;
+
 }
 h1, a {
   font-weight: 700 !important;
+  text-decoration: none;
+  color: var(--white);
 }
 
 p {
@@ -19,6 +24,18 @@ button:hover {
   background-color: #410606 !important; /* White background */
   color: #f0f0f0; /* Black text */
   border-color: #343a40; /* Keep the dark grey border */
+  transition: 0.4s ease !important;
+
+}
+button{
+  background-color: var(--red);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: color 0.9s ease !important;
+
 }
 ::-webkit-scrollbar {
   width: 13px;

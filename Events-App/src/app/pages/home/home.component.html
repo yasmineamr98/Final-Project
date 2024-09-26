@@ -1,3 +1,14 @@
+<div class="landing container-fluid">
+  <h1>EVENTORiA</h1>
+  <h3>Explore ITI's Great Events and Catch Up on Upcoming Opportunities</h3>
+  <button>
+    <a href="#upcoming">Explore Upcoming Events </a
+    ><i class="fa-solid fa-compass"></i>
+  </button>
+</div>
+<div class="three">
+  <h1>Events Categories</h1>
+</div>
 <div class="slider">
   <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -13,8 +24,9 @@
               class="d-block w-100"
               [alt]="category.name"
             />
-            <h3>{{ category.name }}</h3>
             <p>{{ category.description }}</p>
+            <h3>{{ category.name }} Events</h3>
+            <button id="s-btn">Explore Now</button>
           </div>
         </div>
       </div>
@@ -40,7 +52,53 @@
   </div>
 </div>
 
+<div class="three" id="upcoming">
+  <h1>Upcoming Events</h1>
+</div>
 <div class="all-events-cards d-flex justify-content-center flex-wrap">
+  <div
+    *ngFor="let event of paginatedEvents"
+    class="event-card rounded shadow m-2"
+    (mouseenter)="setHoverState(event, true)"
+    (mouseleave)="setHoverState(event, false)"
+  >
+    <img [src]="event.imageUrl"
+    class="img-fluid rounded-top"
+      alt="Event Image"
+    />
+    <div>
+      <div class="p-3">
+        <h5>{{ event.name }}</h5>
+        <p>{{ event.place }}</p>
+        <p>{{ event.date }}</p>
+        <div class="">
+          <button
+            class="btn btn-outline-primary m-2"
+            (click)="navigateToEventDetails(event.id)"
+          >
+            Show Details
+          </button>
+          <button class="btn btn-primary">Get Tickets</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination controls -->
+<div class="pagination-controls">
+  <ul class="pagination justify-content-center">
+    <li
+      *ngFor="let page of [].constructor(totalPages()); let i = index"
+      [ngClass]="{ active: currentPage === i + 1 }"
+      class="page-item"
+    >
+      <a class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</a>
+    </li>
+  </ul>
+</div>
+
+<!-- <div class="all-events-cards d-flex justify-content-center flex-wrap">
   <div
     *ngFor="let event of events"
     class="event-card rounded shadow m-2"
@@ -70,9 +128,13 @@
       </div>
     </div>
   </div>
+</div> -->
+<div class="three">
+  <h1>Highlighted Events</h1>
 </div>
+<app-events></app-events>
 
-<div class="categories text-center">
+<!-- <div class="categories text-center">
   <h1>Events Categories</h1>
   <button type="button" class="btn btn-outline-primary category-btn">
     🏅 Sports
@@ -88,5 +150,13 @@
   </button>
   <button type="button" class="btn btn-outline-primary category-btn">
     🎉 Festivals
+  </button>
+</div> -->
+<div class=" container-fluid buses">
+  <h1></h1>
+  <h3>Our Bus lines operate  almost overall Cairo <br> to take you wherever you are.</h3>
+  <button>
+    <a href="">Explore Bus lines </a
+    ><i class="fa-solid fa-compass"></i>
   </button>
 </div>

@@ -5,74 +5,119 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { EventsComponent } from '../events/events.component';
+import { EventsService } from '../../services/events.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, EventsComponent, HttpClientModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
   categories = [
     {
-      name: 'Sports',
+      name: 'Global',
       image: '../../../assets/images/3.jpg',
-      description: 'Explore thrilling sports events around you.',
+      description: 'VMware and Egypts ITI collaborate for skills development',
     },
     {
-      name: 'Night Life',
+      name: 'Champions',
       image: '../../../assets/images/2.jpg',
-      description: 'Discover vibrant night life spots.',
+      description: 'Zinad IT (Cyber champion) .',
     },
     {
-      name: 'Hot Deals',
+      name: 'Schools',
       image: '../../../assets/images/5.jpg',
-      description: 'Get the hottest deals in your city.',
+      description: 'International Public Schools – October 3 ',
     },
     {
-      name: 'Food',
+      name: 'Software Companies',
       image: '../../../assets/images/8.jpeg',
-      description: 'Taste the best dishes with great discounts.',
+      description: 'Explore what is goinig in the Software market',
     },
   ];
+  // events = [
+  //   {
+  //     id: 'event1',
+  //     image: 'assets/images/3.jpg',
+  //     name: 'Summer Festival',
+  //     place: 'Central Park',
+  //     date: '2024-10-04',
+  //     hover: false,
+  //   },
+  //   {
+  //     id: 'event2',
+  //     image: 'assets/images/4.jpg',
+  //     name: 'Music Concert',
+  //     place: 'Downtown Arena',
+  //     date: '2024-11-15',
+  //     hover: false,
+  //   },
+  //   {
+  //     id: 'event3',
+  //     image: 'assets/images/5.jpg',
+  //     name: 'Art Exhibition',
+  //     place: 'City Gallery',
+  //     date: '2024-12-20',
+  //     hover: false,
+  //   },
+  //   {
+  //     id: 'event4',
+  //     image: 'assets/images/6.jpg',
+  //     name: 'Tech Conference',
+  //     place: 'Silicon Valley',
+  //     date: '2024-09-15',
+  //     hover: false,
+  //   },
+  //   {
+  //     id: 'event5',
+  //     image: 'assets/images/7.jpg',
+  //     name: 'Startup Meetup',
+  //     place: 'New York',
+  //     date: '2024-10-05',
+  //     hover: false,
+  //   },
+  // ];
+  events:any[]=[]
 
-  events = [
-    {
-      id: 'event1',
-      image: 'assets/images/3.jpg',
-      name: 'Summer Festival',
-      place: 'Central Park',
-      date: '2024-10-04',
-      hover: false,
-    },
-    {
-      id: 'event2',
-      image: 'assets/images/4.jpg',
-      name: 'Music Concert',
-      place: 'Downtown Arena',
-      date: '2024-11-15',
-      hover: false,
-    },
-    {
-      id: 'event3',
-      image: 'assets/images/5.jpg',
-      name: 'Art Exhibition',
-      place: 'City Gallery',
-      date: '2024-12-20',
-      hover: false,
-    },
-  ];
+  // Pagination settings
+  currentPage = 1;
+  itemsPerPage = 2;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private _EventsService:EventsService ) {}
 
-  ngOnInit() {}
 
+  ngOnInit(): void {
+    this._EventsService.getEvents().subscribe(
+      {
+        next:(response) =>{
+              this.events = response;
+        }
+      })
+  }
+  // Set hover state
   setHoverState(event: { hover: boolean }, isHovering: boolean) {
     event.hover = isHovering;
   }
 
+  // Navigate to event details
   navigateToEventDetails(eventId: string) {
     this.router.navigate(['/Events-App/src/app/pages/event-details/', eventId]);
+  }
+
+  // Handle pagination
+  get paginatedEvents() {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    return this.events.slice(startIndex, startIndex + this.itemsPerPage);
+  }
+
+  changePage(pageNumber: number) {
+    this.currentPage = pageNumber;
+  }
+
+  totalPages() {
+    return Math.ceil(this.events.length / this.itemsPerPage);
   }
 }
