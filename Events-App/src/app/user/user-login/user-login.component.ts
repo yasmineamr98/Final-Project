@@ -22,6 +22,7 @@ export class UserLoginComponent {
   login() {
     this.authService.userLogin(this.email, this.password).subscribe(
       (response: any) => {
+        console.log('Login response:', response);
         if (response && response.token) {
           // Store token and user details in sessionStorage
           sessionStorage.setItem('authToken', response.token);

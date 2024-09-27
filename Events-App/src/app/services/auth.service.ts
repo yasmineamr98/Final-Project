@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 const apiUrl = 'http://127.0.0.1:8000/api'; // Base URL for the API
@@ -15,8 +15,17 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   // Method to handle user login
-  userLogin(email: string, password: string): Observable<any> {
-    return this.http.post<any>(this.userApiUrl, { email, password });
+  userLogin(email: string, password: string): Observable<string> {
+    return this.http
+      .post<any>(this.userApiUrl, { email, password }, {
+        headers: {
+          'Authorization': `Bearer ${sessionStorage.getItem('authToken')}`,
+        },
+      })
+      .pipe(
+        // Extract the auth token from the response
+        map((response) => response)
+      );
   }
 
   // Method to handle user registration

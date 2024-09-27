@@ -8,7 +8,7 @@ import { UsersService } from '../../services/users.service'; // Ensure the corre
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [HttpClientModule, CommonModule,RouterLink],
+  imports: [HttpClientModule, CommonModule,RouterLink,],
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css'],
 })
