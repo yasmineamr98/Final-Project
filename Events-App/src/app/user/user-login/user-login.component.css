@@ -58,13 +58,13 @@ h3:after {
 
 .card {
   background-color: var(--dark) !important;
-  border: 1px solid #e48586;
+  border: 1px solid var(--dark) !important;
   border-radius: 10px;
   padding: 30px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   width: 100%;
   max-width: 400px;
-  height: 70%;
+  height: auto;
 }
 
 .card-title {
@@ -97,6 +97,12 @@ h3:after {
 
 .form-group {
   margin-bottom: 1.5rem;
+
+}
+
+.form-group input {
+  color: #fff;
+  background-color: #fff;
 }
 
 .modal-content {
@@ -113,7 +119,7 @@ h3:after {
 }
 
 .btn-primary {
-  background-color: var(--red) ;
+  background-color: var(--red);
   border-color: var(--red);
   width: 100%;
 }

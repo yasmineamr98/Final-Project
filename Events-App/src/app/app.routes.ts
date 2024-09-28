@@ -12,6 +12,9 @@ import { SearchComponent } from './pages/search/search.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './guards/auth.guard'; // Import the guard
 import { UserSettingsComponent } from './user/user-settings/user-settings.component';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
+import { OtpVerificationComponent } from './user/otp-verification/otp-verification.component';
+import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
 
 export const routes: Routes = [
   { path: 'user-login', component: UserLoginComponent },
@@ -35,5 +38,9 @@ export const routes: Routes = [
     component: UserSettingsComponent,
     canActivate: [AuthGuard],
   },
-  {path: 'details' , component:EventDetailsComponent},
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-otp', component: OtpVerificationComponent },
+  { path: 'otp-verification', component: OtpVerificationComponent },
+  { path: '', redirectTo: '/forgot-password', pathMatch: 'full' },
+  { path: 'reset-password', component: ResetPasswordComponent },
 ];

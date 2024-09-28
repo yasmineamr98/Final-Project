@@ -13,11 +13,15 @@ import { EventsComponent } from './pages/events/events.component';
 import { SearchComponent } from './pages/search/search.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
+import { OtpVerificationComponent } from './user/otp-verification/otp-verification.component';
+import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    AppComponent,
     RouterOutlet,
     UserLoginComponent,
     FooterComponent,
@@ -31,6 +35,9 @@ import { BrowserModule } from '@angular/platform-browser';
     EventsComponent,
     SearchComponent,
     HomeComponent,
+    ForgotPasswordComponent,
+    OtpVerificationComponent,
+    ResetPasswordComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
