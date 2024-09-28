@@ -1,7 +1,9 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h2 class="text-center">Verify OTP</h2>
+<div
+  class="forget-container vh-100 d-flex justify-content-center align-items-center"
+>
+  <div class="card shadow-lg p-4 ">
+    <div class="card-body">
+      <h3 class="card-title text-center"> Verify otp</h3>
             <form [formGroup]="otpForm" (ngSubmit)="verifyOtp(); onSubmit()">
                 <div class="form-group">
                     <label for="otp" class="mb-2">OTP:</label>
@@ -18,28 +20,5 @@
         </div>
     </div>
 </div>
+    
 
-<style>
-    .container {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .form-control {
-        border-radius: 5px;
-        border: 1px solid #5a5a5a;
-        background: none;
-        padding: 10px;
-        font-size: 16px;
-        color: #5a5a5a;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-</style>
