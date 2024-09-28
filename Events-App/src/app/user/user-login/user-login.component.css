@@ -38,12 +38,12 @@ body {
     #ff5858
   ); */
 
-  background-color: #ff4d4d;
+  /* background-color: var(--dark);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
+  width: 100%; */
 }
 
 h3:after {
@@ -57,7 +57,7 @@ h3:after {
 }
 
 .card {
-  background-color: #fde5ec !important;
+  background-color: var(--dark) !important;
   border: 1px solid #e48586;
   border-radius: 10px;
   padding: 30px;
@@ -68,19 +68,20 @@ h3:after {
 }
 
 .card-title {
-  color: #5a5a5a;
+  color: #fff;
   text-align: center;
 }
 
-.btn-primary {
-  background-color: #e48586;
-  border-color: #e48586;
-  width: 100%;
+.card-body {
+  padding: 20px;
+  color: #fff;
 }
 
+
+
 .btn-primary:hover {
-  background-color: #916db3;
-  border-color: #916db3;
+  background-color: #410606;
+  border-color: #410606;
 }
 
 .form-control {
@@ -112,14 +113,15 @@ h3:after {
 }
 
 .btn-primary {
-  background-color: #e48586;
-  border-color: #e48586;
+  background-color: var(--red) ;
+  border-color: var(--red);
+  width: 100%;
 }
 
-.btn-primary:hover {
+/* .btn-primary:hover {
   background-color: #ff5858;
   border-color: white;
-}
+} */
 
 .forget-password-btn:focus {
   color: black;

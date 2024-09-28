@@ -21,7 +21,7 @@ export class UserSettingsComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private usersService: UsersService,
-    private authService: AuthService
+    private authService: AuthService,
   ) {}
 
   ngOnInit() {
@@ -55,29 +55,38 @@ export class UserSettingsComponent implements OnInit {
   }
 
   // Method to handle user profile update
-  updateUserProfile() {
-    if (this.userId) {
-      console.log('Updating user profile with data:', this.user); // Debug: Log user data
-      this.usersService.updateUserById(this.userId, this.user).subscribe(
-        (response) => {
-          alert('Profile updated successfully');
-          this.router.navigate(['/user-profile', this.userId]);
-        },
-        (error) => {
-          console.error('Error updating profile:', error); // Debug: Log error response
-          if (error.error.errors) {
-            this.errorMessage = Object.values(error.error.errors)
-              .flat()
-              .join(', '); // Show all validation errors
-          } else {
-            this.errorMessage = 'Error updating profile.';
-          }
-        }
-      );
-    } else {
-      this.errorMessage = 'User ID is not defined.';
-    }
+  // Method to handle user profile update
+updateUserProfile() {
+  if (!sessionStorage.getItem('authToken')) {
+    console.error('Authentication token is not defined.');
+    this.errorMessage = 'Authentication token is not defined.';
+    return;
   }
+
+  console.log('Updating user profile with data:', this.user); // Debug: Log user data
+  this.usersService.updateUserProfileWithToken(sessionStorage.getItem('authToken')?? '', this.user).subscribe(
+    (response: any) => {
+      if (response && response.token) {
+        sessionStorage.setItem('authToken', response.token); // Update the token in storage
+        return { token: response.token };
+      } else {
+        console.error('Authentication token not found in response.');
+        return null;
+      }
+    },
+    (error: any) => {
+      if (error.error && error.error.errors) {
+        // Show all validation errors
+        this.errorMessage = Object.values(error.error.errors)
+          .flat()
+          .join(', ');
+      } else {
+        this.errorMessage = 'Error updating profile.';
+      }
+      console.error('Error updating profile:', error); // Debug: Log error response
+    }
+  );
+}
 
   handleProfileImageUpload(event: Event) {
     const file = (event.target as HTMLInputElement).files?.item(0);

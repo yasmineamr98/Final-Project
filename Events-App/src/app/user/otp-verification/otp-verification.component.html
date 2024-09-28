@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="text-center">Verify OTP</h2>
+            <form [formGroup]="otpForm" (ngSubmit)="verifyOtp(); onSubmit()">
+                <div class="form-group">
+                    <label for="otp" class="mb-2">OTP:</label>
+                    <input type="text" id="otp" name="otp" formControlName="otp" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="email" class="mb-2">Email:</label>
+                    <input type="email" id="email" name="email" formControlName="email" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    Verify OTP
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #5a5a5a;
+        background: none;
+        padding: 10px;
+        font-size: 16px;
+        color: #5a5a5a;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+</style>

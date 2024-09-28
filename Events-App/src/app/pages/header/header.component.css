@@ -14,6 +14,7 @@ body {
   padding: 1rem;
   transition: background-color 0.3s ease-in-out,
     backdrop-filter 0.3s ease-in-out;
+    z-index: 10;
 }
 
 /* When navbar is hovered */
@@ -83,6 +84,7 @@ body {
 
 .nav-item .dropdown-menu.show {
   opacity: 1;
+  
 }
 
 /* Navbar brand styling */

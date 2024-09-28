@@ -11,6 +11,7 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   color: var(--white);
+  z-index: 1;
 }
 .landing h1 {
   font-size: 7rem;
