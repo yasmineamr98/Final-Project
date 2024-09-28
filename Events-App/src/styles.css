@@ -5,7 +5,7 @@
   --white: #ffffff;
 }
 body {
-  font-family: 'Cairo Play', sans-serif;
+  font-family: 'Cairo', sans-serif;
   transition: color 0.9s ease !important;
   overflow-x: hidden;
   width: 100.5%;
@@ -35,7 +35,7 @@ button{
   cursor: pointer;
   border-radius: 50px;
   transition: color 0.9s ease !important;
-
+  text-decoration: none !important;
 }
 ::-webkit-scrollbar {
   width: 13px;

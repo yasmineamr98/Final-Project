@@ -1,40 +1,29 @@
 .fullPage {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  /* Align items to the top */
-  min-height: calc(100vh - 200px);
-  /* Adjust based on the height of your header and footer */
-  margin: 0;
-  /* Remove default margin */
-  padding-top: 50px;
-  /* Space above the form */
-  padding-bottom: 50px;
-  /* Space below the form to ensure it's above the footer */
-  /* background: #800020;
-  radial-gradient: (
-    circle,
-    rgba(255, 144, 168, 1) 0%,
-    rgba(180, 3, 14, 1) 100%
-  ); */
+  background-color: var(--red);
+  box-shadow: rgb(0, 0, 0) 0px 2px 8px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  padding: 4em;
+  background-image: url(../../../assets/images/1.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  margin-left: calc(-50vw + 50%);
 }
 
 .register-form {
-  background: var(--dark);
-  border: 1px solid #e0e5b6;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #7c0808d3 !important;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.459) 0px 2px 18px 10px;
   width: 100%;
   max-width: 500px;
   box-sizing: border-box;
 }
-
 h2 {
   color: #fff;
   text-align: center;
@@ -76,11 +65,9 @@ input[type="password"]:focus {
   border: none;
 }
 
-
-
 .btn-primary {
-  background-color: var(--red) ;
-  border-color: var(--red) ;
+  background-color: var(--dark);
+  border-color: var(--red);
   color: white;
   padding: 10px;
   border-radius: 5px;
@@ -112,8 +99,3 @@ input[type="password"]:focus {
   border-color: #410606;
   color: White;
 } */
-
-
-
-
-

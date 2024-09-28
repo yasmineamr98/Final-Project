@@ -1,12 +1,5 @@
 body {
-  /* background: rgb(255, 144, 168); */
-  /* background: radial-gradient(
-    circle,
-    rgba(255, 144, 168, 1) 0%,
-    rgba(180, 3, 14, 1) 100%
-  ); */
-  background-color: #ff4d4d;
-  height: 400vh;
+  background-color: var(--dark);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,42 +7,26 @@ body {
 }
 
 .login-container {
-  /* background: rgb(252, 186, 173);
-  background: linear-gradient(
-    270deg,
-    rgba(252, 186, 173, 1) 0%,
-    rgba(228, 133, 102, 1) 63%,
-    rgba(145, 109, 179, 1) 100%
-  ); */
-
-  /* background-image: linear-gradient(
-    to right top,
-    #d6d2d4,
-    #d3b6c1,
-    #d29aa9,
-    #ce7e8c,
-    #c8616b,
-    #c9565e,
-    #ca4c50,
-    #c94141,
-    #d64747,
-    #e44c4c,
-    #f15252,
-    #ff5858
-  ); */
-
-  /* background-color: var(--dark);
+  background-color: var(--red);
+  box-shadow: rgb(0, 0, 0) 0px 2px 8px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%; */
+  padding: 4em;
+  background-image: url(../../../assets/images/1.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  margin-left: calc(-50vw + 50%);
 }
 
 h3:after {
   content: " ";
   display: block;
-  border: 2px solid #5a5a5a;
+  border: 2px solid #636363;
   width: 50px;
   margin: auto;
   margin-top: 5px;
@@ -57,14 +34,14 @@ h3:after {
 }
 
 .card {
-  background-color: var(--dark) !important;
-  border: 1px solid var(--dark) !important;
+  color: white;
+  background-color: #7c0808d3 !important;
+  border: 1px solid #3333;
   border-radius: 10px;
   padding: 30px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.459) 0px 2px 18px 10px !important;
   width: 100%;
   max-width: 400px;
-  height: auto;
 }
 
 .card-title {
@@ -76,9 +53,11 @@ h3:after {
   padding: 20px;
   color: #fff;
 }
-
-
-
+.btn-primary {
+  background-color: var(--dark);
+  border-color: var(--dark);
+  width: 100%;
+}
 .btn-primary:hover {
   background-color: #410606;
   border-color: #410606;
@@ -97,7 +76,6 @@ h3:after {
 
 .form-group {
   margin-bottom: 1.5rem;
-
 }
 
 .form-group input {
@@ -118,16 +96,6 @@ h3:after {
   border-top: 1px solid #e48586;
 }
 
-.btn-primary {
-  background-color: var(--red);
-  border-color: var(--red);
-  width: 100%;
-}
-
-/* .btn-primary:hover {
-  background-color: #ff5858;
-  border-color: white;
-} */
 
 .forget-password-btn:focus {
   color: black;

@@ -14,7 +14,10 @@ body {
   padding: 1rem;
   transition: background-color 0.3s ease-in-out,
     backdrop-filter 0.3s ease-in-out;
-    z-index: 10;
+  z-index: 10;
+  align-items: first baseline;
+  font-family: 'Cairo Play', sans-serif;
+
 }
 
 /* When navbar is hovered */
@@ -22,13 +25,14 @@ body {
   background-color: rgba(173, 216, 230, 0.8); /* Slightly darker on hover */
   backdrop-filter: blur(12px); /* Increase blur effect on hover */
 }
-.logo{
-  width: 220px;
+.logo {
+  width: 120px;
+  margin: 0 10px 10px 0px;
 }
 
 /* Centering the search input and button */
 .search-container {
-  width: 90%;
+  width: 70%;
 }
 
 .search-field {
@@ -64,7 +68,6 @@ body {
   margin-left: 0.5rem;
   padding: 10px 30px !important;
   border-radius: 50px;
-
 }
 .nav-item {
   color: #ddd;
@@ -84,7 +87,6 @@ body {
 
 .nav-item .dropdown-menu.show {
   opacity: 1;
-  
 }
 
 /* Navbar brand styling */
