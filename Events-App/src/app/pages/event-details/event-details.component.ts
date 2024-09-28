@@ -10,12 +10,13 @@ import { EventsService } from '../../services/events.service';
   styleUrls: ['./event-details.component.css']  // Corrected styleUrls
 })
 export class EventDetailsComponent implements OnInit {
+  eventDetails: any; // Define a property to hold event details
+
   constructor(private _ActivatedRoute: ActivatedRoute, private _EventsService: EventsService) {}
 
   ngOnInit(): void {
     this._ActivatedRoute.paramMap.subscribe({
       next: (params) => {
-        // Check if 'id' exists in the params and is not null
         const eventIdStr = params.get('id');
 
         // Handle the case when 'id' is null
@@ -27,7 +28,8 @@ export class EventDetailsComponent implements OnInit {
               const eventDetails = response.find((event: any) => event.id === eventId);
 
               if (eventDetails) {
-                console.log(eventDetails);  // Output the event details
+                this.eventDetails = eventDetails;  // Assign the details to the property
+                console.log(this.eventDetails);  // Output the event details
               } else {
                 console.error('Event not found!');
               }

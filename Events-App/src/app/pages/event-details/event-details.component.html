@@ -6,61 +6,55 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container event-details-container py-4 my-5">
-        <div class="row align-items-center">
-          <!-- Left side with the event image -->
-          <div class="col-md-8">
+  <div class="container event-details-container py-4 my-5">
+    <div class="row align-items-center">
+        <!-- Left side with the event image -->
+        <div class="col-md-8">
             <img
-              src="assets/images/pasted.png"
-              alt="Event Image"
-              class="img-fluid rounded"
+                [src]="eventDetails?.imageUrl"  
+                alt="Event Image"
+                class="img-fluid rounded"
             />
-          </div>
-      
-          <!-- Right side with event information -->
-          <div class="col-md-3 ms-md-3">
+        </div>
+
+        <!-- Right side with event information -->
+        <div class="col-md-3 ms-md-3">
             <ul class="list-unstyled mb-4">
-              <li class="mb-2">
-                <i class="bi bi-calendar3"></i> 15 NOV
-              </li>
-              <li class="mb-2">
-                <i class="bi bi-clock"></i> 06:00 PM
-              </li>
-              <li class="mb-2">
-                <i class="bi bi-geo-alt"></i> THE PYRAMIDS OF GIZA
-              </li>
-              <li>
-                <a href="#" class="text-decoration-none text-white">
-                  <i class="bi bi-geo"></i> Get Directions
-                </a>
-              </li>
+                <li class="mb-2">
+                    <i class="bi bi-calendar3"></i> {{ eventDetails?.date }} <!-- Bind to event date -->
+                </li>
+                <li class="mb-2">
+                    <i class="bi bi-clock"></i> {{ eventDetails?.time }} <!-- Bind to event time -->
+                </li>
+                <li class="mb-2">
+                    <i class="bi bi-geo-alt"></i> {{ eventDetails?.location }} <!-- Bind to event location -->
+                </li>
+                <li>
+                    <a href="#" class="text-decoration-none text-white">
+                        <i class="bi bi-geo"></i> Get Directions
+                    </a>
+                </li>
             </ul>
             <button class="btn btn-danger btn-lg">Get Tickets</button>
-          </div>
         </div>
-      
-        <!-- Event details below -->
-        <div class="event-description mt-4">
-          <h1 class="text-danger">Circoloco By The Great Pyramids Of Giza</h1>
-          <p>Circoloco at The Great Pyramids of Giza.</p>
-          <p>15 November 2024</p>
-          <p>6PM – 3AM</p>
-      
-          <h2>Event Terms and Conditions:</h2>
-          <ul class="ps-4">
-            <li>
-              Please note that all tickets are non-refundable and
-              non-exchangeable under any circumstances.
-            </li>
+    </div>
+
+    <!-- Event details below -->
+    <div class="event-description mt-4">
+        <h1 class="text-danger">{{ eventDetails?.name }}</h1> <!-- Bind to event name -->
+        <p>{{ eventDetails?.description }}</p> <!-- Bind to event description -->
+        <p>{{ eventDetails?.date }} <!-- Optionally, you can format this date as needed --></p>
+        <p>{{ eventDetails?.time }} – {{ eventDetails?.endTime }}</p> <!-- Bind to event end time -->
+
+        <h2>Event Terms and Conditions:</h2>
+        <ul class="ps-4">
+            <li>Please note that all tickets are non-refundable and non-exchangeable under any circumstances.</li>
             <li>Tickets are nominative.</li>
-            <li>
-              Physical ID/Passports checks will be conducted at the entrance to
-              verify identity.
-            </li>
+            <li>Physical ID/Passports checks will be conducted at the entrance to verify identity.</li>
             <li>NO RE-ENTRY allowed once you exit the event venue.</li>
-          </ul>
-        </div>
-      </div>
-      
+        </ul>
+    </div>
+</div>
+
 </body>
 </html>
