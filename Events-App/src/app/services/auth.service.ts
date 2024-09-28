@@ -17,11 +17,15 @@ export class AuthService {
   // Method to handle user login
   userLogin(email: string, password: string): Observable<string> {
     return this.http
-      .post<any>(this.userApiUrl, { email, password }, {
-        headers: {
-          'Authorization': `Bearer ${sessionStorage.getItem('authToken')}`,
-        },
-      })
+      .post<any>(
+        this.userApiUrl,
+        { email, password },
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem('authToken')}`,
+          },
+        }
+      )
       .pipe(
         // Extract the auth token from the response
         map((response) => response)
@@ -58,5 +62,24 @@ export class AuthService {
   getUserId(): string | null {
     const user = JSON.parse(sessionStorage.getItem('User') || '{}');
     return user?.id || null; // Safely retrieve user ID from the stored user object
+  }
+
+  sendOtp(email: string) {
+    return this.http.post(`http://127.0.0.1:8000/api/send-reset-otp`, {
+      email,
+    });
+  }
+
+  verifyOtp(data: { email: string; otp: number }) {
+    return this.http.post(`http://127.0.0.1:8000/api/verify-otp`, data);
+  }
+
+  
+  resetPassword(data: { email: string; password: string; password_confirmation: string }) {
+    return this.http.post(`http://127.0.0.1:8000/api/reset-password`, data);
+  }
+
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('token');
   }
 }
