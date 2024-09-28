@@ -23,7 +23,7 @@
                   {{ event.location }}
                 </p>
                 <div class="d-flex justify-content-between">
-                  <a href="event-details" class="btn btn-outline-secondary show-btn">Show Details</a>
+                  <a [routerLink]="['/event-details' , event.id]" class="btn btn-outline-secondary show-btn">Show Details</a>
                   <a href="#" class="btn book">BOOK NOW</a>
                 </div>
               </div>

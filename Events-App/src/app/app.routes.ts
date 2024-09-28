@@ -25,7 +25,7 @@ export const routes: Routes = [
     component: UserProfileComponent,
     canActivate: [AuthGuard], // Protect this route
   },
-  { path: 'event-details', component: EventDetailsComponent },
+  { path: 'event-details/:id', component: EventDetailsComponent },
   { path: 'events', component: EventsComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'header', component: HeaderComponent },
@@ -35,4 +35,5 @@ export const routes: Routes = [
     component: UserSettingsComponent,
     canActivate: [AuthGuard],
   },
+  {path: 'details' , component:EventDetailsComponent},
 ];
