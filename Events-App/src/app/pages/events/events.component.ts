@@ -22,6 +22,8 @@ ngOnInit(): void {
     {
       next:(response) =>{
             this.events = response;
+            console.log(this.events);
+            
       }
     })
 }

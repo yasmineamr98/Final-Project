@@ -14,7 +14,7 @@
           <!-- Loop through the events array to display each event -->
           <div class="col-md-6 mb-4 " *ngFor="let event of events">
             <div class="card event shadow-sm">
-              <img [src]="event.imageUrl" class="card-img-top" alt="{{ event.name }}">
+              <img [src]="event.event_image"class="card-img-top" alt="{{ event.name }}">
               <div class="card-body">
                 <h5 class="card-title">{{ event.name }}</h5>
                 <p class="card-text">{{ event.description }}</p>
