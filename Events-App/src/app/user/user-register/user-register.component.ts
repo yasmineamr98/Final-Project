@@ -16,10 +16,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.css'],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink,],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink],
 })
 export class UserRegisterComponent implements OnInit {
   registerForm: FormGroup;
+  successMessage: string | null = null; // To store success messages
+  errorMessage: string | null = null; // To store error messages
 
   constructor(
     private fb: FormBuilder,
@@ -35,9 +37,7 @@ export class UserRegisterComponent implements OnInit {
         email: new FormControl('', [Validators.required, Validators.email]),
         password: new FormControl('', [
           Validators.required,
-          Validators.pattern(
-            '^(?=.*[a-zA-Z])(?=.*[0-9]).{8,}$'
-          ),
+          Validators.pattern('^(?=.*[a-zA-Z])(?=.*[0-9]).{8,}$'),
         ]),
         password_confirmation: new FormControl('', [Validators.required]),
       },
@@ -66,7 +66,7 @@ export class UserRegisterComponent implements OnInit {
         password: this.registerForm.value.password,
         password_confirmation: this.registerForm.value.password_confirmation,
       };
-
+  
       try {
         const response = await this.authService
           .userRegister(
@@ -76,16 +76,22 @@ export class UserRegisterComponent implements OnInit {
             user.password_confirmation
           )
           .toPromise();
-        console.log('User registered successfully', response);
+        alert('User registered successfully', );
+        this.successMessage = 'Registration successful! Please check your email for confirmation.';
+        this.errorMessage = ''; // Clear any previous error message
         this.router.navigate(['/']);
-      } catch (error) {
+      } catch (error: any) {
+        // Handle the error and set the error message
         console.error('Error during registration', error);
+        this.errorMessage = error.error?.message || 'An unexpected error occurred. Please try again.';
+        this.successMessage = ''; // Clear any previous success message
       }
     } else {
       // Mark all controls as touched to show validation errors
       this.registerForm.markAllAsTouched();
     }
   }
+  
 
   alreadyHaveAccount() {
     this.router.navigate(['/login']);

@@ -2,7 +2,17 @@
   <div class="register-form" [formGroup]="registerForm">
     <h2>Sign Up</h2>
 
-    <!--First Name -->
+    <!-- Success Message -->
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+    <!-- First Name -->
     <div class="form-group">
       <label for="name"> Name</label>
       <input

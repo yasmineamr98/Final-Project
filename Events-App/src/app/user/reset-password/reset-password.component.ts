@@ -68,7 +68,7 @@ export class ResetPasswordComponent implements OnInit {
         if (this.authService.isAuthenticated()) {
           this.router.navigate(['/user-login']);
         }
-      }, 500);
+      });
     }
   }
 

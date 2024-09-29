@@ -44,7 +44,13 @@ export class AuthService {
       email,
       password,
       password_confirmation,
-    });
+    }).pipe(
+      map((response) => {
+        // Handle successful registration
+        console.log('Registration response:', response);
+        return response; // You might want to return a success message or token here
+      })
+    );
   }
   // Logout method
   logout(): void {
