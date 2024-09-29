@@ -1,46 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { EventsService } from '../../services/events.service';
 
 @Component({
   selector: 'app-event-details',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './event-details.component.html',
-  styleUrls: ['./event-details.component.css']  // Corrected styleUrls
+  styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
-  eventDetails: any; // Define a property to hold event details
+  eventDetails: any; // Holds the event details
 
   constructor(private _ActivatedRoute: ActivatedRoute, private _EventsService: EventsService) {}
 
   ngOnInit(): void {
-    this._ActivatedRoute.paramMap.subscribe({
-      next: (params) => {
-        const eventIdStr = params.get('id');
+    // Subscribe to route params to get the event ID
+    this._ActivatedRoute.paramMap.subscribe(params => {
+      const eventIdStr = params.get('id');
 
-        // Handle the case when 'id' is null
-        if (eventIdStr !== null) {
-          const eventId: number = +eventIdStr; // Convert to number
-          
-          this._EventsService.getEventDetails(eventId).subscribe({
-            next: (response) => {
-              const eventDetails = response.find((event: any) => event.id === eventId);
+      // If 'id' is not null, proceed to fetch the event details
+      if (eventIdStr) {
+        const eventId = +eventIdStr; // Convert the ID to a number
 
-              if (eventDetails) {
-                this.eventDetails = eventDetails;  // Assign the details to the property
-                console.log(this.eventDetails);  // Output the event details
-              } else {
-                console.error('Event not found!');
-              }
-            },
-            error: (error) => {
-              console.error('Error fetching event details:', error);
-            }
-          });
-        } else {
-          console.error('Event ID is null!');
-        }
+        // Fetch event details from the service
+        this._EventsService.getEventDetails(eventId).subscribe({
+          next: (response) => {
+            this.eventDetails = response; // Directly assign the response to eventDetails
+            console.log(this.eventDetails); // Check the data in the console
+          },
+          error: (error) => {
+            console.error('Error fetching event details:', error);
+          }
+        });
+      } else {
+        console.error('Event ID is null!');
       }
     });
   }

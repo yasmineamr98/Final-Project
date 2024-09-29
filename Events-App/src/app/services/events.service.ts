@@ -10,14 +10,14 @@ export class EventsService {
 
   getEvents():Observable<any>
   { 
-     return this._HttpClient.get('https://dummyjson.com/c/7dd5-12ba-4996-a435')
+     return this._HttpClient.get('http://localhost:8000/api/events')
   }
 
   getEventById(id: number): Observable<any> {
-    return this._HttpClient.get(`https://dummyjson.com/c/7dd5-12ba-4996-a435/${id}`);
+    return this._HttpClient.get(`http://localhost:8000/api/events/${id}`);
   }
 
   getEventDetails(id:any): Observable<any> {
-   return this._HttpClient.get(`https://dummyjson.com/c/7dd5-12ba-4996-a435/${id}`)
+   return this._HttpClient.get(`http://localhost:8000/api/events/${id}`)
   }
 }
