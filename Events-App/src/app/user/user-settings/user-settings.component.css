@@ -1,0 +1,54 @@
+.container {
+    background-color: #121212; 
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .sidebar {
+    background-color: #222; 
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .sidebar h4 {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+  
+  .sidebar ul li a {
+    color: #ffffff; 
+    text-decoration: none;
+    font-size: 1.1em;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #ff6f61; 
+  }
+  
+  .settings-details {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #1a1a1a; 
+  }
+  
+  .settings-details h6 {
+    margin-bottom: 5px;
+  }
+  
+  .settings-details input,
+  .settings-details select {
+    background-color: white; 
+    border: 1px solid #444; 
+    color: 1a1a1a; 
+  }
+  
+  .settings-details input::placeholder {
+    color: #bbb; 
+  }
+  
+
+  
