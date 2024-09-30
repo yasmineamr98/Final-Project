@@ -15,6 +15,7 @@ import { UserSettingsComponent } from './user/user-settings/user-settings.compon
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { OtpVerificationComponent } from './user/otp-verification/otp-verification.component';
 import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
+import { UserEventsComponent } from './user/user-events/user-events.component';
 
 export const routes: Routes = [
   { path: 'user-login', component: UserLoginComponent },
@@ -43,4 +44,5 @@ export const routes: Routes = [
   { path: 'otp-verification', component: OtpVerificationComponent },
   { path: '', redirectTo: '/forgot-password', pathMatch: 'full' },
   { path: 'reset-password', component: ResetPasswordComponent },
+  { path : 'user-events', component: UserEventsComponent }
 ];

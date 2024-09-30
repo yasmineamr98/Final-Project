@@ -33,7 +33,7 @@
   .profile-details {
     padding: 20px;
     border-radius: 8px;
-    background-color: #1a1a1a; /* Dark profile details background */
+    background-color: #222; /* Dark profile details background */
   }
   
   .profile-details h6 {

@@ -2,35 +2,34 @@
 <html lang="en">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="row">
-          <!-- Loop through the events array to display each event -->
-          <div class="col-md-6 mb-4 " *ngFor="let event of events">
-            <div class="card event shadow-sm">
-              <img [src]="event.event_image"class="card-img-top" alt="{{ event.name }}">
-              <div class="card-body">
-                <h5 class="card-title">{{ event.name }}</h5>
-                <p class="card-text">{{ event.description }}</p>
-                <p class="card-text  main-color">
-                  <strong>{{ event.date }}</strong><br>
-                  {{ event.location }}
-                </p>
-                <div class="d-flex justify-content-between">
-                  <a [routerLink]="['/event-details' , event.id]" class="btn btn-outline-secondary show-btn">Show Details</a>
-                  <a href="#" class="btn book">BOOK NOW</a>
-                </div>
-              </div>
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Loop through the events array to display each event -->
+      <div class="col-md-6 mb-4" *ngFor="let event of events">
+        <div class="card event shadow-sm">
+          <img [src]="event.event_image" class="card-img-top" alt="{{ event.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ event.name }}</h5>
+            <p class="card-text">{{ event.description }}</p>
+            <p class="card-text main-color">
+              <strong>{{ event.date }}</strong><br>
+              {{ event.location }}
+            </p>
+            <div class="d-flex justify-content-between">
+              <a [routerLink]="['/event-details', event.id]" class="btn btn-outline-secondary show-btn">Show Details</a>
+              <button (click)="attendEvent(event.id)" class="btn book">Attend</button>
             </div>
           </div>
         </div>
       </div>
-      
+    </div>
+  </div>
 </body>
 </html>

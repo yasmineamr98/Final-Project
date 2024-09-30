@@ -55,4 +55,13 @@ export class UserProfileComponent implements OnInit {
   goToUserSettings() {
     this.router.navigate(['/user-settings', this.userId]); // Navigate to user settings page
   }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn(); // Use AuthService to check if the user is logged in
+  }
+
+  logout() {
+    this.authService.logout(); // Call logout method from AuthService
+    this.router.navigate(['/home']); // Redirect to home after logout
+  }
 }

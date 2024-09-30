@@ -16,6 +16,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { OtpVerificationComponent } from './user/otp-verification/otp-verification.component';
 import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -38,12 +40,18 @@ import { ResetPasswordComponent } from './user/reset-password/reset-password.com
     ForgotPasswordComponent,
     OtpVerificationComponent,
     ResetPasswordComponent,
+    HttpClientModule,
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-
-
 export class AppComponent {
   title = 'Events-App';
 }
