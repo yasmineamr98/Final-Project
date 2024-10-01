@@ -7,11 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { EventsComponent } from '../events/events.component';
 import { EventsService } from '../../services/events.service';
+import { CalendarComponent } from '../../calendar/calendar.component'; // Import the CalendarComponent
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, EventsComponent, HttpClientModule],
+  imports: [CommonModule, EventsComponent, HttpClientModule, CalendarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

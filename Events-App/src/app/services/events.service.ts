@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class EventsService {
-  private baseUrl = 'http://localhost:8000/api';
+  private baseUrl = 'http://127.0.0.1:8000/api';
 
   constructor(private _HttpClient: HttpClient) {}
 
@@ -14,6 +14,15 @@ export class EventsService {
   getEvents(): Observable<any> {
     return this._HttpClient.get(`${this.baseUrl}/events`);
   }
+
+  getEventsCalendar(start: string, end: string): Observable<any> {
+    const params = new HttpParams()
+      .set('start', start)
+      .set('end', end);
+
+    return this._HttpClient.get(`${this.baseUrl}/eventss`, { params });
+  }
+
 
   // Get event by ID
   getEventById(id: number): Observable<any> {

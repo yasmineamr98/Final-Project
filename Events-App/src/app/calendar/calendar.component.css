@@ -1,0 +1,94 @@
+/* Styling for the calendar container */
+#calendar-container {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 10px;
+  border: 3px solid #007bff;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#calendar-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* General styling for all calendar events */
+.fc .fc-event {
+  border: 2px solid #ccc; /* Light grey border for events */
+  border-radius: 5px; /* Rounded corners for events */
+  padding: 5px; /* Add some padding */
+  transition: background-color 0.2s, border-color 0.2s; /* Smooth transition for background and border */
+  color: black !important; /* Ensure text color is black */
+}
+
+/* Hover effect for calendar cells */
+.fc .fc-day:hover {
+  background-color: rgba(0, 123, 255, 0.2); /* Light blue background on hover */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Past events */
+.event-past {
+  background-color: red !important; /* Red for past events */
+  color: white !important; /* White text for contrast */
+}
+
+/* Current events */
+.event-current {
+  background-color: green !important; /* Green for current events */
+  color: white !important; /* White text for contrast */
+}
+
+/* Future events */
+.event-future {
+  background-color: blue !important; /* Blue for future events */
+  color: white !important; /* White text for contrast */
+}
+
+/* Add hover effects for events */
+.fc .fc-event:hover {
+  border-color: #888; /* Darker border on hover */
+  transform: scale(1.05); /* Slightly scale up on hover */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Modal styling */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  display: none;
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-dialog {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 10px;
+}
+
+/* Style for the calendar day cells */
+.fc-day {
+  background-color: #f9f9f9; /* Light gray background for better contrast */
+  color: #333; /* Dark text color */
+}
