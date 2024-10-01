@@ -18,6 +18,8 @@ import { OtpVerificationComponent } from './user/otp-verification/otp-verificati
 import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateConfigModule } from './translate-config.module'; // Add this line
 
 @Component({
   selector: 'app-root',
@@ -41,6 +43,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     OtpVerificationComponent,
     ResetPasswordComponent,
     HttpClientModule,
+    TranslateConfigModule
   ],
   providers: [
     {
@@ -54,4 +57,15 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'Events-App';
+    // Inject TranslateService
+    constructor(private translate: TranslateService) {
+      // Set default language
+      translate.setDefaultLang('en');
+
+      // Get browser language
+      const browserLang = translate.getBrowserLang() || 'en'; // Default to 'en' if browserLang is undefined
+
+      // Use browser language if it matches 'en' or 'ar', otherwise use 'en'
+      translate.use(browserLang.match(/en|ar/) ? browserLang : 'en');
+    }
 }

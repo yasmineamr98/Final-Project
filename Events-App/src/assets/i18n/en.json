@@ -1,0 +1,18 @@
+{
+  "HOME": {
+    "WELCOME": "Welcome to the Event Management System",
+    "SEARCH_PLACEHOLDER": "Search for Event..."
+  },
+  "NAV": {
+    "HOME": "Home",
+    "PROFILE": "Profile",
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "LOGOUT": "Logout",
+    "EVENTS": "Events",
+    "ALL_EVENTS": "All Events",
+    "KIDS_EVENTS": "Kids Events",
+    "UPCOMING_EVENTS": "Upcoming Events"
+  },
+  "SEARCH": "Search"
+}
