@@ -18,10 +18,10 @@ export class EventsComponent implements OnInit {
   constructor(private _EventsService: EventsService) {}
 
   ngOnInit(): void {
-    // Load all events
-    this.loadEvents();
     // Load user-attended events
     this.loadUserEvents();
+    // Load all events
+    this.loadEvents();
   }
 
   // Load all events
@@ -49,6 +49,9 @@ loadEvents(): void {
       next: (response) => {
         this.userEvents = response;
         console.log('User Events:', this.userEvents);
+
+        this.loadEvents(); // Now that we have userEvents, we can load all events
+
       },
       error: (err) => {
         console.error('Error loading user events:', err);

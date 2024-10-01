@@ -5,7 +5,7 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserHomepageComponent } from './user/user-homepage/user-homepage.component';
-import { UserNotificationComponent } from './user/user-notification/user-notification.component';
+import { UserNotificationsComponent } from './user/user-notifications/user-notifications.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UserSettingsComponent } from './user/user-settings/user-settings.component';
 import { EventDetailsComponent } from './pages/event-details/event-details.component';
@@ -32,7 +32,7 @@ import { TranslateConfigModule } from './translate-config.module'; // Add this l
     HeaderComponent,
     UserRegisterComponent,
     UserHomepageComponent,
-    UserNotificationComponent,
+    UserNotificationsComponent,
     UserProfileComponent,
     UserSettingsComponent,
     EventDetailsComponent,

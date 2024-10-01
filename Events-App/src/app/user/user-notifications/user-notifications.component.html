@@ -1,0 +1,11 @@
+<div class="notifications-container">
+  <h2>User Notifications</h2>
+  <ul *ngIf="notifications.length > 0">
+    <li *ngFor="let notification of notifications">
+      <strong>{{ notification.name }}</strong>
+      <p>{{ notification.description }}</p>
+      <small>{{ notification.date }}</small>
+    </li>
+  </ul>
+  <p *ngIf="notifications.length === 0">No notifications available.</p>
+</div>

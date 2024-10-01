@@ -1,0 +1,21 @@
+.notifications-container {
+  padding: 10px;
+}
+
+.notifications-container h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.notifications-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.notifications-container li {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
