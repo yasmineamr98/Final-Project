@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service'; // Adjust the path if needed
 import { TranslateService, TranslateModule } from '@ngx-translate/core'; // Import TranslateService and TranslateModule
 import { NotificationsService } from '../../services/notifications.service';
-
+// '@ngx-translate/core';
 interface Notification {
   id: number;               // Adjust according to your actual data structure
   name: string;             // Name or title of the notification
