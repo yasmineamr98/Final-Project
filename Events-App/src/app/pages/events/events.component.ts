@@ -33,11 +33,8 @@ loadEvents(): void {
       // Update the attended property of each event
       this.events.forEach(event => {
         const userEventIndex = this.userEvents.findIndex(userEvent => userEvent.id === event.id);
-        if (userEventIndex !== -1) {
-          event.attended = true;
-        } else {
-          event.attended = false;
-        }
+        event.attended = userEventIndex !== -1;
+
       });
     },
     error: (err) => {
@@ -74,7 +71,7 @@ attendEvent(eventId: number): void {
       // Reload events attended by the user to update the UI
       this.loadUserEvents();
       // Reload events to update the UI
-      this.loadEvents();
+      // this.loadEvents();
     },
     error: (err) => {
       console.error('Error attending event:', err);

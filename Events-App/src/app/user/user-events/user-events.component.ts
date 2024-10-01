@@ -34,41 +34,41 @@ export class UserEventsComponent implements OnInit {
       },
     });
   }
-  loadEvents(): void {
-    this._EventsService.getEvents().subscribe({
-      next: (response) => {
-        this.events = response;
-        // Update the attended property of each event
-        this.events.forEach((event: { id: any; attended: boolean }) => {
-          const userEventIndex = this.userEvents.findIndex(
-            (userEvent) => userEvent.id === event.id
-          );
-          if (userEventIndex !== -1) {
-            event.attended = true;
-          } else {
-            event.attended = false;
-          }
-        });
-      },
-      error: (err) => {
-        console.error('Error loading events:', err);
-      },
-    });
-  }
+  // loadEvents(): void {
+  //   this._EventsService.getEvents().subscribe({
+  //     next: (response) => {
+  //       this.events = response;
+  //       // Update the attended property of each event
+  //       this.events.forEach((event: { id: any; attended: boolean }) => {
+  //         const userEventIndex = this.userEvents.findIndex(
+  //           (userEvent) => userEvent.id === event.id
+  //         );
+  //         if (userEventIndex !== -1) {
+  //           event.attended = true;
+  //         } else {
+  //           event.attended = false;
+  //         }
+  //       });
+  //     },
+  //     error: (err) => {
+  //       console.error('Error loading events:', err);
+  //     },
+  //   });
+  // }
 
   attendEvent(eventId: number): void {
     this._EventsService.attendEvent(eventId).subscribe({
       next: (response) => {
         console.log(response.message);
         // Update the event.attended property
-        const eventIndex = this.events.findIndex(
-          (event: { id: number }) => event.id === eventId
-        );
+        const eventIndex = this.userEvents.findIndex(event => event.id === eventId);
+
         if (eventIndex !== -1) {
-          this.events[eventIndex].attended = !this.events[eventIndex].attended;
+          this.userEvents.splice(eventIndex, 1); // Remove the event from userEvents array
         }
         // Reload events attended by the user to update the UI
-
+        // this.loadUserEvents();
+        // Reload events to update the UI
       },
       error: (err) => {
         console.error('Error attending event:', err);
