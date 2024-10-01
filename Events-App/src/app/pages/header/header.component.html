@@ -1,9 +1,11 @@
 <div class="header-container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Logo section -->
     <a routerLink="/home" aria-label="Home">
       <img src="assets/images/logo-2.png" alt="Logo" class="logo" />
     </a>
 
+    <!-- Search bar in the center -->
     <div class="search-container mx-auto d-flex align-items-center">
       <input
         class="form-control search-field"
@@ -19,6 +21,7 @@
       </button>
     </div>
 
+    <!-- Toggle button for responsive navbar -->
     <button
       class="navbar-toggler"
       type="button"
@@ -31,11 +34,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Navigation links -->
     <div
       class="collapse navbar-collapse justify-content-end"
       id="navbarNavDropdown"
     >
       <ul class="navbar-nav">
+        <!-- Home link -->
         <li class="nav-item">
           <a class="nav-link" routerLink="/home" aria-label="Home">Home</a>
         </li>
@@ -50,20 +55,29 @@
           >
         </li>
 
+        <!-- Notification bell, visible only when logged in -->
+        <li *ngIf="isLoggedIn()" class="nav-item dropdown" (click)="toggleDropdown()">
+          <a class="nav-link" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="badge" *ngIf="notificationCount > 0">{{ notificationCount }}</span>
+          </a>
+          <div *ngIf="showDropdown" class="dropdown-menu show">
+            <div *ngFor="let notification of notifications" class="dropdown-item" (click)="goToEventDetails(notification.id)">
+              <strong>{{ notification.name }}</strong>
+              <p>{{ notification.description }}</p>
+            </div>
+            <div *ngIf="notifications.length === 0" class="dropdown-item">No notifications available.</div>
+          </div>
+        </li>
+
         <!-- Login tab, visible only when NOT logged in -->
         <li *ngIf="!isLoggedIn()" class="nav-item">
-          <a class="nav-link" routerLink="/user-login" aria-label="Login"
-            >Login</a
-          >
+          <a class="nav-link" routerLink="/user-login" aria-label="Login">Login</a>
         </li>
 
         <!-- Register tab, visible only when NOT logged in -->
         <li *ngIf="!isLoggedIn()" class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/user-register"
-            routerLinkActive="active"
-            aria-label="Register"
+          <a class="nav-link" routerLink="/user-register" aria-label="Register"
             >Register</a
           >
         </li>
@@ -73,6 +87,7 @@
           <a class="nav-link" (click)="logout()" aria-label="Logout">Logout</a>
         </li>
 
+        <!-- Events dropdown -->
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"

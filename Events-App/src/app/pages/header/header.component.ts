@@ -2,6 +2,20 @@ import { RouterLink, Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service'; // Adjust the path if needed
+import { NotificationsService } from '../../services/notifications.service';
+
+interface Notification {
+  id: number;               // Adjust according to your actual data structure
+  name: string;             // Name or title of the notification
+  description: string;      // Description of the notification
+  date: string;             // Date or time of the notification
+}
+
+interface NotificationsResponse {
+  new_events: Notification[];
+  upcoming_events: Notification[];
+  user_attended_events: Notification[];
+}
 
 @Component({
   selector: 'app-header',
@@ -11,7 +25,22 @@ import { AuthService } from '../../services/auth.service'; // Adjust the path if
   styleUrls: ['./header.component.css'], // Update if necessary
 })
 export class HeaderComponent {
-  constructor(private router: Router, private authService: AuthService) {}
+  notificationCount: number = 0;
+  notifications: Notification[] = []; // Initialize notifications array
+  showDropdown: boolean = false;      // Initialize showDropdown
+
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private notificationsService: NotificationsService
+  ) {}
+
+  ngOnInit() {
+    if (this.isLoggedIn()) {
+      this.loadNotifications();
+      this.loadNotificationCount(); // Load notification count on init
+    }
+  }
 
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn(); // Use AuthService to check if the user is logged in
@@ -25,5 +54,59 @@ export class HeaderComponent {
   getUserId(): string | null {
     const user = JSON.parse(sessionStorage.getItem('User') || '{}');
     return user?.id;
+  }
+
+  loadNotifications() {
+    this.notificationsService.getNotifications().subscribe({
+      next: (response: NotificationsResponse) => { // Type the response
+        this.notifications = [
+          ...response.new_events,
+          ...response.upcoming_events,
+          ...response.user_attended_events,
+        ];
+        this.notificationCount = this.notifications.length; // Count notifications
+        sessionStorage.setItem('notificationCount', String(this.notificationCount)); // Update session storage
+
+        // Clear notifications if there are none
+        if (this.notificationCount === 0) {
+          this.notifications = []; // Clear notifications
+          this.showDropdown = false; // Optionally hide the dropdown
+        }
+      },
+      
+      error: (error) => {
+        console.error('Error loading notifications:', error);
+      },
+    });
+  }
+
+  loadNotificationCount() {
+    const storedCount = sessionStorage.getItem('notificationCount');
+    if (storedCount) {
+      this.notificationCount = Number(storedCount); // Load count from sessionStorage
+    }
+  }
+
+  resetNotificationCount() {
+    // Always reset count to 0 on component init
+    this.notificationCount = 0; 
+    sessionStorage.setItem('notificationCount', '0'); // Store count as zero
+  }
+
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown; // Toggle dropdown visibility
+    if (this.showDropdown) {
+      this.clearNotificationCount(); // Reset count when opening dropdown
+    }
+  }
+
+  clearNotificationCount() {
+    this.notificationCount = 0; // Reset notification count
+    sessionStorage.setItem('notificationCount', '0'); // Store count in sessionStorage
+  }
+
+  goToEventDetails(eventId: number) {
+    // Navigate to the event details page using the event ID
+    this.router.navigate(['/event-details', eventId]); // Adjust the route as necessary
   }
 }
