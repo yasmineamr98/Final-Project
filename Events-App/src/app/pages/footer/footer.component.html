@@ -8,24 +8,24 @@
       </div>
       <div class="footer-links">
         <ul>
-          <li><a routerLink="/home" aria-label="Home">Home</a></li>
-          <li><a routerLink="/events" aria-label="Events">Upcoming Events</a></li>
-          <li><a routerLink="/events" aria-label="Events">Kids Events</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a routerLink="/home" aria-label="Home">{{ 'NAV.HOME' | translate }}</a></li>
+          <li><a routerLink="/events" aria-label="Events">{{ 'NAV.UPCOMING_EVENTS' | translate }}</a></li>
+          <li><a routerLink="/events" aria-label="Events">{{ 'NAV.KIDS_EVENTS' | translate }}</a></li>
+          <li><a href="#">{{ 'FOOTER.ABOUT_US' | translate }}</a></li>
+          <li><a href="#">{{ 'FOOTER.CONTACT_US' | translate }}</a></li>
         </ul>
       </div>
       <div class="footer-subscribe">
-        <h4>Subscribe to our newsletter</h4>
+        <h4>{{ 'FOOTER.SUBSCRIBE' | translate }}</h4>
         <form action="#">
-          <input type="email" placeholder="Type your email here..." />
-          <button type="submit" class="rtl-btn">Send</button>
+          <input type="email" placeholder="{{ 'FOOTER.EMAIL_PLACEHOLDER' | translate }}" />
+          <button type="submit" class="rtl-btn">{{ 'FOOTER.SEND' | translate }}</button>
         </form>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="footer-left">
-        <p>© 2024 Eventoria. | All Rights Reserved</p>
+        <p>© 2024 Eventoria. | {{ 'FOOTER.ALL_RIGHTS_RESERVED' | translate }}</p>
       </div>
       <div class="footer-right">
         <img

@@ -26,6 +26,15 @@
     "EVENTS": "Events",
     "ALL_EVENTS": "All Events",
     "KIDS_EVENTS": "Kids Events",
-    "UPCOMING_EVENTS": "Upcoming Events"
+    "UPCOMING_EVENTS": "Upcoming Events",
+    "SEARCH": " SEARCH  "
+  },
+  "FOOTER": {
+    "SUBSCRIBE": "Subscribe to our newsletter",
+    "EMAIL_PLACEHOLDER": "Type your email here...",
+    "SEND": "Send",
+    "ABOUT_US": "About Us",
+    "CONTACT_US": "Contact Us",
+    "ALL_RIGHTS_RESERVED": "All Rights Reserved"
   }
 }

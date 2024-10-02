@@ -21,6 +21,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateConfigModule } from './translate-config.module';
 import { TranslateModule } from '@ngx-translate/core'; // Add this line
+import { LoadingOverlayComponent } from '../app/shared/loading-overlay/loading-overlay.component'; // Adjust the path as necessary
 
 @Component({
   selector: 'app-root',
@@ -45,7 +46,8 @@ import { TranslateModule } from '@ngx-translate/core'; // Add this line
     ResetPasswordComponent,
     HttpClientModule,
     TranslateConfigModule,
-    TranslateModule
+    TranslateModule,
+    LoadingOverlayComponent
   ],
   providers: [
     {
@@ -59,6 +61,7 @@ import { TranslateModule } from '@ngx-translate/core'; // Add this line
 })
 export class AppComponent {
   title = 'Events-App';
+  isLoading: boolean = false; // Control loading state
     // Inject TranslateService
     constructor(private translate: TranslateService) {
       // Set default language
@@ -70,4 +73,13 @@ export class AppComponent {
       // Use browser language if it matches 'en' or 'ar', otherwise use 'en'
       translate.use(browserLang.match(/en|ar/) ? browserLang : 'en');
     }
+    // loadData() {
+    //   this.isLoading = true; // Set loading to true
+    //   // Simulate a data load with a timeout
+    //   setTimeout(() => {
+    //     this.isLoading = false; // Set loading to false after data is loaded
+    //   }, 3000); // Replace with actual data loading logic
+    // }
+
 }
+

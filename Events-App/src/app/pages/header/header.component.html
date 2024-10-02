@@ -1,3 +1,13 @@
+<div *ngIf="isLoading" class="loading-overlay">
+  <div class="loading-spinner">
+    <!-- Example loading dots -->
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+  <p class="sp">Loading...</p>
+  <img class="sp" src="assets/images/logo-2.png" alt="Loading..." />
+</div>
 <div class="header-container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Logo section -->
@@ -18,7 +28,7 @@
         type="submit"
       >
         <i class="fa-solid fa-magnifying-glass me-2"></i>
-        {{ "SEARCH" | translate }}
+        {{ "NAV.SEARCH" | translate }}
       </button>
     </div>
 
@@ -27,7 +37,6 @@
         {{ currentLang === "en" ? "العربية" : "English" }}
       </button>
     </div>
-
     <!-- The rest of your navbar items -->
     <div
       class="collapse navbar-collapse justify-content-end"

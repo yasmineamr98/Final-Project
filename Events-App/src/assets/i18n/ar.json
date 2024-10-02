@@ -26,8 +26,15 @@
     "EVENTS": "الفعاليات",
     "ALL_EVENTS": "جميع الفعاليات",
     "KIDS_EVENTS": "فعاليات الأطفال",
-    "UPCOMING_EVENTS": "الفعاليات القادمة"
+    "UPCOMING_EVENTS": "الفعاليات القادمة",
+      "SEARCH": " بحث  "
   },
-  "SEARCH": " بحث  "
-
+  "FOOTER": {
+    "SUBSCRIBE": "اشترك في نشرتنا الإخبارية",
+    "EMAIL_PLACEHOLDER": "اكتب بريدك الإلكتروني هنا...",
+    "SEND": "إرسال",
+    "ABOUT_US": "معلومات عنا",
+    "CONTACT_US": "اتصل بنا",
+    "ALL_RIGHTS_RESERVED": "جميع الحقوق محفوظة"
+  }
 }

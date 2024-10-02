@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service'; // Adjust the path if needed
 import { TranslateService, TranslateModule } from '@ngx-translate/core'; // Import TranslateService and TranslateModule
 import { NotificationsService } from '../../services/notifications.service';
+import { AppComponent } from '../../app.component';
 // '@ngx-translate/core';
 interface Notification {
   id: number; // Adjust according to your actual data structure
@@ -21,12 +22,13 @@ interface NotificationsResponse {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslateModule],
+  imports: [CommonModule, RouterLink, TranslateModule, AppComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'], // Update if necessary
 })
 export class HeaderComponent {
   currentLang: string;
+  isLoading: boolean = false; // Property to track loading state
 
   constructor(
     private router: Router,
@@ -40,8 +42,8 @@ export class HeaderComponent {
     const browserLang = this.translate.getBrowserLang();
     this.currentLang = browserLang?.match(/en|ar/) ? browserLang : 'en';
     this.translate.use(this.currentLang);
-     // Set the direction based on the current language
-     this.setDirection(this.currentLang);
+    // Set the direction based on the current language
+    this.setDirection(this.currentLang);
   }
   notificationCount: number = 0;
   notifications: Notification[] = []; // Initialize notifications array
@@ -127,6 +129,7 @@ export class HeaderComponent {
   }
 
   switchLanguage(language: string) {
+
     // Use the selected language for translations
     this.translate.use(language);
 
@@ -146,6 +149,7 @@ export class HeaderComponent {
 
     // Optional: You can reload the page to ensure the changes take effect everywhere
     window.location.reload();
+    // Simulate a data load with a timeout
   }
   setDirection(language: string) {
     console.log(`Setting direction for language: ${language}`);
@@ -167,8 +171,13 @@ export class HeaderComponent {
   }
 
   toggleLanguage() {
+    this.isLoading = true; // Show loader
+
     this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
     this.translate.use(this.currentLang);
     this.setDirection(this.currentLang);
+    setTimeout(() => {
+      this.isLoading = false; // Set loading to false after data is loaded
+    }, 3000);
   }
 }
