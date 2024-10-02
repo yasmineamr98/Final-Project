@@ -43,4 +43,28 @@
   .profile-details p {
     margin: 0;
   }
+
+  .btn-outline-primary{
+    background-color: var(--red);
+    border-color: var(--red);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .btn{
+    background-color: var(--red);
+    border-color: var(--red);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    
+    cursor: pointer;
+    text-align: center;
+    
+  }
   

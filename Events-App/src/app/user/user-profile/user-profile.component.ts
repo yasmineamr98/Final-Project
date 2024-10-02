@@ -15,6 +15,7 @@ import { UsersService } from '../../services/users.service'; // Ensure the corre
 export class UserProfileComponent implements OnInit {
   userId: string | null = null;
   user: any = {};
+  errorMessage: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -63,5 +64,26 @@ export class UserProfileComponent implements OnInit {
   logout() {
     this.authService.logout(); // Call logout method from AuthService
     this.router.navigate(['/home']); // Redirect to home after logout
+  }
+
+  handleProfileImageUpload(event: Event) {
+    const file = (event.target as HTMLInputElement).files?.item(0);
+    if (file) {
+      const formData = new FormData();
+      formData.append('image', file);
+
+      this.usersService.uploadProfileImage(this.userId!, formData).subscribe(
+        (response) => {
+          alert('Profile image updated successfully');
+          console.log('Image upload response:', response);
+          // Optionally, update the user profile image in the UI
+          this.user.profile_image = response.path;
+        },
+        (error) => {
+          this.errorMessage = 'Error uploading profile image.';
+          console.error('Error uploading profile image:', error);
+        }
+      );
+    }
   }
 }

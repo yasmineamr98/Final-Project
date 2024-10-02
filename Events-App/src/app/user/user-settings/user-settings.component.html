@@ -1,95 +1,46 @@
+<div class="container mt-4 my-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="settings-details bg-dark text-white p-4 rounded">
+        <h5 class="mb-4">Account Settings</h5>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container mt-4 my-5">
-        <div class="row">
-          <!-- Sidebar -->
- 
-      
-          <!-- Settings Details -->
-          <div class="col-md-12">
-            <div class="settings-details bg-dark text-white p-4 rounded">
-              <h5 class="mb-4">Account Settings</h5>
-      
-              <form class="settings-form" action="">
-              <div class="mb-3">
-                <label class="text-danger">Change Name</label>
-                <input [(ngModel)]="user.name" type="text" class="form-control" placeholder="Enter new Name" />
-              </div>
-
-              <div class="mb-3">
-                <label class="text-danger">Change Email</label>
-                <input [(ngModel)]="user.email" type="email" class="form-control" placeholder="Enter new email" />
-              </div>
-
-              <div class="mb-3">
-                <label for="gender" name="gender" class="text-danger">Gender</label>
-                <select name="gender" class="form-control">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                  </select>
-              </div>
-
-              <div class="mb-3">
-                <label class="text-danger" for="location" name="location">Change Location</label>
-          <input type="text" class="form-control" placeholder="Enter your location" />
-              </div>
-
-              
-
-              <div class="mb-3">
-                <label class="form-label" for="profile_image">Upload Profile Image:</label>
-                <input  type="file" id="profile_image" (change)="handleProfileImageUpload($event)" name="profile_image"
-                    accept="image/*" />
-              </div>
-
-                    
-         
-
-           
-           
-              <button class="btn btn-danger" type="submit" (click)="updateUserProfile()">Save Changes</button>
-
-            </form>
-            </div>
+        <form class="settings-form" (ngSubmit)="updateUserProfile()">
+          <div class="mb-3">
+            <label class="text-danger">Change Name</label>
+            <input [(ngModel)]="user.name" type="text" class="form-control" name="name" placeholder="Enter new Name" />
           </div>
-        </div>
+
+          <div class="mb-3">
+            <label class="text-danger">Change Email</label>
+            <input [(ngModel)]="user.email" type="email" class="form-control" name="email" placeholder="Enter new email" />
+          </div>
+
+          <div class="mb-3">
+            <label for="gender" name="gender" class="text-danger">Gender</label>
+            <select [(ngModel)]="user.gender" name="gender" class="form-control">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="text-danger" for="location">Change Location</label>
+            <input [(ngModel)]="user.location" type="text" class="form-control" name="location" placeholder="Enter your location" />
+          </div>
+
+          <!-- <div class="mb-3">
+            <label class="form-label" for="profile_image">Upload Profile Image:</label>
+            <input type="file" id="profile_image" (change)="handleProfileImageUpload($event)" name="profile_image" accept="image/*" />
+          </div> -->
+
+          <button class="btn btn-danger" type="submit">Save Changes</button>
+        </form>
       </div>
-</body>
-</html>
-  
-
-
-
-<!-- <h1 class="text-center" style="color: black;" >Edit Profile</h1>
-
-
-<form >
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" [(ngModel)]="user.name" name="name" />
     </div>
-        
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" [(ngModel)]="user.email" name="email" />
-    </div>
-
-    <div>
-        <label for="profile_image">Upload Profile Image:</label>
-        <input type="file" id="profile_image" (change)="handleProfileImageUpload($event)" name="profile_image"
-            accept="image/*" />
-    </div>
-
-    <button type="submit" (click)="updateUserProfile()">Save Changes</button>
-</form>
+  </div>
+</div>
 
 <div *ngIf="errorMessage">
-    <p>{{ errorMessage }}</p>
-</div> -->
+  <p class="text-danger">{{ errorMessage }}</p>
+</div>

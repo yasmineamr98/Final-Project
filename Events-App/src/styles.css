@@ -8,7 +8,7 @@ body {
   font-family: 'Cairo', sans-serif;
   transition: color 0.9s ease !important;
   overflow-x: hidden;
-  width: 100.5%;
+  width: 101%;
   direction: ltr;
 }
 h1, a {

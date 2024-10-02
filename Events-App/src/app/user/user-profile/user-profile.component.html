@@ -30,7 +30,8 @@
             <img src="{{ user.profile_image }}" alt="Profile Picture" class="rounded-circle" width="80" height="80">
             <div class="ms-3">
               <h5 class="mb-0">{{ user.name }}</h5>
-              <button class="btn btn-danger btn-sm mt-1">Edit</button>
+              <input type="file" id="profile_image" (change)="handleProfileImageUpload($event)" name="profile_image" accept="image/*" style="display: none;" />
+              <label for="profile_image" class="btn btn-outline-primary">Change Profile Image</label>
             </div>
           </div>
   
@@ -49,17 +50,17 @@
             <h6 class="text-danger">Email</h6>
             <p>{{ user.email }}</p>
           </div>
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <h6 class="text-danger">Mobile</h6>
             <p></p>
-          </div>
+          </div> -->
           <div class="mb-3">
-            <h6 class="text-danger">Address</h6>
-            <p></p>
+            <h6 class="text-danger">Location</h6>
+            <p>{{user.location}}</p>
           </div>
           <div class="mb-3">
             <h6 class="text-danger">City</h6>
-            <p></p>
+            <p>{{user.location}}</p>
           </div>
   
           <button [routerLink]="['/user-settings', userId]"
