@@ -119,8 +119,9 @@
   position: relative;
   color: #000000;
   z-index: 99;
+  border-bottom: 3px double var(--red);
 }
-.three h1:before {
+/* .three h1:before {
   content: "";
   position: absolute;
   left: 0;
@@ -138,7 +139,7 @@
   width: 95%;
   max-width: 255px;
   background-color: var(--red);
-}
+} */
 .all-events-cards {
   display: flex;
   justify-content: center;

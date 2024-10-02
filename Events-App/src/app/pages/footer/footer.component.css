@@ -22,6 +22,7 @@
   margin-bottom: 15px;
   font-size: 16px;
   font-weight: bold;
+  /* text-align: inherit; */
 }
 
 .footer-links ul {

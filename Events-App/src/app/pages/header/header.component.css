@@ -16,7 +16,8 @@ body {
     backdrop-filter 0.3s ease-in-out;
   z-index: 10;
   align-items: first baseline;
-  font-family: 'Cairo Play', sans-serif;
+  font-family: 'Cairo', sans-serif;
+  flex-direction: row;
 
 }
 
@@ -27,12 +28,13 @@ body {
 }
 .logo {
   width: 120px;
-  margin: 0 10px 10px 0px;
+  margin: 0 10px 10px 10px;
 }
 
 /* Centering the search input and button */
 .search-container {
-  width: 70%;
+  max-width: 70%;
+  min-width: 35%;
 }
 
 .search-field {
@@ -52,6 +54,8 @@ body {
   cursor: pointer;
   border-radius: 50px;
   margin-left: -40px;
+  margin-right: 10px;
+
 }
 
 /* On hover, make the background white with black text */
@@ -71,7 +75,7 @@ body {
 }
 .nav-item {
   color: #ddd;
-  font-size: 1rem;
+  font-size: .7rem;
 }
 /* Smooth hover effect for links */
 .nav-link:hover {

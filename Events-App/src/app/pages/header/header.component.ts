@@ -6,10 +6,10 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core'; // Impo
 import { NotificationsService } from '../../services/notifications.service';
 // '@ngx-translate/core';
 interface Notification {
-  id: number;               // Adjust according to your actual data structure
-  name: string;             // Name or title of the notification
-  description: string;      // Description of the notification
-  date: string;             // Date or time of the notification
+  id: number; // Adjust according to your actual data structure
+  name: string; // Name or title of the notification
+  description: string; // Description of the notification
+  date: string; // Date or time of the notification
 }
 
 interface NotificationsResponse {
@@ -28,17 +28,24 @@ interface NotificationsResponse {
 export class HeaderComponent {
   currentLang: string;
 
-  constructor(private router: Router, private authService: AuthService, private translate: TranslateService, private notificationsService: NotificationsService) {
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private translate: TranslateService,
+    private notificationsService: NotificationsService
+  ) {
     // Set default language
     this.translate.setDefaultLang('en');
     // Use browser language
     const browserLang = this.translate.getBrowserLang();
     this.currentLang = browserLang?.match(/en|ar/) ? browserLang : 'en';
-    this.translate.use(this.currentLang);  }
+    this.translate.use(this.currentLang);
+     // Set the direction based on the current language
+     this.setDirection(this.currentLang);
+  }
   notificationCount: number = 0;
   notifications: Notification[] = []; // Initialize notifications array
-  showDropdown: boolean = false;      // Initialize showDropdown
-
+  showDropdown: boolean = false; // Initialize showDropdown
 
   ngOnInit() {
     if (this.isLoggedIn()) {
@@ -63,14 +70,18 @@ export class HeaderComponent {
 
   loadNotifications() {
     this.notificationsService.getNotifications().subscribe({
-      next: (response: NotificationsResponse) => { // Type the response
+      next: (response: NotificationsResponse) => {
+        // Type the response
         this.notifications = [
           ...response.new_events,
           ...response.upcoming_events,
           ...response.user_attended_events,
         ];
         this.notificationCount = this.notifications.length; // Count notifications
-        sessionStorage.setItem('notificationCount', String(this.notificationCount)); // Update session storage
+        sessionStorage.setItem(
+          'notificationCount',
+          String(this.notificationCount)
+        ); // Update session storage
 
         // Clear notifications if there are none
         if (this.notificationCount === 0) {
@@ -116,10 +127,48 @@ export class HeaderComponent {
   }
 
   switchLanguage(language: string) {
+    // Use the selected language for translations
     this.translate.use(language);
+
+    // Update the 'lang' attribute for accessibility
+    document.documentElement.lang = language;
+
+    // Determine the direction (RTL or LTR) based on the selected language
+    const direction = language === 'ar' ? 'rtl' : 'ltr';
+
+    // Update the 'dir' attribute for the document and body
+    document.documentElement.dir = direction;
+    document.body.dir = direction;
+
+    // Save the language and direction settings in local storage if needed
+    localStorage.setItem('language', language);
+    localStorage.setItem('direction', direction);
+
+    // Optional: You can reload the page to ensure the changes take effect everywhere
+    window.location.reload();
   }
+  setDirection(language: string) {
+    console.log(`Setting direction for language: ${language}`);
+    const direction = language === 'ar' ? 'rtl' : 'ltr';
+
+    // Set the `dir` attribute for text direction
+    document.documentElement.setAttribute('dir', direction);
+    document.documentElement.setAttribute('lang', language);
+
+    // Apply a global class to the body for RTL or LTR styles
+    const body = document.body;
+    if (direction === 'rtl') {
+      body.classList.add('rtl');
+      body.classList.remove('ltr');
+    } else {
+      body.classList.add('ltr');
+      body.classList.remove('rtl');
+    }
+  }
+
   toggleLanguage() {
     this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
-    this.translate.use(this.currentLang);}
-
+    this.translate.use(this.currentLang);
+    this.setDirection(this.currentLang);
+  }
 }

@@ -9,7 +9,7 @@ body {
   transition: color 0.9s ease !important;
   overflow-x: hidden;
   width: 100.5%;
-
+  direction: ltr;
 }
 h1, a {
   font-weight: 700 !important;
@@ -53,5 +53,69 @@ button{
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--red);
 
+}
+
+
+/* Handling RTL & LTR */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+body[dir="rtl"] .navbar, nav {
+  /* Reverse navbar items for RTL */
+  text-align: right;
+
+}
+body[dir="rtl"] .navbar-nav {
+
+}
+/* Global styles for RTL and LTR */
+body.ltr {
+  text-align: left;
+  direction: ltr;
+}
+
+body.rtl {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Modify flexbox and other containers for RTL */
+body.rtl .container,
+body.rtl .flex-container {
+
+}
+
+/* Adjust specific elements */
+body.rtl nav {
+
+}
+
+
+body.rtl .search-btn {
+  background-color: var(--red);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-left: -40px;
+}
+/* Any other RTL-specific modifications */
+
+body.rtl .navbar, nav {
+  padding-left: 0;
+
+}
+
+
+body.rtl .rtl-landing {
+  margin-right: calc(-50vw + 50%);
+
+}
+body.rtl .rtl-btn {
+  margin-right: -40px;
+  margin-left: 10px;
 }
 
