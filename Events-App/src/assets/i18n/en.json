@@ -1,6 +1,20 @@
 {
   "HOME": {
-    "WELCOME": "Welcome to the Event Management System",
+    "EVENTORIA": "EVENTORiA",
+    "DESCRIPTION": "Explore ITI's Great Events and Catch Up on Upcoming Opportunities",
+    "EXPLORE_UPCOMING": "Explore Upcoming Events",
+    "CATEGORIES": "Events Categories",
+    "EXPLORE_NOW": "Explore Now",
+    "PREVIOUS": "Previous",
+    "NEXT": "Next",
+    "CALENDAR": "Event Calendar",
+    "UPCOMING": "Upcoming Events",
+    "HIGHLIGHTED": "Highlighted Events",
+    "BUS_DESCRIPTION": "Our Bus lines operate almost overall Cairo to pick you wherever you are.",
+    "EXPLORE_BUS": "Explore Bus lines",
+    "EVENTS": "Events",
+    "SHOW_DETAILS": "Show Details",
+    "GET_TICKETS": "Get Tickets",
     "SEARCH_PLACEHOLDER": "Search for Event..."
   },
   "NAV": {
@@ -13,6 +27,5 @@
     "ALL_EVENTS": "All Events",
     "KIDS_EVENTS": "Kids Events",
     "UPCOMING_EVENTS": "Upcoming Events"
-  },
-  "SEARCH": "Search"
+  }
 }

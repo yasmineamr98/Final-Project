@@ -19,7 +19,8 @@ import { ResetPasswordComponent } from './user/reset-password/reset-password.com
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-import { TranslateConfigModule } from './translate-config.module'; // Add this line
+import { TranslateConfigModule } from './translate-config.module';
+import { TranslateModule } from '@ngx-translate/core'; // Add this line
 
 @Component({
   selector: 'app-root',
@@ -43,7 +44,8 @@ import { TranslateConfigModule } from './translate-config.module'; // Add this l
     OtpVerificationComponent,
     ResetPasswordComponent,
     HttpClientModule,
-    TranslateConfigModule
+    TranslateConfigModule,
+    TranslateModule
   ],
   providers: [
     {

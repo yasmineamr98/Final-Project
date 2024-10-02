@@ -13,47 +13,63 @@
         [placeholder]="'HOME.SEARCH_PLACEHOLDER' | translate"
         aria-label="Search"
       />
-      <button class="btn btn-outline-success d-flex align-items-center search-btn rtl-btn" type="submit">
-        <i class="fa-solid fa-magnifying-glass me-2"></i> {{ 'SEARCH' | translate }}
+      <button
+        class="btn btn-outline-success d-flex align-items-center search-btn rtl-btn"
+        type="submit"
+      >
+        <i class="fa-solid fa-magnifying-glass me-2"></i>
+        {{ "SEARCH" | translate }}
       </button>
     </div>
 
     <div class="language-switcher">
-      <button (click)="toggleLanguage()">{{ currentLang === 'en' ? 'العربية' : 'English' }}</button>
+      <button (click)="toggleLanguage()">
+        {{ currentLang === "en" ? "العربية" : "English" }}
+      </button>
     </div>
 
     <!-- The rest of your navbar items -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-    <!-- Toggle button for responsive navbar -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Navigation links -->
     <div
       class="collapse navbar-collapse justify-content-end"
       id="navbarNavDropdown"
     >
-      <ul class="navbar-nav">
-        <!-- Home link -->
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home" aria-label="Home">{{ 'NAV.HOME' | translate }}</a>
-        </li>
+      <!-- Toggle button for responsive navbar -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <li *ngIf="isLoggedIn()" class="nav-item">
-          <a class="nav-link" [routerLink]="['/user-profile', getUserId()]" aria-label="Profile">{{ 'NAV.PROFILE' | translate }}</a>
-        </li>
+      <!-- Navigation links -->
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNavDropdown"
+      >
+        <ul class="navbar-nav">
+          <!-- Home link -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" aria-label="Home">{{
+              "NAV.HOME" | translate
+            }}</a>
+          </li>
 
-        <!-- Notification bell, visible only when logged in -->
-        <li *ngIf="isLoggedIn()" class="nav-item dropdown" (click)="toggleDropdown()">
+          <li *ngIf="isLoggedIn()" class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="['/user-profile', getUserId()]"
+              aria-label="Profile"
+              >{{ "NAV.PROFILE" | translate }}</a
+            >
+          </li>
+
+          <!-- Notification bell, visible only when logged in -->
+          <!-- <li *ngIf="isLoggedIn()" class="nav-item dropdown" (click)="toggleDropdown()">
           <a class="nav-link" aria-label="Notifications">
             <i class="fa-solid fa-bell"></i>
             <span class="badge" *ngIf="notificationCount > 0">{{ notificationCount }}</span>
@@ -65,50 +81,97 @@
             </div>
             <div *ngIf="notifications.length === 0" class="dropdown-item">No notifications available.</div>
           </div>
-        </li>
+        </li> -->
 
-        <!-- Notification bell, visible only when logged in -->
-        <li *ngIf="isLoggedIn()" class="nav-item dropdown" (click)="toggleDropdown()">
-          <a class="nav-link" aria-label="Notifications">
-            <i class="fa-solid fa-bell"></i>
-            <span class="badge" *ngIf="notificationCount > 0">{{ notificationCount }}</span>
-          </a>
-          <div *ngIf="showDropdown" class="dropdown-menu show">
-            <div *ngFor="let notification of notifications" class="dropdown-item" (click)="goToEventDetails(notification.id)">
-              <strong>{{ notification.name }}</strong>
-              <p>{{ notification.description }}</p>
+          <li *ngIf="!isLoggedIn()" class="nav-item">
+            <a class="nav-link" routerLink="/user-login" aria-label="Login">{{
+              "NAV.LOGIN" | translate
+            }}</a>
+          </li>
+
+          <li *ngIf="!isLoggedIn()" class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/user-register"
+              routerLinkActive="active"
+              aria-label="Register"
+              >{{ "NAV.REGISTER" | translate }}</a
+            >
+          </li>
+
+          <li *ngIf="isLoggedIn()" class="nav-item">
+            <a class="nav-link" (click)="logout()" aria-label="Logout">{{
+              "NAV.LOGOUT" | translate
+            }}</a>
+          </li>
+
+          <!-- Events dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >{{ "NAV.EVENTS" | translate }}</a
+            >
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/events"
+                  aria-label="All Events"
+                  >{{ "NAV.ALL_EVENTS" | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/events/kids"
+                  aria-label="Kids Events"
+                  >{{ "NAV.KIDS_EVENTS" | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/events/upcoming"
+                  aria-label="Upcoming Events"
+                  >{{ "NAV.UPCOMING_EVENTS" | translate }}</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- Notification bell, visible only when logged in -->
+          <li
+            *ngIf="isLoggedIn()"
+            class="nav-item dropdown"
+            (click)="toggleDropdown()"
+          >
+            <a class="nav-link" aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="badge" *ngIf="notificationCount > 0">{{
+                notificationCount
+              }}</span>
+            </a>
+            <div *ngIf="showDropdown" class="dropdown-menu show rtl-show">
+              <div
+                *ngFor="let notification of notifications"
+                class="dropdown-item"
+                (click)="goToEventDetails(notification.id)"
+              >
+                <strong>{{ notification.name }}</strong>
+                <p>{{ notification.description }}</p>
+              </div>
+              <div *ngIf="notifications.length === 0" class="dropdown-item">
+                No notifications available.
+              </div>
             </div>
-            <div *ngIf="notifications.length === 0" class="dropdown-item">No notifications available.</div>
-          </div>
-        </li>
-
-        <li *ngIf="!isLoggedIn()" class="nav-item">
-          <a class="nav-link" routerLink="/user-login" aria-label="Login">{{ 'NAV.LOGIN' | translate }}</a>
-        </li>
-
-        <li *ngIf="!isLoggedIn()" class="nav-item">
-          <a class="nav-link" routerLink="/user-register" routerLinkActive="active" aria-label="Register">{{ 'NAV.REGISTER' | translate }}</a>
-        </li>
-
-        <li *ngIf="isLoggedIn()" class="nav-item">
-          <a class="nav-link" (click)="logout()" aria-label="Logout">{{ 'NAV.LOGOUT' | translate }}</a>
-        </li>
-
-        <!-- Events dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ 'NAV.EVENTS' | translate }}</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li>
-              <a class="dropdown-item" routerLink="/events" aria-label="All Events">{{ 'NAV.ALL_EVENTS' | translate }}</a>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="/events/kids" aria-label="Kids Events">{{ 'NAV.KIDS_EVENTS' | translate }}</a>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="/events/upcoming" aria-label="Upcoming Events">{{ 'NAV.UPCOMING_EVENTS' | translate }}</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 </div>

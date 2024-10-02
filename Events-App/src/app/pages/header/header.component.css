@@ -34,7 +34,7 @@ body {
 /* Centering the search input and button */
 .search-container {
   max-width: 70%;
-  min-width: 35%;
+  min-width: 33%;
 }
 
 .search-field {
@@ -68,14 +68,15 @@ body {
 /* Navbar links */
 .nav-link {
   color: #ddd;
-  font-size: 1rem;
-  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  margin:0 2px;
   padding: 10px 30px !important;
   border-radius: 50px;
+  text-align: center !important;
 }
 .nav-item {
   color: #ddd;
-  font-size: .7rem;
+  font-size: 1rem;
 }
 /* Smooth hover effect for links */
 .nav-link:hover {
@@ -128,10 +129,14 @@ body {
 .badge {
   position: absolute;
   top: 0;
-  right: -5px;
+  right: -50px;
   padding: 5px 10px;
   border-radius: 50%;
   background-color: red;
   color: white;
   font-size: 0.75rem;
+}
+
+.rtl-show {
+translate: -150px;
 }

@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  gap: 10px;
   padding-top: 25vh;
   background-image: url(../../../assets/images/1.jpeg);
   background-size: cover;
@@ -251,6 +252,7 @@ height: 100%;
   flex-direction: column;
   justify-content: center !important;
   align-items: center !important;
+  gap: 10px;
   padding: 10vh 0;
   background-image: url(../../../assets/images/buses.jpg);
   background-size: cover;

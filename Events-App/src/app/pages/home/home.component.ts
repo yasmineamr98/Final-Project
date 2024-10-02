@@ -8,12 +8,14 @@ import { CommonModule } from '@angular/common';
 import { EventsComponent } from '../events/events.component';
 import { EventsService } from '../../services/events.service';
 import { CalendarComponent } from '../../calendar/calendar.component'; // Import the CalendarComponent
+import { TranslateModule } from '@ngx-translate/core';
+
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, EventsComponent, HttpClientModule, CalendarComponent],
+  imports: [CommonModule, EventsComponent, HttpClientModule, CalendarComponent, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

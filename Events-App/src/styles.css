@@ -37,6 +37,9 @@ button{
   transition: color 0.9s ease !important;
   text-decoration: none !important;
 }
+i{
+  margin: 0 5px;
+}
 ::-webkit-scrollbar {
   width: 13px;
 }
@@ -119,3 +122,22 @@ body.rtl .rtl-btn {
   margin-left: 10px;
 }
 
+body.rtl .rtl-show {
+  translate: 150px;
+
+}
+body.rtl .nav-link {
+  font-size: 1rem;
+  margin:0 2px;
+  margin-left: 8px;
+  padding: 10px 25px !important;
+}
+body.rtl .carousel-control-next {
+  background-color: #251f1fc5;
+  border-radius: 50%;
+  height: 8%;
+  width: 4%;
+  position: absolute;
+  top: 30rem;
+  right: 5rem;
+}
