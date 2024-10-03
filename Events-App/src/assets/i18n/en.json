@@ -59,6 +59,27 @@
     "PASSWORD_REQUIRED": "Password is required.",
     "PASSWORD_MINLENGTH": "Password must be at least 8 characters long.",
     "BUTTON": "Reset Password"
+  },
+  "EVENTS": {
+    "TITLE": "Events",
+    "DESCRIPTION": "Check out the upcoming events and attend them.",
+    "LEAVE_BUTTON": "Leave"
+  },
+  "LOGIN": {
+    "TITLE": "User Login",
+    "DESCRIPTION": "Enter your credentials to log in.",
+    "EMAIL_LABEL": "Email:",
+    "EMAIL_PLACEHOLDER": "Enter your email",
+    "PASSWORD_LABEL": "Password:",
+    "PASSWORD_PLACEHOLDER": "Enter your password",
+    "BUTTON": "Login"
+  },
+  "USER_HOMEPAGE": {
+    "SHOW_DETAILS": "Show Details",
+    "GET_TICKETS": "Get Tickets"
+  },
+  "USER_NOTIFICATIONS": {
+    "TITLE": "User Notifications",
+    "NO_NOTIFICATIONS": "No notifications available."
   }
-
 }

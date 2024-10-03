@@ -58,5 +58,27 @@
     "PASSWORD_REQUIRED": "كلمة المرور مطلوبة.",
     "PASSWORD_MINLENGTH": "يجب أن تكون كلمة المرور مكونة من 8 أحرف على الأقل.",
     "BUTTON": "إعادة تعيين كلمة المرور"
+  },
+  "EVENTS": {
+    "TITLE": "الفعاليات",
+    "DESCRIPTION": "تحقق من الفعاليات القادمة وشارك فيها.",
+    "LEAVE_BUTTON": "مغادرة"
+  },
+  "LOGIN": {
+    "TITLE": "تسجيل الدخول",
+    "DESCRIPTION": "أدخل بيانات الاعتماد الخاصة بك لتسجيل الدخول.",
+    "EMAIL_LABEL": "البريد الإلكتروني:",
+    "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+    "PASSWORD_LABEL": "كلمة المرور:",
+    "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور الخاصة بك",
+    "BUTTON": "تسجيل الدخول"
+  },
+  "USER_HOMEPAGE": {
+    "SHOW_DETAILS": "عرض التفاصيل",
+    "GET_TICKETS": "احصل على التذاكر"
+  },
+  "USER_NOTIFICATIONS": {
+    "TITLE": "إشعارات المستخدم",
+    "NO_NOTIFICATIONS": "لا توجد إشعارات."
   }
 }

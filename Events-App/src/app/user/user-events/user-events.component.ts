@@ -3,11 +3,12 @@ import { EventsService } from '../../services/events.service'; // Adjust the pat
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-events',
   standalone: true,
-  imports: [CommonModule, RouterLink, HttpClientModule],
+  imports: [CommonModule, RouterLink, HttpClientModule,TranslateModule],
   templateUrl: './user-events.component.html',
   styleUrls: ['./user-events.component.css'], // Fixed the property name here
 })
@@ -76,5 +77,5 @@ export class UserEventsComponent implements OnInit {
     });
   }
 
-  
+
 }
