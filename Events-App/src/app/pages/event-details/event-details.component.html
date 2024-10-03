@@ -1,53 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container event-details-container py-4 my-5" *ngIf="eventDetails">
-        <div class="row align-items-center">
-          <div class="col-md-8">
-            <img [src]="eventDetails.event_image" alt="Event Image" class="img-fluid rounded" />
-          </div>
-          <div class="col-md-3 ms-md-3">
-            <ul class="list-unstyled mb-4">
+<div class="container event-details-container py-4 my-5" *ngIf="eventDetails">
+  <div class="row align-items-center">
+      <div class="col-md-8">
+          <img [src]="eventDetails.event_image" alt="Event Image" class="img-fluid rounded" />
+      </div>
+      <div class="col-md-3 ms-md-3">
+          <ul class="list-unstyled mb-4">
               <li class="mb-2">
-                <i class="bi bi-calendar3"></i> {{ eventDetails.date }}
+                  <i class="bi bi-calendar3"></i> {{ eventDetails.date }}
               </li>
               <li class="mb-2">
-                <i class="bi bi-clock"></i> {{ eventDetails.time }}
+                  <i class="bi bi-clock"></i> {{ eventDetails.time }}
               </li>
               <li class="mb-2">
-                <i class="bi bi-geo-alt"></i> {{ eventDetails.location }}
+                  <i class="bi bi-geo-alt"></i> {{ eventDetails.location }}
               </li>
               <li>
-                <a href="#" class="text-decoration-none text-white">
-                  <i class="bi bi-geo"></i> Get Directions
-                </a>
+                  <a href="#" class="text-decoration-none text-white">
+                      <i class="bi bi-geo"></i> Get Directions
+                  </a>
               </li>
-            </ul>
-            <button class="btn btn-danger btn-lg">Attend</button>
-          </div>
-        </div>
-      
-        <div class="event-description mt-4">
-          <h1 class="text-danger">{{ eventDetails.name }}</h1>
-          <p>{{ eventDetails.description }}</p>
-          <p>{{ eventDetails.date }}</p>
-          <p>{{ eventDetails.time }} – {{ eventDetails.endTime }}</p>
-      
-          <h2>Event Terms and Conditions:</h2>
-          <ul class="ps-4">
-            <li>Please note that all tickets are non-refundable and non-exchangeable under any circumstances.</li>
-            <li>Tickets are nominative.</li>
-            <li>Physical ID/Passports checks will be conducted at the entrance to verify identity.</li>
-            <li>NO RE-ENTRY allowed once you exit the event venue.</li>
           </ul>
-        </div>
+          <button (click)="attendEvent(eventDetails.id)" class="btn btn-outline-secondary show-btn">
+              {{ eventDetails.attended ? 'Leave' : 'Attend' }}
+          </button>
       </div>
-      
+  </div>
+  
+  <div class="event-description mt-4">
+      <h1 class="text-danger">{{ eventDetails.name }}</h1>
+      <p>{{ eventDetails.description }}</p>
+      <p>{{ eventDetails.date }}</p>
+      <p>{{ eventDetails.time }} – {{ eventDetails.endTime }}</p>
 
-</body>
-</html>
+      <h2>Event Terms and Conditions:</h2>
+      <ul class="ps-4">
+          <li>Please note that all tickets are non-refundable and non-exchangeable under any circumstances.</li>
+          <li>Tickets are nominative.</li>
+          <li>Physical ID/Passports checks will be conducted at the entrance to verify identity.</li>
+          <li>NO RE-ENTRY allowed once you exit the event venue.</li>
+      </ul>
+      
+      <!-- Button to redirect to buses list -->
+      <button (click)="goToBusesList()" class="btn btn-primary mt-4">
+          View Buses List
+      </button>
+  </div>
+</div>

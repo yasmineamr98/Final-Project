@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { EventsService } from '../../services/events.service';
 
@@ -13,7 +13,11 @@ import { EventsService } from '../../services/events.service';
 export class EventDetailsComponent implements OnInit {
   eventDetails: any; // Holds the event details
 
-  constructor(private _ActivatedRoute: ActivatedRoute, private _EventsService: EventsService) {}
+  constructor(
+    private _ActivatedRoute: ActivatedRoute,
+    private _EventsService: EventsService,
+    private router: Router // Inject Router for navigation
+  ) {}
 
   ngOnInit(): void {
     // Subscribe to route params to get the event ID
@@ -40,5 +44,22 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
-  
+  attendEvent(eventId: number): void {
+    this._EventsService.attendEvent(eventId).subscribe({
+      next: (response) => {
+        console.log(response.message);
+        // Toggle the attended status
+        this.eventDetails.attended = !this.eventDetails.attended;
+        // Optionally, you can update the event list or perform any additional actions
+      },
+      error: (err) => {
+        console.error('Error attending event:', err);
+      },
+    });
+  }
+
+  // Method to redirect to buses list
+  goToBusesList(): void {
+    this.router.navigate(['/buses']);
+  }
 }
