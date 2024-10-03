@@ -81,5 +81,51 @@
   "USER_NOTIFICATIONS": {
     "TITLE": "User Notifications",
     "NO_NOTIFICATIONS": "No notifications available."
-  }
+  },
+  "USER_PROFILE": {
+    "SIDEBAR_TITLE": "My Profile",
+    "MY_EVENTS": "My Events",
+    "LOGOUT": "Logout",
+    "CHANGE_PROFILE_IMAGE": "Change Profile Image",
+    "USERNAME": "User Name",
+    "USER_ID": "User ID",
+    "EMAIL": "Email",
+    "LOCATION": "Location",
+    "CITY": "City",
+    "USER_SETTINGS": "User Settings"
+  },
+    "REGISTER": {
+      "SIGN_UP": "Sign Up",
+      "NAME": "Name",
+      "ENTER_NAME": "Enter your full name",
+      "NAME_REQUIRED": "Name is required",
+      "NAME_MINLENGTH": "Name must be at least 3 characters long",
+      "ENTER_EMAIL": "Email Address",
+      "EMAIL_PLACEHOLDER": "Enter your email address",
+      "EMAIL_REQUIRED": "Email is required",
+      "INVALID_EMAIL": "Invalid email address",
+      "ENTER_PASSWORD": "Password",
+      "PASSWORD_PLACEHOLDER": "Enter your password",
+      "PASSWORD_REQUIRED": "Password is required",
+      "PASSWORD_PATTERN": "Password must include at least one letter, one number, and one special character",
+      "CONFIRM_PASSWORD": "Confirm Password",
+      "CONFIRM_PASSWORD_PLACEHOLDER": "Re-enter your password",
+      "ALREADY":"Already signed up?",
+      "LOGIN": "Login"
+    },
+    "SETTINGS": {
+      "ACCOUNT_SETTINGS": "Account Settings",
+      "CHANGE_NAME": "Change Name",
+      "ENTER_NEW_NAME": "Enter new Name",
+      "CHANGE_EMAIL": "Change Email",
+      "ENTER_NEW_EMAIL": "Enter new email",
+      "GENDER": "Gender",
+      "MALE": "Male",
+      "FEMALE": "Female",
+      "OTHER": "Other",
+      "CHANGE_LOCATION": "Change Location",
+      "ENTER_LOCATION": "Enter your location",
+      "SAVE_CHANGES": "Save Changes"
+    }
+
 }

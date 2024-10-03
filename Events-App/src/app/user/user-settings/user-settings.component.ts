@@ -4,13 +4,14 @@ import { UsersService } from '../../services/users.service';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-settings',
   standalone: true,
   templateUrl: './user-settings.component.html',
   styleUrls: ['./user-settings.component.css'],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,TranslateModule],
 })
 export class UserSettingsComponent implements OnInit {
   userId: string | null = null;
@@ -51,7 +52,7 @@ export class UserSettingsComponent implements OnInit {
       this.errorMessage = 'Authentication token is not defined.';
       return;
     }
-  
+
     const updatedUser = {
       name: this.user.name,
       email: this.user.email,
@@ -59,10 +60,10 @@ export class UserSettingsComponent implements OnInit {
       gender: this.user.gender,
       bio: this.user.bio,
     };
-  
+
     // Log the updated user data
     console.log('Updated User Data:', updatedUser);
-  
+
     this.usersService.updateUserProfileWithToken(sessionStorage.getItem('authToken') ?? '', updatedUser).subscribe(
       (response) => {
         console.log('Profile updated successfully:', response);
@@ -79,7 +80,7 @@ export class UserSettingsComponent implements OnInit {
       }
     );
   }
-  
+
 
 
 }

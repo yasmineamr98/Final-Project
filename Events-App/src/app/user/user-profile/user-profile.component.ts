@@ -4,11 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router'; // Fix here: import Router
 import { UsersService } from '../../services/users.service'; // Ensure the correct path
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [HttpClientModule, CommonModule,RouterLink,],
+  imports: [HttpClientModule, CommonModule,RouterLink,TranslateModule],
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css'],
 })

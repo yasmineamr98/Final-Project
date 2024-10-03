@@ -1,42 +1,62 @@
 <div class="container mt-4 my-5">
   <div class="row">
-    <div class="col-md-12">
-      <div class="settings-details bg-dark text-white p-4 rounded">
-        <h5 class="mb-4">Account Settings</h5>
+    <div class="col-md-12"><div class="settings-details bg-dark text-white p-4 rounded">
+      <h5 class="mb-4">{{ 'SETTINGS.ACCOUNT_SETTINGS' | translate }}</h5>
 
-        <form class="settings-form" (ngSubmit)="updateUserProfile()">
-          <div class="mb-3">
-            <label class="text-danger">Change Name</label>
-            <input [(ngModel)]="user.name" type="text" class="form-control" name="name" placeholder="Enter new Name" />
-          </div>
+      <form class="settings-form" (ngSubmit)="updateUserProfile()">
+        <!-- Change Name -->
+        <div class="mb-3">
+          <label class="text-danger">{{ 'SETTINGS.CHANGE_NAME' | translate }}</label>
+          <input
+            [(ngModel)]="user.name"
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="{{ 'SETTINGS.ENTER_NEW_NAME' | translate }}"
+          />
+        </div>
 
-          <div class="mb-3">
-            <label class="text-danger">Change Email</label>
-            <input [(ngModel)]="user.email" type="email" class="form-control" name="email" placeholder="Enter new email" />
-          </div>
+        <!-- Change Email -->
+        <div class="mb-3">
+          <label class="text-danger">{{ 'SETTINGS.CHANGE_EMAIL' | translate }}</label>
+          <input
+            [(ngModel)]="user.email"
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="{{ 'SETTINGS.ENTER_NEW_EMAIL' | translate }}"
+          />
+        </div>
 
-          <div class="mb-3">
-            <label for="gender" name="gender" class="text-danger">Gender</label>
-            <select [(ngModel)]="user.gender" name="gender" class="form-control">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
+        <!-- Gender -->
+        <div class="mb-3">
+          <label class="text-danger" for="gender">{{ 'SETTINGS.GENDER' | translate }}</label>
+          <select [(ngModel)]="user.gender" name="gender" class="form-control">
+            <option value="male">{{ 'SETTINGS.MALE' | translate }}</option>
+            <option value="female">{{ 'SETTINGS.FEMALE' | translate }}</option>
+            <option value="other">{{ 'SETTINGS.OTHER' | translate }}</option>
+          </select>
+        </div>
 
-          <div class="mb-3">
-            <label class="text-danger" for="location">Change Location</label>
-            <input [(ngModel)]="user.location" type="text" class="form-control" name="location" placeholder="Enter your location" />
-          </div>
+        <!-- Change Location -->
+        <div class="mb-3">
+          <label class="text-danger" for="location">{{ 'SETTINGS.CHANGE_LOCATION' | translate }}</label>
+          <input
+            [(ngModel)]="user.location"
+            type="text"
+            class="form-control"
+            name="location"
+            placeholder="{{ 'SETTINGS.ENTER_LOCATION' | translate }}"
+          />
+        </div>
 
-          <!-- <div class="mb-3">
-            <label class="form-label" for="profile_image">Upload Profile Image:</label>
-            <input type="file" id="profile_image" (change)="handleProfileImageUpload($event)" name="profile_image" accept="image/*" />
-          </div> -->
+        <!-- Save Changes Button -->
+        <button class="btn btn-danger" type="submit">
+          {{ 'SETTINGS.SAVE_CHANGES' | translate }}
+        </button>
+      </form>
+    </div>
 
-          <button class="btn btn-danger" type="submit">Save Changes</button>
-        </form>
-      </div>
     </div>
   </div>
 </div>

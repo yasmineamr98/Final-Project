@@ -80,5 +80,50 @@
   "USER_NOTIFICATIONS": {
     "TITLE": "إشعارات المستخدم",
     "NO_NOTIFICATIONS": "لا توجد إشعارات."
+  },
+  "USER_PROFILE": {
+    "SIDEBAR_TITLE": "ملفي الشخصي",
+    "MY_EVENTS": "فعالياتي",
+    "LOGOUT": "تسجيل الخروج",
+    "CHANGE_PROFILE_IMAGE": "تغيير صورة الملف الشخصي",
+    "USERNAME": "اسم المستخدم",
+    "USER_ID": "معرف المستخدم",
+    "EMAIL": "البريد الإلكتروني",
+    "LOCATION": "الموقع",
+    "CITY": "المدينة",
+    "USER_SETTINGS": "إعدادات المستخدم"
+  },
+  "REGISTER": {
+    "SIGN_UP": "تسجيل جديد",
+    "NAME": "الاسم",
+    "ENTER_NAME": "أدخل اسمك الكامل",
+    "NAME_REQUIRED": "الاسم مطلوب",
+    "NAME_MINLENGTH": "يجب ألا يقل الاسم عن 3 أحرف",
+    "ENTER_EMAIL": "البريد الإلكتروني",
+    "EMAIL_PLACEHOLDER": "أدخل عنوان بريدك الإلكتروني",
+    "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب",
+    "INVALID_EMAIL": "عنوان بريد إلكتروني غير صالح",
+    "ENTER_PASSWORD": "كلمة المرور",
+    "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور الخاصة بك",
+    "PASSWORD_REQUIRED": "كلمة المرور مطلوبة",
+    "PASSWORD_PATTERN": "يجب أن تحتوي كلمة المرور على حرف ورقم ورمز خاص على الأقل",
+    "CONFIRM_PASSWORD": "تأكيد كلمة المرور",
+    "CONFIRM_PASSWORD_PLACEHOLDER": "أعد إدخال كلمة المرور",
+    "ALREADY": "قمت بالتسجيل مسبقاً بالفعل؟",
+    "LOGIN": "تسجيل الدخول"
+  },
+  "SETTINGS": {
+    "ACCOUNT_SETTINGS": "إعدادات الحساب",
+    "CHANGE_NAME": "تغيير الاسم",
+    "ENTER_NEW_NAME": "أدخل الاسم الجديد",
+    "CHANGE_EMAIL": "تغيير البريد الإلكتروني",
+    "ENTER_NEW_EMAIL": "أدخل البريد الإلكتروني الجديد",
+    "GENDER": "الجنس",
+    "MALE": "ذكر",
+    "FEMALE": "أنثى",
+    "OTHER": "آخر",
+    "CHANGE_LOCATION": "تغيير الموقع",
+    "ENTER_LOCATION": "أدخل موقعك",
+    "SAVE_CHANGES": "حفظ التغييرات"
   }
 }
