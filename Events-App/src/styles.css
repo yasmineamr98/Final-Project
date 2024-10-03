@@ -10,6 +10,7 @@ body {
   overflow-x: hidden;
   width: 101%;
   direction: ltr;
+  min-height: 55vh;
 }
 h1, a {
   font-weight: 700 !important;
@@ -114,7 +115,7 @@ body.rtl .navbar, nav {
 
 
 body.rtl .rtl-landing {
-  margin-right: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 49%);
 
 }
 body.rtl .rtl-btn {

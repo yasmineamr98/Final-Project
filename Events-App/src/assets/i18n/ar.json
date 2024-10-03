@@ -27,7 +27,8 @@
     "ALL_EVENTS": "جميع الفعاليات",
     "KIDS_EVENTS": "فعاليات الأطفال",
     "UPCOMING_EVENTS": "الفعاليات القادمة",
-      "SEARCH": " بحث  "
+    "SEARCH": " بحث  ",
+    "LOADING": "جــار التحمــيل ..."
   },
   "FOOTER": {
     "SUBSCRIBE": "اشترك في نشرتنا الإخبارية",
@@ -36,5 +37,48 @@
     "ABOUT_US": "معلومات عنا",
     "CONTACT_US": "اتصل بنا",
     "ALL_RIGHTS_RESERVED": "جميع الحقوق محفوظة"
+  },
+  "FORGOT_PASSWORD": {
+    "TITLE": "نسيت كلمة المرور",
+    "DESCRIPTION": "أدخل بريدك الإلكتروني المسجل لتلقي رمز التحقق.",
+    "SEND_OTP": "إرسال رمز التحقق"
+  },
+  "VERIFY_OTP": {
+    "TITLE": "تحقق من رمز OTP",
+    "DESCRIPTION": "أدخل رمز التحقق المرسل إلى بريدك الإلكتروني.",
+    "BUTTON": "تحقق"
+  },
+  "RESET_PASSWORD": {
+    "TITLE": "إعادة تعيين كلمة المرور",
+    "DESCRIPTION": "قم بتعيين كلمة المرور الجديدة أدناه.",
+    "EMAIL_LABEL": "البريد الإلكتروني:",
+    "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب.",
+    "INVALID_EMAIL": "يرجى إدخال بريد إلكتروني صالح.",
+    "PASSWORD_LABEL": "كلمة المرور:",
+    "PASSWORD_REQUIRED": "كلمة المرور مطلوبة.",
+    "PASSWORD_MINLENGTH": "يجب أن تكون كلمة المرور مكونة من 8 أحرف على الأقل.",
+    "BUTTON": "إعادة تعيين كلمة المرور"
+  },
+  "EVENTS": {
+    "TITLE": "الفعاليات",
+    "DESCRIPTION": "تحقق من الفعاليات القادمة وشارك فيها.",
+    "LEAVE_BUTTON": "مغادرة"
+  },
+  "LOGIN": {
+    "TITLE": "تسجيل الدخول",
+    "DESCRIPTION": "أدخل بيانات الاعتماد الخاصة بك لتسجيل الدخول.",
+    "EMAIL_LABEL": "البريد الإلكتروني:",
+    "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+    "PASSWORD_LABEL": "كلمة المرور:",
+    "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور الخاصة بك",
+    "BUTTON": "تسجيل الدخول"
+  },
+  "USER_HOMEPAGE": {
+    "SHOW_DETAILS": "عرض التفاصيل",
+    "GET_TICKETS": "احصل على التذاكر"
+  },
+  "USER_NOTIFICATIONS": {
+    "TITLE": "إشعارات المستخدم",
+    "NO_NOTIFICATIONS": "لا توجد إشعارات."
   }
 }

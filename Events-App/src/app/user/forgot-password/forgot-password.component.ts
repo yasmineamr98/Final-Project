@@ -9,6 +9,7 @@ import {
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-forgot-password',
@@ -21,6 +22,7 @@ import { CommonModule } from '@angular/common';
     RouterLink,
     RouterOutlet,
     CommonModule,
+    TranslateModule
   ],
 })
 export class ForgotPasswordComponent {

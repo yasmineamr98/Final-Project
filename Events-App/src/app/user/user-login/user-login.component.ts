@@ -3,13 +3,14 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service'; // Adjust path if needed
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Import FormsModule for ngModel binding
 import { CommonModule } from '@angular/common'; // CommonModule for standalone components
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-login',
   standalone: true,
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css'],
-  imports: [FormsModule, CommonModule, RouterLink,ReactiveFormsModule], // Import FormsModule and CommonModule
+  imports: [FormsModule, CommonModule, RouterLink,ReactiveFormsModule,TranslateModule], // Import FormsModule and CommonModule
 })
 export class UserLoginComponent {
   email: string = ''; // Bind to ngModel for email
@@ -39,6 +40,6 @@ export class UserLoginComponent {
       }
     );
   }
-  
+
 
 }

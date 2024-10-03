@@ -9,12 +9,13 @@ import {
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-otp-verification',
   standalone: true,
   templateUrl: './otp-verification.component.html',
-  imports: [FormsModule, ReactiveFormsModule, CommonModule,],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule,TranslateModule],
   styleUrls: ['./otp-verification.component.css'],
 })
 export class OtpVerificationComponent {

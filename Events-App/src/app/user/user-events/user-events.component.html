@@ -1,5 +1,6 @@
 <div class="container mt-5">
-  <h2>Your Events</h2>
+  <h2>{{ "EVENTS.TITLE" | translate }}</h2>
+  <p>{{ "EVENTS.DESCRIPTION" | translate }}</p>
   <div class="row">
     <div class="col-md-6 mb-4" *ngFor="let event of userEvents">
       <div class="card event shadow-sm">
@@ -17,7 +18,7 @@
             {{ event.location }}
           </p>
           <button (click)="attendEvent(event.id)" class="btn book">
-            Leave
+            {{ "EVENTS.LEAVE_BUTTON" | translate }}
           </button>
         </div>
       </div>

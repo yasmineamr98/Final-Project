@@ -3,11 +3,12 @@ import { NotificationsService } from '../../services/notifications.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { AuthInterceptor } from '../../interceptors/auth.interceptor';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-notifications',
   standalone: true,
-  imports: [HttpClientModule, CommonModule],
+  imports: [HttpClientModule, CommonModule,TranslateModule],
   providers: [
     NotificationsService,
     {

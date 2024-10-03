@@ -1,5 +1,5 @@
 <div class="notifications-container">
-  <h2>User Notifications</h2>
+  <h2>{{ 'USER_NOTIFICATIONS.TITLE' | translate }}</h2>
   <ul *ngIf="notifications.length > 0">
     <li *ngFor="let notification of notifications">
       <strong>{{ notification.name }}</strong>
@@ -7,5 +7,5 @@
       <small>{{ notification.date }}</small>
     </li>
   </ul>
-  <p *ngIf="notifications.length === 0">No notifications available.</p>
+  <p *ngIf="notifications.length === 0">{{ 'USER_NOTIFICATIONS.NO_NOTIFICATIONS' | translate }}</p>
 </div>
