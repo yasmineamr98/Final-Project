@@ -10,13 +10,15 @@ import {
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-user-register',
   standalone: true,
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.css'],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink,TranslateModule],
 })
 export class UserRegisterComponent implements OnInit {
   registerForm: FormGroup;
@@ -66,7 +68,7 @@ export class UserRegisterComponent implements OnInit {
         password: this.registerForm.value.password,
         password_confirmation: this.registerForm.value.password_confirmation,
       };
-  
+
       try {
         const response = await this.authService
           .userRegister(
@@ -91,7 +93,7 @@ export class UserRegisterComponent implements OnInit {
       this.registerForm.markAllAsTouched();
     }
   }
-  
+
 
   alreadyHaveAccount() {
     this.router.navigate(['/login']);
