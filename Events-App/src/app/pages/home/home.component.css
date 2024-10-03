@@ -12,7 +12,7 @@
   min-height: 90vh;
   position: relative;
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 49%);
   color: var(--white);
 }
 .landing h1 {

@@ -27,7 +27,9 @@
     "ALL_EVENTS": "All Events",
     "KIDS_EVENTS": "Kids Events",
     "UPCOMING_EVENTS": "Upcoming Events",
-    "SEARCH": " SEARCH  "
+    "SEARCH": " Search  ",
+    "LOADING": "LOADING..."
+
   },
   "FOOTER": {
     "SUBSCRIBE": "Subscribe to our newsletter",
@@ -36,5 +38,27 @@
     "ABOUT_US": "About Us",
     "CONTACT_US": "Contact Us",
     "ALL_RIGHTS_RESERVED": "All Rights Reserved"
+  },
+    "FORGOT_PASSWORD": {
+      "TITLE": "Forgot Password",
+      "DESCRIPTION": "Enter your registered email to receive an OTP.",
+      "SEND_OTP": "Send OTP"
+    },
+    "VERIFY_OTP": {
+      "TITLE": "Verify OTP",
+      "DESCRIPTION": "Enter the OTP sent to your email.",
+      "BUTTON": "Verify"
+    },
+    "RESET_PASSWORD": {
+    "TITLE": "Reset Password",
+    "DESCRIPTION": "Set your new password below.",
+    "EMAIL_LABEL": "Email:",
+    "EMAIL_REQUIRED": "Email is required.",
+    "INVALID_EMAIL": "Please enter a valid email.",
+    "PASSWORD_LABEL": "Password:",
+    "PASSWORD_REQUIRED": "Password is required.",
+    "PASSWORD_MINLENGTH": "Password must be at least 8 characters long.",
+    "BUTTON": "Reset Password"
   }
+
 }
