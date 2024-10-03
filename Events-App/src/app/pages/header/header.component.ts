@@ -6,6 +6,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core'; // Impo
 import { NotificationsService } from '../../services/notifications.service';
 import { AppComponent } from '../../app.component';
 // '@ngx-translate/core';
+import { FormsModule } from '@angular/forms'; // Import FormsModule here
 interface Notification {
   id: number; // Adjust according to your actual data structure
   name: string; // Name or title of the notification
@@ -22,13 +23,14 @@ interface NotificationsResponse {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslateModule, AppComponent],
+  imports: [CommonModule, RouterLink, FormsModule,TranslateModule, AppComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'], // Update if necessary
 })
 export class HeaderComponent {
   currentLang: string;
   isLoading: boolean = false; // Property to track loading state
+  searchQuery: string = ''; // New property to hold the search query
 
   constructor(
     private router: Router,
@@ -180,4 +182,12 @@ export class HeaderComponent {
       this.isLoading = false; // Set loading to false after data is loaded
     }, 3000);
   }
+
+    // New method to handle search
+    search() {
+      if (this.searchQuery.trim()) {
+        this.router.navigate(['/search'], { queryParams: { q: this.searchQuery } });
+      }
+    }
+  
 }

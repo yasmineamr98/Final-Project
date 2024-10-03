@@ -15,23 +15,25 @@
       <img src="assets/images/logo-2.png" alt="Logo" class="logo" />
     </a>
 
-    <!-- Search bar in the center -->
-    <div class="search-container mx-auto d-flex align-items-center">
-      <input
-        class="form-control search-field"
-        type="search"
-        [placeholder]="'HOME.SEARCH_PLACEHOLDER' | translate"
-        aria-label="Search"
-      />
-      <button
-        class="btn btn-outline-success d-flex align-items-center search-btn rtl-btn"
-        type="submit"
-      >
-        <i class="fa-solid fa-magnifying-glass me-2"></i>
-        {{ "NAV.SEARCH" | translate }}
-      </button>
-    </div>
-
+  <!-- Search bar in the center -->
+  <div class="search-container mx-auto d-flex align-items-center">
+    <input
+      class="form-control search-field"
+      type="search"
+      [(ngModel)]="searchQuery"
+      [placeholder]="'HOME.SEARCH_PLACEHOLDER' | translate"
+      aria-label="Search"
+      (keydown.enter)="search()"
+    />
+    <button
+      class="btn btn-outline-success d-flex align-items-center search-btn rtl-btn"
+      type="submit"
+      (click)="search()"
+    >
+      <i class="fa-solid fa-magnifying-glass me-2"></i>
+      {{ "NAV.SEARCH" | translate }}
+    </button>
+  </div>
     <div class="language-switcher">
       <button (click)="toggleLanguage()">
         {{ currentLang === "en" ? "العربية" : "English" }}
