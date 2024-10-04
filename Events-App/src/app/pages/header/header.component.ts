@@ -23,7 +23,13 @@ interface NotificationsResponse {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule,TranslateModule, AppComponent],
+  imports: [
+    CommonModule,
+    RouterLink,
+    FormsModule,
+    TranslateModule,
+    AppComponent,
+  ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'], // Update if necessary
 })
@@ -41,10 +47,9 @@ export class HeaderComponent {
     // Set default language
     this.translate.setDefaultLang('en');
     // Use browser language
-    const browserLang = this.translate.getBrowserLang();
-    this.currentLang = browserLang?.match(/en|ar/) ? browserLang : 'en';
+    const savedLanguage = localStorage.getItem('selectedLanguage');
+    this.currentLang = savedLanguage || this.translate.getBrowserLang() || 'en';
     this.translate.use(this.currentLang);
-    // Set the direction based on the current language
     this.setDirection(this.currentLang);
   }
   notificationCount: number = 0;
@@ -134,24 +139,13 @@ export class HeaderComponent {
 
     // Use the selected language for translations
     this.translate.use(language);
+    this.currentLang = language;
 
-    // Update the 'lang' attribute for accessibility
-    document.documentElement.lang = language;
+    // Save the selected language in localStorage
+    localStorage.setItem('selectedLanguage', language);
 
-    // Determine the direction (RTL or LTR) based on the selected language
-    const direction = language === 'ar' ? 'rtl' : 'ltr';
-
-    // Update the 'dir' attribute for the document and body
-    document.documentElement.dir = direction;
-    document.body.dir = direction;
-
-    // Save the language and direction settings in local storage if needed
-    localStorage.setItem('language', language);
-    localStorage.setItem('direction', direction);
-
-    // Optional: You can reload the page to ensure the changes take effect everywhere
-    window.location.reload();
-    // Simulate a data load with a timeout
+    // Update the direction of the document
+    this.setDirection(language);
   }
   setDirection(language: string) {
     console.log(`Setting direction for language: ${language}`);
@@ -175,19 +169,21 @@ export class HeaderComponent {
   toggleLanguage() {
     this.isLoading = true; // Show loader
 
+    // Toggle between 'en' and 'ar'
     this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
-    this.translate.use(this.currentLang);
+    this.switchLanguage(this.currentLang);
     this.setDirection(this.currentLang);
     setTimeout(() => {
       this.isLoading = false; // Set loading to false after data is loaded
     }, 3000);
   }
 
-    // New method to handle search
-    search() {
-      if (this.searchQuery.trim()) {
-        this.router.navigate(['/search'], { queryParams: { q: this.searchQuery } });
-      }
+  // New method to handle search
+  search() {
+    if (this.searchQuery.trim()) {
+      this.router.navigate(['/search'], {
+        queryParams: { q: this.searchQuery },
+      });
     }
-  
+  }
 }

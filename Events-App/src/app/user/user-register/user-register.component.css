@@ -12,7 +12,7 @@
   min-height: 100vh;
   min-width: 100vw;
   position: relative;
-  margin-left: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 49%);
 }
 
 .register-form {
@@ -99,4 +99,3 @@ input[type="password"]:focus {
   border-color: #410606;
   color: White;
 } */
- 

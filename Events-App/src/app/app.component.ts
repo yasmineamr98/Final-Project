@@ -64,14 +64,16 @@ export class AppComponent {
   isLoading: boolean = false; // Control loading state
     // Inject TranslateService
     constructor(private translate: TranslateService) {
-      // Set default language
-      translate.setDefaultLang('en');
+    // Set the default language
+    this.translate.setDefaultLang('en');
 
-      // Get browser language
-      const browserLang = translate.getBrowserLang() || 'en'; // Default to 'en' if browserLang is undefined
+    // Get the saved language from localStorage
+    const savedLanguage = localStorage.getItem('selectedLanguage');
 
-      // Use browser language if it matches 'en' or 'ar', otherwise use 'en'
-      translate.use(browserLang.match(/en|ar/) ? browserLang : 'en');
+    // Use the saved language or the browser language, fallback to 'en' if not found
+    const browserLang = savedLanguage || this.translate.getBrowserLang();
+    this.translate.use(browserLang?.match(/en|ar/) ? browserLang : 'en');
+
     }
     // loadData() {
     //   this.isLoading = true; // Set loading to true

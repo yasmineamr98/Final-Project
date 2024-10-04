@@ -17,8 +17,7 @@
 }
 .landing h1 {
   font-size: 7rem;
-  font-family: 'Cairo Play', sans-serif;
-
+  font-family: "Cairo Play", sans-serif;
 }
 
 .carousel-item {
@@ -115,7 +114,7 @@
   font-size: 3rem;
   letter-spacing: 0;
   line-height: 1.5em;
-  margin: 3rem ;
+  margin: 3rem;
   padding: 25px 0;
   position: relative;
   color: #000000;
@@ -173,11 +172,11 @@
   background-color: var(--dark);
   color: white;
   border: white 1px !important;
-  padding: 10px 20px ;
+  padding: 10px 20px;
 }
 .event-card img {
-width: 600px;
-height: 100%;
+  width: 600px;
+  height: 100%;
 }
 
 .event-card:hover .btn-outline-primary {
@@ -190,12 +189,12 @@ height: 100%;
   color: white;
   border-color: white solid;
 }
-.p-3 p, h5 {
+.p-3 p,
+h5 {
   font-family: sarif !important;
   color: var(--white) !important;
 }
 /*#########*/
-
 
 .section-title {
   font-size: 2rem;
@@ -225,7 +224,7 @@ height: 100%;
 .pagination-controls {
   margin-top: 2rem;
   cursor: pointer;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .pagination {
@@ -238,16 +237,14 @@ height: 100%;
   border: 1px solid #4d0202;
   font-size: large;
   background-color: #4a0a0d;
-
 }
 
 .pagination .page-item.active .page-link {
   border-color: #901b20;
   background-color: #700a0a;
-
 }
 
-.buses{
+.buses {
   display: flex;
   flex-direction: column;
   justify-content: center !important;
@@ -260,10 +257,10 @@ height: 100%;
   background-attachment: fixed;
   min-height: 60vh;
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 49%);
   color: var(--white);
 }
-.buses h3{
+.buses h3 {
   font-size: 2.5em !important;
   text-align: center;
 }
