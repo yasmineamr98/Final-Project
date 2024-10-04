@@ -15,6 +15,16 @@ export class EventsService {
     return this._HttpClient.get(`${this.baseUrl}/events`);
   }
 
+
+  // getEventsByCategory(categoryId: number): Observable<any> {
+  //   return this._HttpClient.get(`${this.baseUrl}/categories/${categoryId}/events`);
+  // }
+
+  getCategories(): Observable<any> {
+    return this._HttpClient.get(`http://127.0.0.1:8000/api/categories`);
+  }
+
+
   getEventsCalendar(start: string, end: string): Observable<any> {
     const params = new HttpParams()
       .set('start', start)
@@ -59,5 +69,9 @@ export class EventsService {
     return new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
+
+
+
+
   }
 }
