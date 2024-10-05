@@ -18,18 +18,18 @@
       <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div
-            *ngFor="let category of testcategories; let i = index"
+            *ngFor="let category of categories; let i = index"
             class="carousel-item"
             [class.active]="i === 0"
           >
             <div class="d-flex justify-content-center">
               <div class="text-center">
                 <img
-                  [src]="category.image"
+                  [src]="category.category_image"
                   class="d-block w-100"
                   [alt]="category.name"
                 />
-                <p>{{ category.description }}</p>
+                <p>{{ category.description | slice: 0:84 }}</p>
                 <h3>{{ category.name + ' Events' }}</h3>
                 <button id="s-btn">{{ 'HOME.EXPLORE_NOW' | translate }}</button>
               </div>
