@@ -13,6 +13,7 @@
           <input name="password" [(ngModel)]="password" type="password" class="form-control" id="password" placeholder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}" required />
         </div>
         <button type="submit" class="btn btn-primary btn-block mt-4">{{ 'LOGIN.BUTTON' | translate }}</button>
+        <a routerLink="/forgot-password" class="btn btn-link forget-password-btn">{{ 'forgot password ' | translate }}</a>
       </form>
     </div>
   </div>
