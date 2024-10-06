@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth.service'; // Adjust the path if
 import { TranslateService, TranslateModule } from '@ngx-translate/core'; // Import TranslateService and TranslateModule
 import { NotificationsService } from '../../services/notifications.service';
 import { AppComponent } from '../../app.component';
+import { EventsService } from '../../services/events.service';
 // '@ngx-translate/core';
 import { FormsModule } from '@angular/forms'; // Import FormsModule here
 interface Notification {
@@ -37,12 +38,14 @@ export class HeaderComponent {
   currentLang: string;
   isLoading: boolean = false; // Property to track loading state
   searchQuery: string = ''; // New property to hold the search query
+  categories: any[] = [];
 
   constructor(
     private router: Router,
     private authService: AuthService,
     private translate: TranslateService,
-    private notificationsService: NotificationsService
+    private notificationsService: NotificationsService,
+    private _EventsService:EventsService
   ) {
     // Set default language
     this.translate.setDefaultLang('en');
@@ -57,6 +60,20 @@ export class HeaderComponent {
   showDropdown: boolean = false; // Initialize showDropdown
 
   ngOnInit() {
+
+    this._EventsService.getCategories().subscribe(
+      {
+        next:(response) =>{
+              this.categories = response;
+              console.log(this.categories);
+              console.log(response);
+              
+              
+        }
+
+      }
+    )
+
     if (this.isLoggedIn()) {
       this.loadNotifications();
       this.loadNotificationCount(); // Load notification count on init

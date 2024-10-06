@@ -128,7 +128,7 @@
               aria-expanded="false"
               >{{ "NAV.EVENTS" | translate }}</a
             >
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
               <li>
                 <a
                   class="dropdown-item"
@@ -137,12 +137,12 @@
                   >{{ "NAV.ALL_EVENTS" | translate }}</a
                 >
               </li>
-              <li>
+              <li *ngFor="let category of categories; let i = index">
                 <a
                   class="dropdown-item"
                   routerLink="/events/kids"
                   aria-label="Kids Events"
-                  >{{ "NAV.KIDS_EVENTS" | translate }}</a
+                  >{{ category.name| translate }}</a
                 >
               </li>
               <li>
