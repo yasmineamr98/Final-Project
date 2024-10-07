@@ -9,20 +9,25 @@ import { EventsComponent } from '../events/events.component';
 import { EventsService } from '../../services/events.service';
 import { CalendarComponent } from '../../calendar/calendar.component'; // Import the CalendarComponent
 import { TranslateModule } from '@ngx-translate/core';
-
-
-
+import { PaymentService } from '../../services/payment.service'; // Import PaymentService
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, EventsComponent, HttpClientModule, CalendarComponent, TranslateModule] ,
+  imports: [
+    CommonModule,
+    EventsComponent,
+    HttpClientModule,
+    CalendarComponent,
+    TranslateModule,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-
   categories: any[] = [];
+  paymentUrl: string = ''; // Initialize as an empty string
+
 
   testcategories = [
     {
@@ -46,78 +51,33 @@ export class HomeComponent implements OnInit {
       description: 'Explore what is goinig in the Software market',
     },
   ];
-  // events = [
-  //   {
-  //     id: 'event1',
-  //     image: 'assets/images/3.jpg',
-  //     name: 'Summer Festival',
-  //     place: 'Central Park',
-  //     date: '2024-10-04',
-  //     hover: false,
-  //   },
-  //   {
-  //     id: 'event2',
-  //     image: 'assets/images/4.jpg',
-  //     name: 'Music Concert',
-  //     place: 'Downtown Arena',
-  //     date: '2024-11-15',
-  //     hover: false,
-  //   },
-  //   {
-  //     id: 'event3',
-  //     image: 'assets/images/5.jpg',
-  //     name: 'Art Exhibition',
-  //     place: 'City Gallery',
-  //     date: '2024-12-20',
-  //     hover: false,
-  //   },
-  //   {
-  //     id: 'event4',
-  //     image: 'assets/images/6.jpg',
-  //     name: 'Tech Conference',
-  //     place: 'Silicon Valley',
-  //     date: '2024-09-15',
-  //     hover: false,
-  //   },
-  //   {
-  //     id: 'event5',
-  //     image: 'assets/images/7.jpg',
-  //     name: 'Startup Meetup',
-  //     place: 'New York',
-  //     date: '2024-10-05',
-  //     hover: false,
-  //   },
-  // ];
-  events:any[]=[]
+  events: any[] = [];
 
   // Pagination settings
   currentPage = 1;
   itemsPerPage = 2;
 
-  constructor(private router: Router,private _EventsService:EventsService ) {}
-
+  constructor(
+    private router: Router,
+    private _EventsService: EventsService,
+    private paymentService: PaymentService
+  ) {}
 
   ngOnInit(): void {
-    this._EventsService.getEvents().subscribe(
-      {
-        next:(response) =>{
-              this.events = response;
-        }
-      })
+    this._EventsService.getEvents().subscribe({
+      next: (response) => {
+        this.events = response;
+      },
+    });
 
-      // get categories
-      this._EventsService.getCategories().subscribe(
-        {
-          next:(response) =>{
-                this.categories = response;
-                console.log(this.categories);
-                console.log(response);
-                
-                
-          }
-
-        }
-      )
+    // get categories
+    this._EventsService.getCategories().subscribe({
+      next: (response) => {
+        this.categories = response;
+        console.log(this.categories);
+        console.log(response);
+      },
+    });
   }
   // Set hover state
   setHoverState(event: { hover: boolean }, isHovering: boolean) {
@@ -144,9 +104,22 @@ export class HomeComponent implements OnInit {
   }
 
 
- 
 
- 
+  redirectToPayment(): void {
+    const orderId = 'YOUR_ORDER_ID'; // Replace with your dynamic order ID
+    const amount = 100; // Replace with your dynamic amount
 
+    this.paymentService.initiatePayment(orderId, amount).subscribe({
+      next: (response) => {
+        console.log('Payment initiated:', response);
+        if (response.payment_url) {
+          window.location.href = response.payment_url; // Redirect to the Laravel checkout URL
+        }
+      },
+      error: (err) => {
+        console.error('Error initiating payment:', err);
+      },
+    });
+  }
 
 }
