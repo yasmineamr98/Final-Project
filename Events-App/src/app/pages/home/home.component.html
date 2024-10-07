@@ -1,8 +1,8 @@
 <div class="landing container-fluid rtl-landing">
-  <h1>{{ 'HOME.EVENTORIA' | translate }}</h1>
-  <h3>{{ 'HOME.DESCRIPTION' | translate }}</h3>
+  <h1>{{ "HOME.EVENTORIA" | translate }}</h1>
+  <h3>{{ "HOME.DESCRIPTION" | translate }}</h3>
   <button>
-    <a href="home#upcoming">{{ 'HOME.EXPLORE_UPCOMING' | translate }}</a>
+    <a href="home#upcoming">{{ "HOME.EXPLORE_UPCOMING" | translate }}</a>
     <i class="fa-solid fa-compass"></i>
   </button>
 </div>
@@ -12,7 +12,7 @@
   <!-- Category slider on the left (col-md-6) -->
   <div class="col-md-12">
     <div class="three">
-      <h1>{{ 'HOME.CATEGORIES' | translate }}</h1>
+      <h1>{{ "HOME.CATEGORIES" | translate }}</h1>
     </div>
     <div class="slider">
       <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -29,9 +29,9 @@
                   class="d-block w-100"
                   [alt]="category.name"
                 />
-                <p>{{ category.description | slice: 0:84 }}</p>
-                <h3>{{ category.name + ' Events' }}</h3>
-                <button id="s-btn">{{ 'HOME.EXPLORE_NOW' | translate }}</button>
+                <p>{{ category.description | slice : 0 : 84 }}</p>
+                <h3>{{ category.name + " Events" }}</h3>
+                <button id="s-btn">{{ "HOME.EXPLORE_NOW" | translate }}</button>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@
           data-bs-slide="prev"
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">{{ 'HOME.PREVIOUS' | translate }}</span>
+          <span class="visually-hidden">{{ "HOME.PREVIOUS" | translate }}</span>
         </a>
         <a
           class="carousel-control-next"
@@ -52,7 +52,7 @@
           data-bs-slide="next"
         >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">{{ 'HOME.NEXT' | translate }}</span>
+          <span class="visually-hidden">{{ "HOME.NEXT" | translate }}</span>
         </a>
       </div>
     </div>
@@ -62,13 +62,13 @@
 <!-- Calendar on the right (col-md-6) -->
 <div class="col-md-12">
   <div class="three">
-    <h1>{{ 'HOME.CALENDAR' | translate }}</h1>
+    <h1>{{ "HOME.CALENDAR" | translate }}</h1>
   </div>
   <app-calendar></app-calendar>
 </div>
 
 <div class="three" id="upcoming">
-  <h1>{{ 'HOME.UPCOMING' | translate }}</h1>
+  <h1>{{ "HOME.UPCOMING" | translate }}</h1>
 
   <!-- Events card section -->
   <div class="all-events-cards d-flex justify-content-center flex-wrap">
@@ -93,9 +93,11 @@
               class="btn btn-outline-primary m-2"
               (click)="navigateToEventDetails(event.id)"
             >
-              {{ 'HOME.SHOW_DETAILS' | translate }}
+              {{ "HOME.SHOW_DETAILS" | translate }}
             </button>
-            <button class="btn btn-primary">{{ 'HOME.GET_TICKETS' | translate }}</button>
+            <button class="btn btn-primary">
+              {{ "HOME.GET_TICKETS" | translate }}
+            </button>
           </div>
         </div>
       </div>
@@ -115,18 +117,85 @@
     </ul>
   </div>
 
+  <!-- Payment Section -->
+  <div
+    class="payment-section card shadow-lg p-4 mt-4 "
+  >
+    <div class="row align-items-center">
+      <!-- Payment Gateway Info -->
+      <div class="col-lg-9 col-md-12">
+        <h2 class="fw-bold fs-l mb-3" style="color: #901b20">
+          Discover Our Premium Events!
+        </h2>
+        <p class=" mb-4">
+          Some of our exclusive events, like <strong>Kids Workshops</strong> and
+          <strong>VIP Meetups</strong> require a nominal fee. <br />
+        </p>
+        <div class="mb-3">
+          <h4 class="mb-2">Featured Paid Events:</h4>
+          <ul
+            class="list-unstyled"
+            style=" font-size: 19px; padding-left: 15px"
+          >
+            <li>- Kids Coding Bootcamp</li>
+            <li>- Creative Arts Workshop</li>
+            <li>- Advanced Tech Talks</li>
+          </ul>
+        </div>
+        <hr class="my-3" />
+
+        <!-- List of Events Information (optional) -->
+        <p class="text-muted mb-4 fs-5 ">
+          You can easily pay for these events using our secure payment gateway,
+          with a seamless and safe process.
+        </p>
+        <!-- Secure Payment Logo -->
+        <div class="d-flex align-items-center">
+          <img
+            src="https://cdn-ilbiobj.nitrocdn.com/xxdIcTyQeLMIJxNgivmsWAabzERAWXgf/assets/images/optimized/rev-cc3064d/collard-production.s3.eu-west-1.amazonaws.com/wp-content/uploads/2021/09/12182844/mc-visa-2.png"
+            alt="Secure Payment"
+          />
+          <span class="text-muted">Secure Payments Powered by</span>
+          <img
+            src="https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/lpt5ox5xhjeorf2rryxa"
+            alt="Secure Payment"
+            class="rounded-2 p-0"
+          />
+        </div>
+      </div>
+
+      <!-- Pay Now Button -->
+      <div
+        class="col-lg-3 col-md-12 text-lg-end text-md-center mt-3 mt-lg-0 d-flex align-self-end justify-center align-center flex-column"
+      >
+        <button
+          (click)="redirectToPayment()"
+          class="btn btn-lg btn-primary payment-button shadow-sm"
+          style="
+            border-radius: 25px;
+            background-color: #901b20;
+            border: none;
+            padding: 12px 30px;
+          "
+        >
+          <i class="fas fa-credit-card me-2"></i> Pay Now
+        </button>
+      </div>
+    </div>
+  </div>
+
   <div class="three">
-    <h1>{{ 'HOME.HIGHLIGHTED' | translate }}</h1>
+    <h1>{{ "HOME.HIGHLIGHTED" | translate }}</h1>
   </div>
   <app-events></app-events>
-
   <div class="container-fluid buses rtl-landing">
     <h1></h1>
     <h3>
-      {{ 'HOME.BUS_DESCRIPTION' | translate }}
+      {{ "HOME.BUS_DESCRIPTION" | translate }}
     </h3>
     <button>
-      <a href="">{{ 'HOME.EXPLORE_BUS' | translate }}</a><i class="fa-solid fa-compass"></i>
+      <a href="/buses">{{ "HOME.EXPLORE_BUS" | translate }}</a
+      ><i class="fa-solid fa-compass"></i>
     </button>
   </div>
 </div>
