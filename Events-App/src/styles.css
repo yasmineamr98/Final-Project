@@ -128,10 +128,9 @@ body.rtl .rtl-show {
 
 }
 body.rtl .nav-link {
-  font-size: 1rem;
+  font-size: 15px;
   margin:0 2px;
-  margin-left: 8px;
-  padding: 10px 25px !important;
+  padding: 10px 20px !important;
 }
 body.rtl .carousel-control-next {
   background-color: #251f1fc5;
