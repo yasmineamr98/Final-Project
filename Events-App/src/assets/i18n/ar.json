@@ -90,7 +90,8 @@
     "USER_ID": "معرف المستخدم",
     "EMAIL": "البريد الإلكتروني",
     "LOCATION": "الموقع",
-    "CITY": "المدينة",
+    "BIO": "بيان",
+    "BIRTHDATE": "تاريخ الميلاد",
     "USER_SETTINGS": "إعدادات المستخدم"
   },
   "REGISTER": {
@@ -122,8 +123,12 @@
     "MALE": "ذكر",
     "FEMALE": "أنثى",
     "OTHER": "آخر",
+    "CHANGE_BIO": "تغيير البيان",
+    "CHANGE_BIRTHDATE" : "تغيير تاريخ الميلاد",
+    "ENTER_BIO": "أدخل البيان",
     "CHANGE_LOCATION": "تغيير الموقع",
     "ENTER_LOCATION": "أدخل موقعك",
+    "ENTER_BIRTHDATE": " أدخل تاريخ الميلاد",
     "SAVE_CHANGES": "حفظ التغييرات"
   }
 }

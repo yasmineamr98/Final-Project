@@ -54,9 +54,15 @@
             <p>{{ user.location }}</p>
           </div>
           <div class="mb-3">
-            <h6 class="text-danger">{{ 'USER_PROFILE.CITY' | translate }}</h6>
-            <p>{{ user.location }}</p>
+            <h6 class="text-danger">{{ 'USER_PROFILE.BIO' | translate }}</h6>
+            <p>{{ user.bio }}</p>
+          </div> 
+          
+          <div class="mb-3">
+            <h6 class="text-danger">{{ 'USER_PROFILE.BIRTHDATE' | translate }}</h6>
+            <p>{{ user.birth_date }}</p>
           </div>
+          
 
           <button [routerLink]="['/user-settings', userId]"
             *ngIf="userId === user.id"

@@ -29,7 +29,6 @@
     "UPCOMING_EVENTS": "Upcoming Events",
     "SEARCH": " Search  ",
     "LOADING": "LOADING..."
-
   },
   "FOOTER": {
     "SUBSCRIBE": "Subscribe to our newsletter",
@@ -39,17 +38,17 @@
     "CONTACT_US": "Contact Us",
     "ALL_RIGHTS_RESERVED": "All Rights Reserved"
   },
-    "FORGOT_PASSWORD": {
-      "TITLE": "Forgot Password",
-      "DESCRIPTION": "Enter your registered email to receive an OTP.",
-      "SEND_OTP": "Send OTP"
-    },
-    "VERIFY_OTP": {
-      "TITLE": "Verify OTP",
-      "DESCRIPTION": "Enter the OTP sent to your email.",
-      "BUTTON": "Verify"
-    },
-    "RESET_PASSWORD": {
+  "FORGOT_PASSWORD": {
+    "TITLE": "Forgot Password",
+    "DESCRIPTION": "Enter your registered email to receive an OTP.",
+    "SEND_OTP": "Send OTP"
+  },
+  "VERIFY_OTP": {
+    "TITLE": "Verify OTP",
+    "DESCRIPTION": "Enter the OTP sent to your email.",
+    "BUTTON": "Verify"
+  },
+  "RESET_PASSWORD": {
     "TITLE": "Reset Password",
     "DESCRIPTION": "Set your new password below.",
     "EMAIL_LABEL": "Email:",
@@ -91,41 +90,45 @@
     "USER_ID": "User ID",
     "EMAIL": "Email",
     "LOCATION": "Location",
-    "CITY": "City",
+    "BIO": "Bio",
+    "BIRTHDATE": "Birth Date",
     "USER_SETTINGS": "User Settings"
   },
-    "REGISTER": {
-      "SIGN_UP": "Sign Up",
-      "NAME": "Name",
-      "ENTER_NAME": "Enter your full name",
-      "NAME_REQUIRED": "Name is required",
-      "NAME_MINLENGTH": "Name must be at least 3 characters long",
-      "ENTER_EMAIL": "Email Address",
-      "EMAIL_PLACEHOLDER": "Enter your email address",
-      "EMAIL_REQUIRED": "Email is required",
-      "INVALID_EMAIL": "Invalid email address",
-      "ENTER_PASSWORD": "Password",
-      "PASSWORD_PLACEHOLDER": "Enter your password",
-      "PASSWORD_REQUIRED": "Password is required",
-      "PASSWORD_PATTERN": "Password must include at least one letter, one number, and one special character",
-      "CONFIRM_PASSWORD": "Confirm Password",
-      "CONFIRM_PASSWORD_PLACEHOLDER": "Re-enter your password",
-      "ALREADY":"Already signed up?",
-      "LOGIN": "Login"
-    },
-    "SETTINGS": {
-      "ACCOUNT_SETTINGS": "Account Settings",
-      "CHANGE_NAME": "Change Name",
-      "ENTER_NEW_NAME": "Enter new Name",
-      "CHANGE_EMAIL": "Change Email",
-      "ENTER_NEW_EMAIL": "Enter new email",
-      "GENDER": "Gender",
-      "MALE": "Male",
-      "FEMALE": "Female",
-      "OTHER": "Other",
-      "CHANGE_LOCATION": "Change Location",
-      "ENTER_LOCATION": "Enter your location",
-      "SAVE_CHANGES": "Save Changes"
-    }
-
+  "REGISTER": {
+    "SIGN_UP": "Sign Up",
+    "NAME": "Name",
+    "ENTER_NAME": "Enter your full name",
+    "NAME_REQUIRED": "Name is required",
+    "NAME_MINLENGTH": "Name must be at least 3 characters long",
+    "ENTER_EMAIL": "Email Address",
+    "EMAIL_PLACEHOLDER": "Enter your email address",
+    "EMAIL_REQUIRED": "Email is required",
+    "INVALID_EMAIL": "Invalid email address",
+    "ENTER_PASSWORD": "Password",
+    "PASSWORD_PLACEHOLDER": "Enter your password",
+    "PASSWORD_REQUIRED": "Password is required",
+    "PASSWORD_PATTERN": "Password must include at least one letter, one number, and one special character",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "CONFIRM_PASSWORD_PLACEHOLDER": "Re-enter your password",
+    "ALREADY": "Already signed up?",
+    "LOGIN": "Login"
+  },
+  "SETTINGS": {
+    "ACCOUNT_SETTINGS": "Account Settings",
+    "CHANGE_NAME": "Change Name",
+    "ENTER_NEW_NAME": "Enter new Name",
+    "CHANGE_EMAIL": "Change Email",
+    "ENTER_NEW_EMAIL": "Enter new email",
+    "GENDER": "Gender",
+    "MALE": "Male",
+    "FEMALE": "Female",
+    "OTHER": "Other",
+    "CHANGE_LOCATION": "Change Location",
+    "CHANGE_BIO": "Change Bio",
+    "CHANGE_BIRTHDATE" : "Change Birthdate",
+    "ENTER_LOCATION": "Enter your location",
+    "ENTER_BIO": "Enter your Bio",
+    "ENTER_BIRTHDATE": "Enter your Birthdate",
+    "SAVE_CHANGES": "Save Changes"
+  }
 }

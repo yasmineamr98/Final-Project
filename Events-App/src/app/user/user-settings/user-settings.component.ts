@@ -59,6 +59,7 @@ export class UserSettingsComponent implements OnInit {
       location: this.user.location,
       gender: this.user.gender,
       bio: this.user.bio,
+      birth_date: this.user.birth_date
     };
 
     // Log the updated user data
