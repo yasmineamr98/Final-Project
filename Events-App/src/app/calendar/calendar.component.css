@@ -3,9 +3,10 @@
   max-width: 100%;
   margin: 20px auto;
   padding: 10px;
-  border: 3px solid #700a0a;
+  border: 6px double #700a0a;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #000000b2;
 }
 
 #calendar-container:hover {
@@ -91,4 +92,14 @@
 .fc-day {
   background-color: #f9f9f9; /* Light gray background for better contrast */
   color: #333; /* Dark text color */
+}
+.fc .fc-toolbar-title {
+  font-size: 1.75em;
+  margin: 0px;
+  color: aqua;
+}
+.fc .fc-toolbar-title {
+  font-size: 1.75em;
+  margin: 0px;
+  color: white !important;
 }

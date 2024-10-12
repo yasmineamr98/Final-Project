@@ -6,9 +6,88 @@
     <i class="fa-solid fa-compass"></i>
   </button>
 </div>
+<!-- Calendar on the right (col-md-6) -->
+<div class="col-md-12 d-flex gap-4 compo ">
+  <div class=" col-6">
+    <!-- <h1>{{ "HOME.CALENDAR" | translate }}</h1> -->
+    <app-calendar></app-calendar>
+  </div>
 
+  <!-- Payment Section -->
+  <div class="three col-6">
+    <h1 class="m-0 mb-5">{{ "HOME.CALENDAR" | translate }}</h1>
+    <br>
+    <div class="payment-section card shadow-lg p-4 m-2">
+      <div class="row align-items-center">
+        <!-- Payment Gateway Info -->
+        <div class="col-md-12 ">
+          <h2 class="fw-bold fs-l mb-3">
+            Pay for Premium Events!
+          </h2>
+          <p class="mb-4">
+            Some of our exclusive events, like <strong>Kids Workshops</strong> and
+            <strong>VIP Meetups</strong> require a nominal fee. <br />
+          </p>
+          <!-- <div class="mb-3">
+            <h4 class="mb-2">Featured Paid Events:</h4>
+            <ul class="list-unstyled" style="font-size: 19px; padding-left: 15px">
+              <li>- Kids Coding Bootcamp</li>
+              <li>- Creative Arts Workshop</li>
+              <li>- Advanced Tech Talks</li>
+            </ul>
+          </div> -->
+          <hr class="my-3" />
+
+          <!-- List of Events Information (optional) -->
+          <p class="text-white mb-5 fs-6">
+            You can easily pay for these events using our secure payment gateway,
+            with a seamless and safe process.
+          </p>
+          <!-- Secure Payment Logo -->
+          <div class="d-flex align-items-center mt-5">
+            <img
+              src="https://cdn-ilbiobj.nitrocdn.com/xxdIcTyQeLMIJxNgivmsWAabzERAWXgf/assets/images/optimized/rev-cc3064d/collard-production.s3.eu-west-1.amazonaws.com/wp-content/uploads/2021/09/12182844/mc-visa-2.png"
+              alt="Secure Payment"
+            />
+            <span class="text-muted fw-bold">Secure Payments Powered by</span>
+            <img
+              src="https://paymob.com/images/logoC.png"
+              alt="Secure Payment"
+              class="rounded-2 m-0 bg-transparent p-2"
+            />
+          </div>
+        </div>
+
+        <!-- Pay Now Button -->
+        <!-- <div
+          class="col-lg-3 col-md-12 text-lg-end text-md-center mt-3 mt-lg-0 d-flex align-self-end justify-center align-center flex-column"
+        > -->
+          <!-- <button
+            (click)="redirectToPayment()"
+            class="btn btn-lg btn-primary payment-button shadow-sm"
+            style="
+              border-radius: 25px;
+              background-color: #901b20;
+              border: none;
+              padding: 12px 30px;
+            "
+          >
+            <i class="fas fa-credit-card me-2"></i> Pay Now
+          </button>
+        </div> -->
+        <button
+        (click)="redirectToPayment()"
+        class="btn btn-lg btn-primary payment-button shadow-sm mt-4 ">
+        <i class="fas fa-credit-card m-2"></i> Pay Now
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
 <!-- Categories slider and calendar in a row -->
-<div class="container-fluid row my-5">
+<div class="container-fluid row my-0">
   <!-- Category slider on the left (col-md-6) -->
   <div class="col-md-12">
     <div class="three">
@@ -31,9 +110,12 @@
                 />
                 <p>{{ category.description | slice : 0 : 84 }}</p>
                 <h3>{{ category.name + " Events" }}</h3>
-                <button id="s-btn" (click)="navigateToCategoryDetails(category.id)">
+                <button
+                  id="s-btn"
+                  (click)="navigateToCategoryDetails(category.id)"
+                >
                   {{ "HOME.EXPLORE_NOW" | translate }}
-                </button>              
+                </button>
               </div>
             </div>
           </div>
@@ -59,14 +141,6 @@
       </div>
     </div>
   </div>
-</div>
-
-<!-- Calendar on the right (col-md-6) -->
-<div class="col-md-12">
-  <div class="three">
-    <h1>{{ "HOME.CALENDAR" | translate }}</h1>
-  </div>
-  <app-calendar></app-calendar>
 </div>
 
 <div class="three" id="upcoming">
@@ -117,73 +191,6 @@
         <a class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</a>
       </li>
     </ul>
-  </div>
-
-  <!-- Payment Section -->
-  <div
-    class="payment-section card shadow-lg p-4 mt-4 "
-  >
-    <div class="row align-items-center">
-      <!-- Payment Gateway Info -->
-      <div class="col-lg-9 col-md-12">
-        <h2 class="fw-bold fs-l mb-3" style="color: #901b20">
-          Discover Our Premium Events!
-        </h2>
-        <p class=" mb-4">
-          Some of our exclusive events, like <strong>Kids Workshops</strong> and
-          <strong>VIP Meetups</strong> require a nominal fee. <br />
-        </p>
-        <div class="mb-3">
-          <h4 class="mb-2">Featured Paid Events:</h4>
-          <ul
-            class="list-unstyled"
-            style=" font-size: 19px; padding-left: 15px"
-          >
-            <li>- Kids Coding Bootcamp</li>
-            <li>- Creative Arts Workshop</li>
-            <li>- Advanced Tech Talks</li>
-          </ul>
-        </div>
-        <hr class="my-3" />
-
-        <!-- List of Events Information (optional) -->
-        <p class="text-muted mb-4 fs-5 ">
-          You can easily pay for these events using our secure payment gateway,
-          with a seamless and safe process.
-        </p>
-        <!-- Secure Payment Logo -->
-        <div class="d-flex align-items-center">
-          <img
-            src="https://cdn-ilbiobj.nitrocdn.com/xxdIcTyQeLMIJxNgivmsWAabzERAWXgf/assets/images/optimized/rev-cc3064d/collard-production.s3.eu-west-1.amazonaws.com/wp-content/uploads/2021/09/12182844/mc-visa-2.png"
-            alt="Secure Payment"
-          />
-          <span class="text-muted">Secure Payments Powered by</span>
-          <img
-            src="https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/lpt5ox5xhjeorf2rryxa"
-            alt="Secure Payment"
-            class="rounded-2 p-0"
-          />
-        </div>
-      </div>
-
-      <!-- Pay Now Button -->
-      <div
-        class="col-lg-3 col-md-12 text-lg-end text-md-center mt-3 mt-lg-0 d-flex align-self-end justify-center align-center flex-column"
-      >
-        <button
-          (click)="redirectToPayment()"
-          class="btn btn-lg btn-primary payment-button shadow-sm"
-          style="
-            border-radius: 25px;
-            background-color: #901b20;
-            border: none;
-            padding: 12px 30px;
-          "
-        >
-          <i class="fas fa-credit-card me-2"></i> Pay Now
-        </button>
-      </div>
-    </div>
   </div>
 
   <div class="three" id="HIGHLIGHTED">
