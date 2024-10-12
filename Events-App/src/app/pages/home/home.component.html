@@ -31,7 +31,9 @@
                 />
                 <p>{{ category.description | slice : 0 : 84 }}</p>
                 <h3>{{ category.name + " Events" }}</h3>
-                <button id="s-btn">{{ "HOME.EXPLORE_NOW" | translate }}</button>
+                <button id="s-btn" (click)="navigateToCategoryDetails(category.id)">
+                  {{ "HOME.EXPLORE_NOW" | translate }}
+                </button>              
               </div>
             </div>
           </div>

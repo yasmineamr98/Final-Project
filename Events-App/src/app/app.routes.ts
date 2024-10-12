@@ -18,7 +18,7 @@ import { ResetPasswordComponent } from './user/reset-password/reset-password.com
 import { UserEventsComponent } from './user/user-events/user-events.component';
 import { BusListComponent } from './components/bus-list/bus-list.component';
 import { BusDetailComponent } from './components/bus-detail/bus-detail.component'; // Import the bus detail component
-
+import { CategoryDetailsComponent } from './pages/category-details/category-details.component'; // Import the category details component
 
 export const routes: Routes = [
   { path: 'user-login', component: UserLoginComponent },
@@ -50,4 +50,6 @@ export const routes: Routes = [
   { path : 'user-events', component: UserEventsComponent },
   { path : 'buses', component: BusListComponent },
   { path : 'buses/:id', component: BusDetailComponent },
+  { path: 'category-details/:id', component: CategoryDetailsComponent },  // <-- New route for category details
+
 ];

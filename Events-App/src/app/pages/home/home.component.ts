@@ -11,6 +11,7 @@ import { CalendarComponent } from '../../calendar/calendar.component'; // Import
 import { TranslateModule } from '@ngx-translate/core';
 import { PaymentService } from '../../services/payment.service'; // Import PaymentService
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -83,10 +84,14 @@ export class HomeComponent implements OnInit {
   setHoverState(event: { hover: boolean }, isHovering: boolean) {
     event.hover = isHovering;
   }
+   // Navigate to category details
+   navigateToCategoryDetails(categoryId: string) {
+    this.router.navigate(['/category-details', categoryId]);  // Correct path
+  }
 
   // Navigate to event details
   navigateToEventDetails(eventId: string) {
-    this.router.navigate(['/Events-App/src/app/pages/event-details/', eventId]);
+    this.router.navigate(['/event-details', eventId]);  // Correct path
   }
 
   // Handle pagination
