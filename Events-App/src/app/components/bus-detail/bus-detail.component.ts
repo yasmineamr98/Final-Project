@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { BusService, Bus, Driver, Point } from '../../services/bus.service';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -9,7 +9,7 @@ declare var L: any; // Declare Leaflet
 @Component({
   selector: 'app-bus-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule , RouterLink],
   templateUrl: './bus-detail.component.html',
   styleUrls: ['./bus-detail.component.css']
 })
