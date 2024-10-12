@@ -15,25 +15,25 @@
       <img src="assets/images/logo-2.png" alt="Logo" class="logo" />
     </a>
 
-  <!-- Search bar in the center -->
-  <div class="search-container mx-auto d-flex align-items-center">
-    <input
-      class="form-control search-field"
-      type="search"
-      [(ngModel)]="searchQuery"
-      [placeholder]="'HOME.SEARCH_PLACEHOLDER' | translate"
-      aria-label="Search"
-      (keydown.enter)="search()"
-    />
-    <button
-      class="btn btn-outline-success d-flex align-items-center search-btn rtl-btn"
-      type="submit"
-      (click)="search()"
-    >
-      <i class="fa-solid fa-magnifying-glass me-2"></i>
-      {{ "NAV.SEARCH" | translate }}
-    </button>
-  </div>
+    <!-- Search bar in the center -->
+    <div class="search-container mx-auto d-flex align-items-center">
+      <input
+        class="form-control search-field"
+        type="search"
+        [(ngModel)]="searchQuery"
+        [placeholder]="'HOME.SEARCH_PLACEHOLDER' | translate"
+        aria-label="Search"
+        (keydown.enter)="search()"
+      />
+      <button
+        class="btn btn-outline-success d-flex align-items-center search-btn rtl-btn"
+        type="submit"
+        (click)="search()"
+      >
+        <i class="fa-solid fa-magnifying-glass me-2"></i>
+        {{ "NAV.SEARCH" | translate }}
+      </button>
+    </div>
     <div class="language-switcher">
       <button (click)="toggleLanguage()">
         {{ currentLang === "en" ? "العربية" : "English" }}
@@ -41,7 +41,7 @@
     </div>
     <!-- The rest of your navbar items -->
     <div
-      class="collapse navbar-collapse justify-content-end"
+      class="collapse navbar-collapse justify-content-center"
       id="navbarNavDropdown"
     >
       <!-- Toggle button for responsive navbar -->
@@ -62,7 +62,7 @@
         class="collapse navbar-collapse justify-content-end"
         id="navbarNavDropdown"
       >
-        <ul class="navbar-nav">
+        <ul class="navbar-nav justify-content-around mx-3">
           <!-- Home link -->
           <li class="nav-item">
             <a class="nav-link" routerLink="/home" aria-label="Home">{{
@@ -128,7 +128,10 @@
               aria-expanded="false"
               >{{ "NAV.EVENTS" | translate }}</a
             >
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+            <ul
+              class="dropdown-menu e-drop"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
               <li>
                 <a
                   class="dropdown-item"
@@ -137,20 +140,54 @@
                   >{{ "NAV.ALL_EVENTS" | translate }}</a
                 >
               </li>
-              <li *ngFor="let category of categories; let i = index">
+              <!-- <li *ngFor="let category of categories; let i = index">
                 <a
                   class="dropdown-item"
                   routerLink="/events/kids"
                   aria-label="Kids Events"
                   >{{ category.name| translate }}</a
                 >
+              </li> -->
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="home#upcoming"
+                  aria-label="Upcoming Events"
+                  >{{ "NAV.UPCOMING_EVENTS" | translate }}</a
+                >
               </li>
               <li>
                 <a
                   class="dropdown-item"
-                  routerLink="/events/upcoming"
+                  href="home#HIGHLIGHTED"
                   aria-label="Upcoming Events"
-                  >{{ "NAV.UPCOMING_EVENTS" | translate }}</a
+                  >{{ "HOME.HIGHLIGHTED" | translate }}</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- Events dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >{{ "HOME.CATEGORIE" | translate }}</a
+            >
+            <ul
+              class="dropdown-menu ee-drop"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li *ngFor="let category of categories; let i = index">
+                <a
+                  class="dropdown-item"
+                  routerLink="/events/kids"
+                  aria-label="Kids Events"
+                  >{{ category.name | translate }}</a
                 >
               </li>
             </ul>
@@ -167,14 +204,17 @@
                 notificationCount
               }}</span>
             </a>
-            <div *ngIf="showDropdown" class="dropdown-menu show rtl-show">
+            <div
+              *ngIf="showDropdown"
+              class="dropdown-menu  show rtl-show"
+            >
               <div
                 *ngFor="let notification of notifications"
                 class="dropdown-item"
                 (click)="goToEventDetails(notification.id)"
               >
-                <strong>{{ notification.name }}</strong>
-                <p>{{ notification.description }}</p>
+                <strong class="text-white">{{ notification.name }}</strong>
+                <p class="text-white-50">{{ notification.description }}</p>
               </div>
               <div *ngIf="notifications.length === 0" class="dropdown-item">
                 No notifications available.

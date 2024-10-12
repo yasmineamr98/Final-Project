@@ -1,7 +1,31 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { C, ca } from '@fullcalendar/core/internal-common';
 import { Observable } from 'rxjs';
 
+// Define the interface for the category as previously defined
+interface Event {
+  id: number;
+  name: string;
+  date: string;
+  description: string;
+  created_at: string | null;
+  updated_at: string | null;
+  capacity: number;
+  location: string;
+  event_image: string;
+  category_id: number;
+  user_id: number | null;
+  start_time: string | null;
+  end_time: string | null;
+}
+
+interface Category {
+  name: string;
+  description: string;
+  category_image: string;
+  events: Event[];
+}
 @Injectable({
   providedIn: 'root',
 })
@@ -16,9 +40,6 @@ export class EventsService {
   }
 
 
-  // getEventsByCategory(categoryId: number): Observable<any> {
-  //   return this._HttpClient.get(`${this.baseUrl}/categories/${categoryId}/events`);
-  // }
 
   getCategories(): Observable<any> {
     return this._HttpClient.get(`http://127.0.0.1:8000/api/categories`);
@@ -69,9 +90,14 @@ export class EventsService {
     return new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
+  }
+  // Get category by ID
+  getCategoryById(id: string): Observable<any> {
+    return this._HttpClient.get<any>(`${this.baseUrl}/categories/${id}`);
+  }
 
-
-
-
+  // Get events by category
+  getEventsByCategory(categoryId: string): Observable<Category> {
+    return this._HttpClient.get<Category>(`${this.baseUrl}/categories/${categoryId}/events`);
   }
 }

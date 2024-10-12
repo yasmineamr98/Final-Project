@@ -16,9 +16,8 @@ body {
     backdrop-filter 0.3s ease-in-out;
   z-index: 10;
   align-items: first baseline;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   flex-direction: row;
-
 }
 
 /* When navbar is hovered */
@@ -55,7 +54,6 @@ body {
   border-radius: 50px;
   margin-left: -40px;
   margin-right: 10px;
-
 }
 
 /* On hover, make the background white with black text */
@@ -68,15 +66,15 @@ body {
 /* Navbar links */
 .nav-link {
   color: #ddd;
-  font-size: 1.2rem;
-  margin:0 2px;
-  padding: 10px 30px !important;
+  font-size: 20px;
+  margin: 0 2px;
+  padding: 10px 20px !important;
   border-radius: 50px;
   text-align: center !important;
 }
 .nav-item {
   color: #ddd;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 /* Smooth hover effect for links */
 .nav-link:hover {
@@ -86,14 +84,40 @@ body {
 }
 
 /* Navbar dropdown */
-.nav-item .dropdown-menu {
+.nav-item .dropdown-menu a {
   transition: opacity 0.3s ease;
-}
+  color: aliceblue;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 
-.nav-item .dropdown-menu.show {
+}
+.dropdown-menu.show:last-child {
   opacity: 1;
+  max-width: 345px;
+  /* left: 10px; */
+  right: -150px;
+  overflow: hidden;
+  margin: 5px !important;
+  border: #d20808 double 4px;
+  background-color: #141515ac;
 }
-
+.e-drop {
+  max-width: 145px !important;
+  right: 10px !important;
+}
+.ee-drop.show {
+  max-width: 25px !important;
+  left: 20px !important;
+  right: -30px !important;
+}
+.nav-item .dropdown-menu a:hover {
+  transition: opacity 0.3s ease;
+  background-color: rgb(127, 12, 8);
+}
+.nav-item .dropdown-menu div:hover {
+  transition: opacity 0.3s ease;
+  background-color: rgb(127, 12, 8);
+}
 /* Navbar brand styling */
 .navbar-brand {
   font-weight: bold;
@@ -129,7 +153,7 @@ body {
 .badge {
   position: absolute;
   top: 0;
-  right: -50px;
+  right: 10px;
   padding: 5px 10px;
   border-radius: 50%;
   background-color: red;
@@ -138,7 +162,7 @@ body {
 }
 
 .rtl-show {
-translate: -150px;
+  translate: -150px;
 }
 /* header.component.css */
 .loading-overlay {
@@ -161,7 +185,6 @@ translate: -150px;
 }
 
 .dot {
-
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -176,10 +199,10 @@ translate: -150px;
 .dot:nth-child(3) {
   animation-delay: 0.4s;
 }
-img.sp{
+img.sp {
   width: 250px;
 }
-p.sp{
+p.sp {
   color: white;
   font-size: x-large;
   font-weight: 400;

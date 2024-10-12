@@ -1,1 +1,41 @@
-<p>category-details works!</p>
+<div class="container my-5">
+
+    <!-- Category Details Section -->
+    <div class="border p-4 rounded mb-5 shadow">
+      <h1 class="text-center mb-3" style=" font-weight: bold; text-align: center ; color:black">{{ category.name }}</h1>  <!-- Displays the category name -->
+      <h2 class=" mb-3" style=" font-weight: bold;  ; color:black">Description :</h2>
+      <p class="text-center">{{ category.description }}</p>  <!-- Displays the category description -->
+      <div class="text-center mb-3">
+        <img src="{{ category.category_image }}" class="img-fluid rounded" alt="Category Image">
+      </div>
+    </div>
+  
+    <!-- Events Section -->
+    <div class="border p-4 rounded shadow">
+      <h2 class="text-center mb-4">Related Events</h2>
+      <p *ngIf="events.length === 0" class="text-center">No events found for this category.</p>
+  
+      <div class="row">
+        <!-- Loop through the events array to display each event -->
+        <div class="col-md-6 mb-4" *ngFor="let event of events">
+          <div class="card event shadow-sm border">
+            <img [src]="event.event_image" class="card-img-top rounded" alt="{{ event.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ event.name }}</h5>
+              <p class="card-text">{{ event.description }}</p>
+              <p class="card-text main-color">
+                <strong>{{ event.date | date: 'fullDate' }}</strong><br>
+                {{ event.location }}
+              </p>
+              <div class="d-flex justify-content-between">
+                <a [routerLink]="['/event-details', event.id]" class="btn btn-outline-secondary show-btn">Show Details</a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  

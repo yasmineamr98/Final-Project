@@ -1,0 +1,17 @@
+.event {
+    transition: transform 0.3s;
+  }
+  
+  .event:hover {
+    transform: scale(1.05);
+  }
+  
+  .show-btn {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .show-btn:hover {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+  }
+  
