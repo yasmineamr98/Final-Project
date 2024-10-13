@@ -95,4 +95,30 @@ export class BusDetailComponent implements OnInit, AfterViewInit {
       map.fitBounds(polyline.getBounds());
     }
   }
+   // Method to download the PDF
+  // Method to download the PDF
+  downloadPdf(): void {
+    // Check if this.bus is not null
+    if (this.bus) {
+      // Safely access this.bus.id using optional chaining
+      const busId = this.bus.id;
+      if (busId) {
+        this.busService.downloadPdf(busId).subscribe(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `bus_details_${busId}.pdf`; // Set the desired filename
+          a.click();
+          window.URL.revokeObjectURL(url);
+        }, error => {
+          console.error('Error downloading PDF:', error);
+        });
+      } else {
+        console.warn('Bus ID is invalid.');
+      }
+    } else {
+      console.warn('Bus data is not available.');
+    }
+  }
 }
+

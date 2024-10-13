@@ -70,4 +70,8 @@ export class BusService {
       }))
     );
   }
+  // Download PDF for a specific bus
+  downloadPdf(busId: number): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}/${busId}/download-pdf`, { responseType: 'blob' });
+  }
 }
