@@ -36,7 +36,9 @@ export class EventsService {
 
   // Get all events
   getEvents(): Observable<any> {
-    return this._HttpClient.get(`${this.baseUrl}/events`);
+    return this._HttpClient.get(`${this.baseUrl}/events`, {
+      params: new HttpParams().set('sort_by', 'capacity').set('order', 'desc'),
+    });
   }
 
   getCategories(): Observable<any> {
