@@ -4,6 +4,11 @@
       <div class="settings-details bg-dark text-white p-4 rounded">
         <h5 class="mb-4">{{ "SETTINGS.ACCOUNT_SETTINGS" | translate }}</h5>
 
+        <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="successMessage">
+          {{ successMessage }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
         <form class="settings-form" (ngSubmit)="updateUserProfile()">
           <!-- Change Name -->
           <div class="mb-3">
@@ -82,7 +87,7 @@
               "SETTINGS.CHANGE_BIRTHDATE" | translate
             }}</label>
             <input
-              [(ngModel)]="user.birth_date"
+              [(ngModel)]="user.birth_date "
               type="date"
               class="form-control"
               name="birth_date"
@@ -91,7 +96,7 @@
           </div>
 
           <!-- Save Changes Button -->
-          <button class="btn btn-danger" type="submit">
+          <button class="btn btn-danger" type="submit" [routerLink]="['/user-profile']">
             {{ "SETTINGS.SAVE_CHANGES" | translate }}
           </button>
         </form>
@@ -103,3 +108,6 @@
 <div *ngIf="errorMessage">
   <p class="text-danger">{{ errorMessage }}</p>
 </div>
+
+
+
