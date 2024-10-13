@@ -14,6 +14,8 @@ import { RouterLink } from '@angular/router';
 export class EventsComponent implements OnInit {
   events: any[] = [];
   userEvents: any[] = [];
+  currentPage = 1;
+  itemsPerPage = 5;
 
   constructor(private _EventsService: EventsService) {}
 
@@ -29,7 +31,7 @@ export class EventsComponent implements OnInit {
 loadEvents(): void {
   this._EventsService.getEvents().subscribe({
     next: (response) => {
-      this.events = response;
+      this.events = response.sort((a: { capacity: number; }, b: { capacity: number; }) => b.capacity - a.capacity);
       // Update the attended property of each event
       this.events.forEach(event => {
         const userEventIndex = this.userEvents.findIndex(userEvent => userEvent.id === event.id);
@@ -81,4 +83,18 @@ attendEvent(eventId: number): void {
     },
   });
 }
+
+get paginatedEvents() {
+  const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  return this.events.slice(startIndex, startIndex + this.itemsPerPage);
+}
+
+changePage(pageNumber: number) {
+  this.currentPage = pageNumber;
+}
+
+totalPages() {
+  return Math.ceil(this.events.length / this.itemsPerPage);
+}
+
 }

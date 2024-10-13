@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
@@ -11,12 +11,13 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   templateUrl: './user-settings.component.html',
   styleUrls: ['./user-settings.component.css'],
-  imports: [CommonModule, FormsModule,TranslateModule],
+  imports: [CommonModule, FormsModule,TranslateModule,RouterLink],
 })
 export class UserSettingsComponent implements OnInit {
   userId: string | null = null;
   user: any = {};
   errorMessage: string = '';
+  successMessage: string | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -67,13 +68,16 @@ export class UserSettingsComponent implements OnInit {
 
     this.usersService.updateUserProfileWithToken(sessionStorage.getItem('authToken') ?? '', updatedUser).subscribe(
       (response) => {
-        console.log('Profile updated successfully:', response);
-        alert('Profile updated successfully');
+        this.successMessage = 'Profile updated successfully';
+        setTimeout(() => {
+          this.successMessage = '';
+          this.router.navigate(['/user-profile', this.userId]);
+        }, 1000);
       },
       (error) => {
         // Log the error response for debugging
         console.error('Error updating profile:', error);
-        this.errorMessage = error.error?.message || 'Error updating profile.';
+        this.errorMessage =  'Error updating profile.';
         // Additionally, log the error details if available
         if (error.error) {
           console.error('Validation Errors:', error.error.errors);

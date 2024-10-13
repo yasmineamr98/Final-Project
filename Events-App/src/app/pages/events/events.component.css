@@ -40,3 +40,26 @@
     background-color: #cc3333;
     border-color: #cc3333;
   }
+
+  .pagination-controls {
+    margin-top: 2rem;
+    cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pagination .page-item .page-link {
+    color: white;
+    border: 1px solid #4d0202;
+    font-size: large;
+    background-color: #4a0a0d;
+  }
+  
+  .pagination .page-item.active .page-link {
+    border-color: #901b20;
+    background-color: #700a0a;
+  }
