@@ -56,6 +56,7 @@ export class HomeComponent implements OnInit {
   // Pagination settings
   currentPage = 1;
   itemsPerPage = 2;
+Math: any;
   // totalPages = 0;
 
   constructor(

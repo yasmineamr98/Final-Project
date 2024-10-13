@@ -15,7 +15,7 @@ export class EventsComponent implements OnInit {
   events: any[] = [];
   userEvents: any[] = [];
   currentPage = 1;
-  itemsPerPage = 2;
+  itemsPerPage = 5;
 
   constructor(private _EventsService: EventsService) {}
 
