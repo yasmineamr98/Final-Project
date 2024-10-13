@@ -35,19 +35,25 @@ export class EventsService {
   constructor(private _HttpClient: HttpClient) {}
 
   // Get all events
-  getEvents(page: number): Observable<any> {
+  getEvents(): Observable<any> {
     return this._HttpClient.get(`${this.baseUrl}/events`);
   }
+
+
 
   getCategories(): Observable<any> {
     return this._HttpClient.get(`http://127.0.0.1:8000/api/categories`);
   }
 
+
   getEventsCalendar(start: string, end: string): Observable<any> {
-    const params = new HttpParams().set('start', start).set('end', end);
+    const params = new HttpParams()
+      .set('start', start)
+      .set('end', end);
 
     return this._HttpClient.get(`${this.baseUrl}/eventss`, { params });
   }
+
 
   // Get event by ID
   getEventById(id: number): Observable<any> {
@@ -92,16 +98,6 @@ export class EventsService {
 
   // Get events by category
   getEventsByCategory(categoryId: string): Observable<Category> {
-    return this._HttpClient.get<Category>(
-      `${this.baseUrl}/categories/${categoryId}/events`
-    );
-  }
-
-  getUpcomingEvents(page: number = 1, itemsPerPage: number = 5): Observable<any> {
-    const params = new HttpParams()
-      .set('page', page.toString())
-      .set('itemsPerPage', itemsPerPage.toString()); // Send pagination parameters
-  
-    return this._HttpClient.get<any>(`${this.baseUrl}/upcoming-events`, { params });
+    return this._HttpClient.get<Category>(`${this.baseUrl}/categories/${categoryId}/events`);
   }
 }

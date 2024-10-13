@@ -275,10 +275,11 @@ h5 {
 }
 
 .payment-section {
-  background: #ffffff;
+  background: var(--red);
   border-radius: 18px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.523);
+  color: white;
 }
 
 .payment-section img {
@@ -291,9 +292,24 @@ h5 {
   border-radius: 10px;
 }
 .payment-button:hover {
-  background-color: #721418;
+  background-color: #c33037;
   transform: translateY(-2px);
 }
-.payment-section p {
-  font-size: x-large;
+.payment-button{
+  width: 99%;
+  margin: 0px 0;
+  border-radius:20px;
+  background-color: #00000089;
+  border: none;
+  padding: 5px 30px;
+
+}
+.payment-section p{
+  font-size: large;
+}
+.compo
+{
+  margin-top: 50px;
+  z-index: 90;
+  position: relative;
 }
