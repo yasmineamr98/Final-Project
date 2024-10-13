@@ -4,7 +4,7 @@
     "DESCRIPTION": "Explore ITI's Great Events and Catch Up on Upcoming Opportunities",
     "EXPLORE_UPCOMING": "Explore Upcoming Events",
     "CATEGORIES": "Events Categories",
-    "CATEGORIE" : "Categories",
+    "CATEGORIE": "Categories",
     "EXPLORE_NOW": "Explore Now",
     "PREVIOUS": "Previous",
     "NEXT": "Next",
@@ -16,7 +16,18 @@
     "EVENTS": "Events",
     "SHOW_DETAILS": "Show Details",
     "GET_TICKETS": "Get Tickets",
-    "SEARCH_PLACEHOLDER": "Search for Event..."
+    "SEARCH_PLACEHOLDER": "Search for Event...",
+    "NEWSLETTER_TAG": "Our newsletters",
+    "SUBSCRIBE_HEADING": "Subscribe to our newsletter to receive more updates",
+    "SUBSCRIBE_PARAGRAPH": "",
+    "EMAIL_PLACEHOLDER": "Write your email",
+    "SUBSCRIBE_BUTTON": "subscribe",
+    "WEEKLY_UPDATES": "Weekly updates",
+    "MONTHLY_UPDATES": "Highlighted updates",
+    "SUBSCRIBE_SUCCESS": "You have successfully subscribed!",
+    "SUBSCRIBE_ERROR": "There was an error subscribing. Please try again.",
+    "EMAIL_REQUIRED": "Email is required.",
+    "EMAIL_INVALID": "Please enter a valid email."
   },
   "NAV": {
     "HOME": "Home",
@@ -29,7 +40,9 @@
     "KIDS_EVENTS": "Kids Events",
     "UPCOMING_EVENTS": "Upcoming Events",
     "SEARCH": " Search  ",
-    "LOADING": "LOADING..."
+    "LOADING": "LOADING...",
+    "CONCERTS": " Concerts  ",
+    "WORKSHOPS": " Workshops "
   },
   "FOOTER": {
     "SUBSCRIBE": "Subscribe to our newsletter",
@@ -37,7 +50,9 @@
     "SEND": "Send",
     "ABOUT_US": "About Us",
     "CONTACT_US": "Contact Us",
-    "ALL_RIGHTS_RESERVED": "All Rights Reserved"
+    "ALL_RIGHTS_RESERVED": "All Rights Reserved",
+    "SUBSCRIBE_ERROR": "There was an error subscribing. Please try again.",
+    "SUBSCRIBE_SUCCESS": "You have successfully subscribed!"
   },
   "FORGOT_PASSWORD": {
     "TITLE": "Forgot Password",
@@ -126,7 +141,7 @@
     "OTHER": "Other",
     "CHANGE_LOCATION": "Change Location",
     "CHANGE_BIO": "Change Bio",
-    "CHANGE_BIRTHDATE" : "Change Birthdate",
+    "CHANGE_BIRTHDATE": "Change Birthdate",
     "ENTER_LOCATION": "Enter your location",
     "ENTER_BIO": "Enter your Bio",
     "ENTER_BIRTHDATE": "Enter your Birthdate",

@@ -16,7 +16,20 @@
     "EXPLORE_BUS": "استكشــف خطوط الباصات",
     "EVENTS": "فعاليات",
     "SHOW_DETAILS": "عرض التفاصيل",
-    "GET_TICKETS": "احصل على تذكرة"
+    "GET_TICKETS": "احصل على تذكرة",
+    "SUBSCRIBE_PARAGRAPH": "ابق على اطلاع بآخر الأخبار والأحداث.",
+    "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+    "SUBSCRIBE_BUTTON": "اشترك",
+    "SUBSCRIBE_SUCCESS": "لقد تم الاشتراك بنجاح!",
+    "SUBSCRIBE_ERROR": "حدث خطأ أثناء الاشتراك. حاول مرة أخرى.",
+    "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب.",
+    "EMAIL_INVALID": "يرجى إدخال بريد إلكتروني صالح.",
+    "NEWSLETTER_TAG": "النشرات الإخبارية",
+    "SUBSCRIBE_HEADING": "اشترك في النشرة الإخبارية لدينا للحصول على المزيد من التحديثات",
+    "WEEKLY_UPDATES": "التحديثات الأسبوعية",
+    "MONTHLY_UPDATES": "التحديثات المميزة"
+
+
   },
   "NAV": {
     "HOME": "الرئيسية",
@@ -29,7 +42,11 @@
     "KIDS_EVENTS": "فعاليات الأطفال",
     "UPCOMING_EVENTS": "الفعاليات القادمة",
     "SEARCH": " بحث  ",
-    "LOADING": "جــار التحمــيل ..."
+    "LOADING": "جــار التحمــيل ...",
+    "CONCERTS": " الحفلات  ",
+    "WORKSHOPS": "ورش العمل "
+
+
   },
   "FOOTER": {
     "SUBSCRIBE": "اشترك في نشرتنا الإخبارية",
@@ -37,7 +54,11 @@
     "SEND": "إرسال",
     "ABOUT_US": "معلومات عنا",
     "CONTACT_US": "اتصل بنا",
-    "ALL_RIGHTS_RESERVED": "جميع الحقوق محفوظة"
+    "ALL_RIGHTS_RESERVED": "جميع الحقوق محفوظة",
+    "SUBSCRIBE_ERROR": "حدث خطأ أثناء الاشتراك. الرجاء المحاولة مرة أخرى.",
+    "SUBSCRIBE_SUCCESS": "لقد تم الاشتراك بنجاح!"
+
+
   },
   "FORGOT_PASSWORD": {
     "TITLE": "نسيت كلمة المرور",
