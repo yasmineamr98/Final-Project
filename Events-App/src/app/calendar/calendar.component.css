@@ -6,7 +6,7 @@
   border: 6px double #700a0a;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #000000b2;
+  background-color: #0c0000b2;
 }
 
 #calendar-container:hover {

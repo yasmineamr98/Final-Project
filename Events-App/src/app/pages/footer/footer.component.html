@@ -9,19 +9,32 @@
       <div class="footer-links">
         <ul>
           <li><a routerLink="/home" aria-label="Home">{{ 'NAV.HOME' | translate }}</a></li>
-          <li><a routerLink="/events" aria-label="Events">{{ 'NAV.UPCOMING_EVENTS' | translate }}</a></li>
-          <li><a routerLink="/events" aria-label="Events">{{ 'NAV.KIDS_EVENTS' | translate }}</a></li>
-          <li><a href="#">{{ 'FOOTER.ABOUT_US' | translate }}</a></li>
-          <li><a href="#">{{ 'FOOTER.CONTACT_US' | translate }}</a></li>
+          <li><a routerLink="category-details/16" aria-label="Events">{{ 'NAV.WORKSHOPS' | translate }}</a></li>
+          <li><a routerLink="/category-details/19" aria-label="Events">{{ 'NAV.CONCERTS' | translate }}</a></li>
+          <li><a routerLink="/about" aria-label="Events">{{ 'FOOTER.ABOUT_US' | translate }}</a></li>
+          <li><a routerLink="/contact" aria-label="Events">{{ 'FOOTER.CONTACT_US' | translate }}</a></li>
         </ul>
       </div>
       <div class="footer-subscribe">
         <h4>{{ 'FOOTER.SUBSCRIBE' | translate }}</h4>
-        <form action="#">
-          <input type="email" placeholder="{{ 'FOOTER.EMAIL_PLACEHOLDER' | translate }}" />
+        <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()">
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="{{ 'FOOTER.EMAIL_PLACEHOLDER' | translate }}"
+          />
           <button type="submit" class="rtl-btn">{{ 'FOOTER.SEND' | translate }}</button>
         </form>
+        <!-- Success and Error Messages -->
+        <div *ngIf="subscriptionSuccess" class="alert alert-success mt-3">
+          {{ 'FOOTER.SUBSCRIBE_SUCCESS' | translate }}
+        </div>
+        <div *ngIf="subscriptionError" class="alert alert-danger mt-3">
+          {{ 'FOOTER.SUBSCRIBE_ERROR' | translate }}
+        </div>
       </div>
+
+
     </div>
     <div class="footer-bottom">
       <div class="footer-left">
