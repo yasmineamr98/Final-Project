@@ -10,6 +10,10 @@ import { EventsService } from '../../services/events.service';
 import { CalendarComponent } from '../../calendar/calendar.component'; // Import the CalendarComponent
 import { TranslateModule } from '@ngx-translate/core';
 import { PaymentService } from '../../services/payment.service'; // Import PaymentService
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http'; // Ensure HttpClient is imported
+
+
 
 @Component({
   selector: 'app-home',
@@ -20,6 +24,7 @@ import { PaymentService } from '../../services/payment.service'; // Import Payme
     HttpClientModule,
     CalendarComponent,
     TranslateModule,
+    ReactiveFormsModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -27,7 +32,9 @@ import { PaymentService } from '../../services/payment.service'; // Import Payme
 export class HomeComponent implements OnInit {
   categories: any[] = [];
   paymentUrl: string = ''; // Initialize as an empty string
-
+  subscribeForm: FormGroup; // Declare the subscribeForm
+  successMessage: string | null = null;
+  errorMessage: string | null = null;
   testcategories = [
     {
       name: 'Global',
@@ -62,9 +69,15 @@ Math: any;
   constructor(
     private router: Router,
     private _EventsService: EventsService,
-    private paymentService: PaymentService
-  ) {}
+    private paymentService: PaymentService,
+    private http: HttpClient,
+    private fb: FormBuilder,
 
+  ) {
+    this.subscribeForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+    });
+  }
   ngOnInit(): void {
     // Fetch all events
     // this._EventsService.getEvents().subscribe({
@@ -116,8 +129,8 @@ Math: any;
   }
 
   redirectToPayment(): void {
-    const orderId = 'YOUR_ORDER_ID'; // Replace with your dynamic order ID
-    const amount = 100; // Replace with your dynamic amount
+    const orderId = 'ORDER_ID'; // Replace with your dynamic order ID
+    const amount = 10000; // Replace with your dynamic amount
 
     this.paymentService.initiatePayment(orderId, amount).subscribe({
       next: (response) => {
@@ -131,4 +144,23 @@ Math: any;
       },
     });
   }
+  onSubmit() {
+    if (this.subscribeForm.valid) {
+      this.http.post('http://127.0.0.1:8000/api/subscribe', this.subscribeForm.value)
+        .subscribe({
+          next: (response: any) => {
+            this.successMessage = response.success; // Assuming success message from API
+            this.errorMessage = null;
+            this.subscribeForm.reset(); // Clear the form on success
+          },
+          error: (error: any) => {
+            this.errorMessage = error.error?.error || 'FOOTER.SUBSCRIBE_ERROR'; // Handle errors
+            this.successMessage = null;
+          }
+        });
+    } else {
+      this.errorMessage = 'Please provide a valid email address.'; // Display custom error for invalid form
+    }
+  }
+
 }

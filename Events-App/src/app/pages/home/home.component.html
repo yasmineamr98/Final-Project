@@ -48,7 +48,7 @@
               src="https://cdn-ilbiobj.nitrocdn.com/xxdIcTyQeLMIJxNgivmsWAabzERAWXgf/assets/images/optimized/rev-cc3064d/collard-production.s3.eu-west-1.amazonaws.com/wp-content/uploads/2021/09/12182844/mc-visa-2.png"
               alt="Secure Payment"
             />
-            <span class="text-muted fw-bold">Secure Payments Powered by</span>
+            <span class="text-white mx-1 fw-bold">Secure Payments Powered by</span>
             <img
               src="https://paymob.com/images/logoC.png"
               alt="Secure Payment"
@@ -144,6 +144,50 @@
   <app-calendar></app-calendar>
 </div> -->
 
+<div class="subscribe-container">
+  <div class="subscribe-content">
+    <div class="subscribe-text">
+      <h5>{{ 'HOME.NEWSLETTER_TAG' | translate }}</h5>
+      <h2>{{ 'HOME.SUBSCRIBE_HEADING' | translate }}</h2>
+      <p>{{ 'HOME.SUBSCRIBE_PARAGRAPH' | translate }}</p>
+
+      <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()">
+        <div class="email-input">
+          <input
+            type="email"
+            formControlName="email"
+            [placeholder]="'HOME.EMAIL_PLACEHOLDER' | translate"
+            required
+          />
+
+          <button type="submit">{{ 'HOME.SUBSCRIBE_BUTTON' | translate }}</button>
+        </div>
+        <div *ngIf="subscribeForm.get('email')?.invalid && (subscribeForm.get('email')?.touched || subscribeForm.get('email')?.dirty)">
+          <small *ngIf="subscribeForm.get('email')?.errors?.['required']">{{ 'HOME.EMAIL_REQUIRED' | translate }}</small>
+          <small *ngIf="subscribeForm.get('email')?.errors?.['email']">{{ 'HOME.EMAIL_INVALID' | translate }}</small>
+        </div>
+        <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        <br>
+        <div class="options">
+          <label>
+            <input type="radio" name="frequency" value="weekly" />
+            {{ 'HOME.WEEKLY_UPDATES' | translate }}
+          </label>
+          <label>
+            <input type="radio" name="frequency" value="monthly" />
+            {{ 'HOME.MONTHLY_UPDATES' | translate }}
+          </label>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="subscribe-illustration">
+      <img src="assets/images/logo-2.png" alt="Newsletter" />
+    </div>
+  </div>
+</div>
 
 
   <!-- Events card section -->
