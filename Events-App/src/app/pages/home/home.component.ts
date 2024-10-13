@@ -11,7 +11,6 @@ import { CalendarComponent } from '../../calendar/calendar.component'; // Import
 import { TranslateModule } from '@ngx-translate/core';
 import { PaymentService } from '../../services/payment.service'; // Import PaymentService
 
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -28,7 +27,6 @@ import { PaymentService } from '../../services/payment.service'; // Import Payme
 export class HomeComponent implements OnInit {
   categories: any[] = [];
   paymentUrl: string = ''; // Initialize as an empty string
-
 
   testcategories = [
     {
@@ -53,10 +51,12 @@ export class HomeComponent implements OnInit {
     },
   ];
   events: any[] = [];
+  upcomingEvents: any[] = []; // Add this variable to store upcoming events
 
   // Pagination settings
   currentPage = 1;
   itemsPerPage = 2;
+  // totalPages = 0;
 
   constructor(
     private router: Router,
@@ -65,18 +65,24 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._EventsService.getEvents().subscribe({
-      next: (response) => {
-        this.events = response;
-      },
-    });
+    // Fetch all events
+    // this._EventsService.getEvents().subscribe({
+    //   next: (response) => {
+    //     this.events = response;
+    //   },
+    // });
 
-    // get categories
+    // Fetch categories
     this._EventsService.getCategories().subscribe({
       next: (response) => {
         this.categories = response;
-        console.log(this.categories);
-        console.log(response);
+      },
+    });
+
+    // Fetch the first 5 upcoming events
+    this._EventsService.getUpcomingEvents().subscribe({
+      next: (response) => {
+        this.upcomingEvents = response; // Store upcoming events
       },
     });
   }
@@ -84,14 +90,14 @@ export class HomeComponent implements OnInit {
   setHoverState(event: { hover: boolean }, isHovering: boolean) {
     event.hover = isHovering;
   }
-   // Navigate to category details
-   navigateToCategoryDetails(categoryId: string) {
-    this.router.navigate(['/category-details', categoryId]);  // Correct path
+  // Navigate to category details
+  navigateToCategoryDetails(categoryId: string) {
+    this.router.navigate(['/category-details', categoryId]); // Correct path
   }
 
   // Navigate to event details
   navigateToEventDetails(eventId: string) {
-    this.router.navigate(['/event-details', eventId]);  // Correct path
+    this.router.navigate(['/event-details', eventId]); // Correct path
   }
 
   // Handle pagination
@@ -105,10 +111,8 @@ export class HomeComponent implements OnInit {
   }
 
   totalPages() {
-    return Math.ceil(this.events.length / this.itemsPerPage);
+    return Math.ceil(this.upcomingEvents.length / this.itemsPerPage);
   }
-
-
 
   redirectToPayment(): void {
     const orderId = 'YOUR_ORDER_ID'; // Replace with your dynamic order ID
@@ -126,5 +130,4 @@ export class HomeComponent implements OnInit {
       },
     });
   }
-
 }

@@ -19,7 +19,7 @@
             <h5 class="card-title">{{ event.name }}</h5>
             <p class="card-text">{{ event.description }}</p>
             <p class="card-text main-color">
-              <strong>{{ event.date }}</strong><br>
+              <strong>{{ event.date | date }}</strong><br>
               {{ event.location }}
             </p>
             <div class="d-flex justify-content-between">
