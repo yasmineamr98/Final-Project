@@ -154,7 +154,7 @@ Math: any;
             this.subscribeForm.reset(); // Clear the form on success
           },
           error: (error: any) => {
-            this.errorMessage = error.error?.error || 'FOOTER.SUBSCRIBE_ERROR'; // Handle errors
+            this.errorMessage = error.error?.error || 'HOME.SUBSCRIBE_ERROR'; // Handle errors
             this.successMessage = null;
           }
         });

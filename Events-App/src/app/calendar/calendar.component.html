@@ -9,7 +9,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">{{ selectedEvent?.title }}</h5>
-        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+        <!-- <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button> -->
       </div>
       <div class="modal-body">
         <p><strong>Start:</strong> {{ selectedEvent?.start }}</p>
@@ -17,8 +17,8 @@
         <p><strong>Description:</strong> {{ selectedEvent?.description || 'No description available' }}</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
-        <button type="button" class="btn btn-primary" (click)="goToEventDetails()">Go to Event Details</button>
+        <button type="button" class="btn " (click)="closeModal()">Close</button>
+        <button type="button" class="btn btn-dark" (click)="goToEventDetails()">Go to Event Details</button>
       </div>
     </div>
   </div>

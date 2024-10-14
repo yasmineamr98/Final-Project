@@ -43,7 +43,7 @@
 
 /* Future events */
 .event-future {
-  background-color: blue !important; /* Blue for future events */
+  background-color: var(--red) !important; /* Blue for future events */
   color: white !important; /* White text for contrast */
 }
 
@@ -75,7 +75,7 @@
 }
 
 .modal-header {
-  background-color: #007bff;
+  background-color: var(--red);
   color: white;
   padding: 10px;
 }

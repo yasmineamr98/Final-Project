@@ -7,8 +7,8 @@
   </button>
 </div>
 <!-- Calendar on the right (col-md-6) -->
-<div class="col-md-12 d-flex gap-4 compo ">
-  <div class=" col-6">
+<div class="col-md-12 d-flex gap-4 compo">
+  <div class="col-6">
     <!-- <h1>{{ "HOME.CALENDAR" | translate }}</h1> -->
     <app-calendar></app-calendar>
   </div>
@@ -16,31 +16,23 @@
   <!-- Payment Section -->
   <div class="three col-6">
     <h1 class="m-0 mb-5">{{ "HOME.CALENDAR" | translate }}</h1>
-    <br>
+    <br />
     <div class="payment-section card shadow-lg p-4 m-2">
       <div class="row align-items-center">
         <!-- Payment Gateway Info -->
-        <div class="col-md-12 ">
-          <h2 class="fw-bold fs-l mb-3">
-            Pay for Premium Events!
-          </h2>
+        <div class="col-md-12">
+          <h2 class="fw-bold fs-l mb-3">{{ "PAYMENT.TITLE" | translate }}</h2>
           <p class="mb-4">
-            Some of our exclusive events, like <strong>Kids Workshops</strong> and
-            <strong>VIP Meetups</strong> require a nominal fee. <br />
+            {{ "PAYMENT.DESCRIPTION" | translate }}
+            <strong>{{ "PAYMENT.KIDS_WORKSHOP" | translate }}</strong>
+            {{ "AND" | translate }}
+            <strong>{{ "PAYMENT.VIP_MEETUP" | translate }}</strong>
+            {{ "PAYMENT.REQUIRE_FEE" | translate }} <br />
           </p>
-          <!-- <div class="mb-3">
-            <h4 class="mb-2">Featured Paid Events:</h4>
-            <ul class="list-unstyled" style="font-size: 19px; padding-left: 15px">
-              <li>- Kids Coding Bootcamp</li>
-              <li>- Creative Arts Workshop</li>
-              <li>- Advanced Tech Talks</li>
-            </ul>
-          </div> -->
           <hr class="my-3" />
           <!-- List of Events Information (optional) -->
           <p class="text-white mb-5 fs-6">
-            You can easily pay for these events using our secure payment gateway,
-            with a seamless and safe process.
+            {{ "PAYMENT.SECURE_PROCESS" | translate }}
           </p>
           <!-- Secure Payment Logo -->
           <div class="d-flex align-items-center mt-5">
@@ -48,7 +40,9 @@
               src="https://cdn-ilbiobj.nitrocdn.com/xxdIcTyQeLMIJxNgivmsWAabzERAWXgf/assets/images/optimized/rev-cc3064d/collard-production.s3.eu-west-1.amazonaws.com/wp-content/uploads/2021/09/12182844/mc-visa-2.png"
               alt="Secure Payment"
             />
-            <span class="text-white mx-1 fw-bold">Secure Payments Powered by</span>
+            <span class="text-white mx-1 fw-bold"
+              >{{ "PAYMENT.SECURE_PAYMENTS_BY" | translate }}</span
+            >
             <img
               src="https://paymob.com/images/logoC.png"
               alt="Secure Payment"
@@ -56,28 +50,12 @@
             />
           </div>
         </div>
-        <!-- Pay Now Button -->
-        <!-- <div
-          class="col-lg-3 col-md-12 text-lg-end text-md-center mt-3 mt-lg-0 d-flex align-self-end justify-center align-center flex-column"
-        > -->
-          <!-- <button
-            (click)="redirectToPayment()"
-            class="btn btn-lg btn-primary payment-button shadow-sm"
-            style="
-              border-radius: 25px;
-              background-color: #901b20;
-              border: none;
-              padding: 12px 30px;
-            "
-          >
-            <i class="fas fa-credit-card me-2"></i> Pay Now
-          </button>
-        </div> -->
-        <button
-        (click)="redirectToPayment()"
-        class="btn btn-lg btn-primary payment-button shadow-sm mt-4 ">
-        <i class="fas fa-credit-card m-2"></i> Pay Now
-      </button>
+        <button class="btn btn-lg btn-primary payment-button shadow-sm mt-4">
+          <i class="fas fa-credit-card m-2"></i>
+          <a href="/home#upcoming">{{
+            "PAYMENT.EXPLORE_PAY_NOW" | translate
+          }}</a>
+        </button>
       </div>
     </div>
   </div>
@@ -106,7 +84,10 @@
                 />
                 <p>{{ category.description | slice : 0 : 84 }}</p>
                 <h3>{{ category.name + " Events" }}</h3>
-                <button id="s-btn" (click)="navigateToCategoryDetails(category.id)">
+                <button
+                  id="s-btn"
+                  (click)="navigateToCategoryDetails(category.id)"
+                >
                   {{ "HOME.EXPLORE_NOW" | translate }}
                 </button>
               </div>
@@ -147,9 +128,9 @@
 <div class="subscribe-container">
   <div class="subscribe-content">
     <div class="subscribe-text">
-      <h5>{{ 'HOME.NEWSLETTER_TAG' | translate }}</h5>
-      <h2>{{ 'HOME.SUBSCRIBE_HEADING' | translate }}</h2>
-      <p>{{ 'HOME.SUBSCRIBE_PARAGRAPH' | translate }}</p>
+      <h5>{{ "HOME.NEWSLETTER_TAG" | translate }}</h5>
+      <h2>{{ "HOME.SUBSCRIBE_HEADING" | translate }}</h2>
+      <p>{{ "HOME.SUBSCRIBE_PARAGRAPH" | translate }}</p>
 
       <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()">
         <div class="email-input">
@@ -160,27 +141,40 @@
             required
           />
 
-          <button type="submit">{{ 'HOME.SUBSCRIBE_BUTTON' | translate }}</button>
+          <button type="submit">
+            {{ "HOME.SUBSCRIBE_BUTTON" | translate }}
+          </button>
         </div>
-        <div *ngIf="subscribeForm.get('email')?.invalid && (subscribeForm.get('email')?.touched || subscribeForm.get('email')?.dirty)">
-          <small *ngIf="subscribeForm.get('email')?.errors?.['required']">{{ 'HOME.EMAIL_REQUIRED' | translate }}</small>
-          <small *ngIf="subscribeForm.get('email')?.errors?.['email']">{{ 'HOME.EMAIL_INVALID' | translate }}</small>
+        <div
+          *ngIf="
+            subscribeForm.get('email')?.invalid &&
+            (subscribeForm.get('email')?.touched ||
+              subscribeForm.get('email')?.dirty)
+          "
+        >
+          <small *ngIf="subscribeForm.get('email')?.errors?.['required']">{{
+            "HOME.EMAIL_REQUIRED" | translate
+          }}</small>
+          <small *ngIf="subscribeForm.get('email')?.errors?.['email']">{{
+            "HOME.EMAIL_INVALID" | translate
+          }}</small>
         </div>
-        <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+        <div *ngIf="successMessage" class="success-message">
+          {{ successMessage }}
+        </div>
         <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-        <br>
+        <br />
         <div class="options">
           <label>
             <input type="radio" name="frequency" value="weekly" />
-            {{ 'HOME.WEEKLY_UPDATES' | translate }}
+            {{ "HOME.WEEKLY_UPDATES" | translate }}
           </label>
           <label>
             <input type="radio" name="frequency" value="monthly" />
-            {{ 'HOME.MONTHLY_UPDATES' | translate }}
+            {{ "HOME.MONTHLY_UPDATES" | translate }}
           </label>
         </div>
       </form>
-
     </div>
 
     <div class="subscribe-illustration">
@@ -189,56 +183,66 @@
   </div>
 </div>
 
+<!-- Events card section -->
+<div class="three" id="upcoming">
+  <h1>{{ "HOME.UPCOMING" | translate }}</h1>
 
-  <!-- Events card section -->
-  <div class="three" id="upcoming">
-    <h1>{{ "HOME.UPCOMING" | translate }}</h1>
-
-    <div class="all-events-cards d-flex justify-content-center flex-wrap">
-      <div
-        *ngFor="let event of upcomingEvents | slice:(currentPage-1)*2:currentPage*2"
-        class="event-card rounded shadow m-2"
-        (mouseenter)="setHoverState(event, true)"
-        (mouseleave)="setHoverState(event, false)"
-      >
-        <img
-          [src]="event.event_image"
-          class="img-fluid rounded-top"
-          alt="Event Image"
-        />
-        <div>
-          <div class="p-3">
-            <h5>{{ event.name }}</h5>
-            <p>{{ event.location }}</p>
-            <p>{{ event.date | date }}</p>  <!-- Format event date -->
-            <div class="">
-              <button
-                class="btn btn-outline-primary m-2"
-                (click)="navigateToEventDetails(event.id)"
-              >
-                {{ "HOME.SHOW_DETAILS" | translate }}
-              </button>
-              <button class="btn btn-primary">
+  <div class="all-events-cards d-flex justify-content-center flex-wrap">
+    <div
+      *ngFor="
+        let event of upcomingEvents
+          | slice : (currentPage - 1) * 2 : currentPage * 2
+      "
+      class="event-card rounded shadow m-2"
+      (mouseenter)="setHoverState(event, true)"
+      (mouseleave)="setHoverState(event, false)"
+    >
+      <img
+        [src]="event.event_image"
+        class="img-fluid rounded-top"
+        alt="Event Image"
+      />
+      <div>
+        <div class="p-3">
+          <h5>{{ event.name }}</h5>
+          <p>{{ event.location }}</p>
+          <p>{{ event.date | date }}</p>
+          <!-- Format event date -->
+          <div class="">
+            <button
+              class="btn btn-outline-primary m-2"
+              (click)="navigateToEventDetails(event.id)"
+            >
+              {{ "HOME.SHOW_DETAILS" | translate }}
+            </button>
+            <br />
+            <!-- <button class="btn btn-primary">
                 {{ "HOME.GET_TICKETS" | translate }}
-              </button>
-            </div>
+              </button> -->
+            <button
+              (click)="redirectToPayment()"
+              class="btn payment-button shadow-sm mt-2"
+            >
+              <i class="fas fa-credit-card m-2"></i
+              >{{ "HOME.GET_TICKETS" | translate }}
+            </button>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="pagination-controls">
-      <ul class="pagination justify-content-center">
-        <li
-          *ngFor="let page of [].constructor(totalPages()); let i = index"
-          [ngClass]="{ active: currentPage === i + 1 }"
-          class="page-item"
-        >
-          <a class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</a>
-        </li>
-      </ul>
-    </div>
-
+  <div class="pagination-controls">
+    <ul class="pagination justify-content-center">
+      <li
+        *ngFor="let page of [].constructor(totalPages()); let i = index"
+        [ngClass]="{ active: currentPage === i + 1 }"
+        class="page-item"
+      >
+        <a class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</a>
+      </li>
+    </ul>
+  </div>
 
   <!-- Pagination controls -->
   <!-- <div class="pagination-controls">

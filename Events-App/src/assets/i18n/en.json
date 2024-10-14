@@ -54,6 +54,18 @@
     "SUBSCRIBE_ERROR": "There was an error subscribing. Please try again.",
     "SUBSCRIBE_SUCCESS": "You have successfully subscribed!"
   },
+  "PAYMENT": {
+    "TITLE": "Pay for Premium Events!",
+    "DESCRIPTION": "Some of our exclusive events, like",
+    "KIDS_WORKSHOP": "Kids Workshops",
+    "VIP_MEETUP": "VIP Meetups",
+    "REQUIRE_FEE": "require a nominal fee.",
+    "SECURE_PROCESS": "You can easily pay for these events using our secure payment gateway, with a seamless and safe process.",
+    "SECURE_PAYMENTS_BY": "Secure Payments Powered by",
+    "EXPLORE_PAY_NOW": "Explore & Pay Now!"
+  },
+  "AND": " & "
+,
   "FORGOT_PASSWORD": {
     "TITLE": "Forgot Password",
     "DESCRIPTION": "Enter your registered email to receive an OTP.",
