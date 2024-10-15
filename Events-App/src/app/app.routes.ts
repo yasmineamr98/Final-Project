@@ -19,6 +19,7 @@ import { UserEventsComponent } from './user/user-events/user-events.component';
 import { BusListComponent } from './components/bus-list/bus-list.component';
 import { BusDetailComponent } from './components/bus-detail/bus-detail.component'; // Import the bus detail component
 import { CategoryDetailsComponent } from './pages/category-details/category-details.component'; // Import the category details component
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 export const routes: Routes = [
   { path: 'user-login', component: UserLoginComponent },
@@ -51,5 +52,5 @@ export const routes: Routes = [
   { path : 'buses', component: BusListComponent },
   { path : 'buses/:id', component: BusDetailComponent },
   { path: 'category-details/:id', component: CategoryDetailsComponent },  // <-- New route for category details
-
+  {path: 'about-us' , component: AboutUsComponent},
 ];
