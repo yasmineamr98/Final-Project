@@ -90,7 +90,7 @@
   "EVENTS": {
     "TITLE": "Events",
     "DESCRIPTION": "Check out the upcoming events and attend them.",
-    "LEAVE_BUTTON": "Leave"
+    "LEAVE_BUTTON": "ٌRemove"
   },
   "LOGIN": {
     "TITLE": "User Login",

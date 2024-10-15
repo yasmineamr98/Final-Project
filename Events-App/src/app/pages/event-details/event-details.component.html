@@ -21,11 +21,11 @@
               </li>
           </ul>
           <button (click)="attendEvent(eventDetails.id)" class="btn btn-outline-secondary show-btn">
-              {{ eventDetails.attended ? 'Leave' : 'Attend' }}
+              {{ eventDetails.attended ? 'Add to Favourite' : 'Remove' }}
           </button>
       </div>
   </div>
-  
+
   <div class="event-description mt-4">
       <h1 class="text-danger">{{ eventDetails.name }}</h1>
       <p>{{ eventDetails.description }}</p>
@@ -39,7 +39,7 @@
           <li>Physical ID/Passports checks will be conducted at the entrance to verify identity.</li>
           <li>NO RE-ENTRY allowed once you exit the event venue.</li>
       </ul>
-      
+
       <!-- Button to redirect to buses list -->
       <button (click)="goToBusesList()" class="btn btn-primary mt-4">
           View Buses List

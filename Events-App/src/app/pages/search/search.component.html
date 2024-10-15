@@ -37,7 +37,7 @@
             <div class="d-flex justify-content-between">
               <a [routerLink]="['/event-details', result.id]" class="btn btn-outline-secondary show-btn">Show Details</a>
               <button (click)="attendEvent(result.id)" class="btn book">
-                {{ result.attended ? 'Leave' : 'Attend' }}
+                {{ result.attended ? 'Remove' : 'Add to Faviourte' }}
               </button>
             </div>
           </div>
