@@ -99,6 +99,7 @@
     "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
     "PASSWORD_LABEL": "كلمة المرور:",
     "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور الخاصة بك",
+    "FORGOT_PASSWORD": "نسيت كلمة المرور",
     "BUTTON": "تسجيل الدخول"
   },
   "USER_HOMEPAGE": {

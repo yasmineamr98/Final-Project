@@ -99,6 +99,7 @@
     "EMAIL_PLACEHOLDER": "Enter your email",
     "PASSWORD_LABEL": "Password:",
     "PASSWORD_PLACEHOLDER": "Enter your password",
+    "FORGOT_PASSWORD": "Forgot Password?",
     "BUTTON": "Login"
   },
   "USER_HOMEPAGE": {
