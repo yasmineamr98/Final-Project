@@ -1,0 +1,130 @@
+<div class="fullPage rtl-landing">
+  <div class="register-form" [formGroup]="registerForm">
+    <h2>{{ 'REGISTER.SIGN_UP' | translate }}</h2>
+
+    <!-- Success Message -->
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+    <!-- First Name -->
+    <div class="form-group">
+      <label for="name">{{ 'REGISTER.NAME' | translate }}</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        placeholder="Enter your Name"
+      />
+      <div
+        *ngIf="
+          registerForm.get('name')?.invalid &&
+          (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)
+        "
+      >
+      <small *ngIf="registerForm.get('name')?.errors?.['required']">
+        {{ 'REGISTER.NAME_REQUIRED' | translate }}
+      </small>
+      <small *ngIf="registerForm.get('name')?.errors?.['minlength']">
+        {{ 'REGISTER.NAME_MINLENGTH' | translate }}
+      </small>
+      </div>
+    </div>
+
+    <!-- Email Address -->
+    <div class="form-group">
+      <label for="email">{{ 'REGISTER.ENTER_EMAIL' | translate }}</label>
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        placeholder="Enter Your Email"
+      />
+      <div
+        *ngIf="
+          registerForm.get('email')?.invalid &&
+          (registerForm.get('email')?.dirty ||
+            registerForm.get('email')?.touched)
+        "
+      >
+      <small *ngIf="registerForm.get('email')?.errors?.['required']">
+        {{ 'REGISTER.EMAIL_REQUIRED' | translate }}
+      </small>
+      <small *ngIf="registerForm.get('email')?.errors?.['email']">
+        {{ 'REGISTER.INVALID_EMAIL' | translate }}
+      </small>
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">{{ 'REGISTER.ENTER_PASSWORD' | translate }}</label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="Enter Your Password"
+      />
+      <div
+        *ngIf="
+          registerForm.get('password')?.invalid &&
+          (registerForm.get('password')?.dirty ||
+            registerForm.get('password')?.touched)
+        "
+      >
+      <small *ngIf="registerForm.get('password')?.errors?.['required']">
+        {{ 'REGISTER.PASSWORD_REQUIRED' | translate }}
+      </small>
+      <small *ngIf="registerForm.get('password')?.errors?.['pattern']">
+        {{ 'REGISTER.PASSWORD_PATTERN' | translate }}
+      </small>
+      </div>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="form-group">
+      <label for="password_confirmation">
+        {{ 'REGISTER.CONFIRM_PASSWORD' | translate }}
+      </label>
+            <input
+        id="password_confirmation"
+        type="password"
+        formControlName="password_confirmation"
+        placeholder="Retype Your Password"
+      />
+      <div
+        *ngIf="
+          registerForm.get('password_confirmation')?.invalid &&
+          (registerForm.get('password_confirmation')?.dirty ||
+            registerForm.get('password_confirmation')?.touched)
+        "
+      >
+        <small
+          *ngIf="registerForm.get('password_confirmation')?.errors?.['required']"
+        >
+        {{ 'REGISTER.PASSWORD_REQUIRED' | translate }}
+        </small>
+        <small *ngIf="registerForm.errors?.['mustMatch']">
+          {{ 'REGISTER.PASSWORD_PATTERN' | translate }}        </small>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary btn-block mt-4 register-btn"
+      (click)="register()"
+    >
+    {{ 'REGISTER.SIGN_UP' | translate }}
+    </button>
+    <p class="text-center mt-4 text-white">
+      {{ 'REGISTER.ALREADY' | translate }}
+      <a href="/user-login" class="login-link">      {{ 'REGISTER.LOGIN' | translate }}
+      </a>
+    </p>
+  </div>
+</div>

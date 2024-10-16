@@ -1,0 +1,70 @@
+
+.container {
+    background-color: #121212; /* Dark background */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .sidebar {
+    background-color: #222; /* Sidebar color */
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .sidebar h4 {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+  
+  .sidebar ul li a {
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    font-size: 1.1em;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #ff6f61; /* Highlight color on hover */
+  }
+  
+  .profile-details {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #222; /* Dark profile details background */
+  }
+  
+  .profile-details h6 {
+    margin-bottom: 5px;
+  }
+  
+  .profile-details p {
+    margin: 0;
+  }
+
+  .btn-outline-primary{
+    background-color: var(--red);
+    border-color: var(--red);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .btn{
+    background-color: var(--red);
+    border-color: var(--red);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    
+    cursor: pointer;
+    text-align: center;
+    
+  }
+  

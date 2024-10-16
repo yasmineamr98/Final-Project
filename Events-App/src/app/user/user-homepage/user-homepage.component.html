@@ -1,0 +1,31 @@
+<div
+  class="event-card rounded shadow"
+  [ngClass]="{ hover: isHovering }"
+  (mouseenter)="isHovering = true"
+  (mouseleave)="isHovering = false"
+  style="width: 300px; height: 700px"
+>
+  <img
+    src="{{ event.image }}"
+    class="img-fluid rounded-top"
+    style="height: 400px; object-fit: cover"
+    alt="Event Image"
+  />
+  <div class="p-3">
+    <h5>{{ event.name }}</h5>
+    <p>{{ event.place }}</p>
+    <p>{{ event.date }}</p>
+    <div class="d-flex justify-content-between">
+      <button
+        class="btn btn-outline-primary"
+        (click)="navigateToEventDetails(event.id)"
+      >
+        {{ "USER_HOMEPAGE.SHOW_DETAILS" | translate }}
+      </button>
+      <button class="btn btn-primary">
+        {{ "USER_HOMEPAGE.GET_TICKETS" | translate }}
+      </button>
+      n>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,228 @@
+<div *ngIf="isLoading" class="loading-overlay">
+  <div class="loading-spinner">
+    <!-- Example loading dots -->
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+  <p class="sp">{{ "NAV.LOADING" | translate }}</p>
+  <img class="sp" src="assets/images/logo-2.png" alt="Loading..." />
+</div>
+<div class="header-container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Logo section -->
+    <a routerLink="/home" aria-label="Home">
+      <img src="assets/images/logo-2.png" alt="Logo" class="logo" />
+    </a>
+
+    <!-- Search bar in the center -->
+    <div class="search-container mx-auto d-flex align-items-center">
+      <input
+        class="form-control search-field"
+        type="search"
+        [(ngModel)]="searchQuery"
+        [placeholder]="'HOME.SEARCH_PLACEHOLDER' | translate"
+        aria-label="Search"
+        (keydown.enter)="search()"
+      />
+      <button
+        class="btn btn-outline-success d-flex align-items-center search-btn rtl-btn"
+        type="submit"
+        (click)="search()"
+      >
+        <i class="fa-solid fa-magnifying-glass me-2"></i>
+        {{ "NAV.SEARCH" | translate }}
+      </button>
+    </div>
+    <div class="language-switcher">
+      <button (click)="toggleLanguage()">
+        {{ currentLang === "en" ? "العربية" : "English" }}
+      </button>
+    </div>
+    <!-- The rest of your navbar items -->
+    <div
+      class="collapse navbar-collapse justify-content-center"
+      id="navbarNavDropdown"
+    >
+      <!-- Toggle button for responsive navbar -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation links -->
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNavDropdown"
+      >
+        <ul class="navbar-nav justify-content-around mx-3">
+          <!-- Home link -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" aria-label="Home">{{
+              "NAV.HOME" | translate
+            }}</a>
+          </li>
+
+          <li *ngIf="isLoggedIn()" class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="['/user-profile', getUserId()]"
+              aria-label="Profile"
+              >{{ "NAV.PROFILE" | translate }}</a
+            >
+          </li>
+
+          <!-- Notification bell, visible only when logged in -->
+          <!-- <li *ngIf="isLoggedIn()" class="nav-item dropdown" (click)="toggleDropdown()">
+          <a class="nav-link" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="badge" *ngIf="notificationCount > 0">{{ notificationCount }}</span>
+          </a>
+          <div *ngIf="showDropdown" class="dropdown-menu show">
+            <div *ngFor="let notification of notifications" class="dropdown-item" (click)="goToEventDetails(notification.id)">
+              <strong>{{ notification.name }}</strong>
+              <p>{{ notification.description }}</p>
+            </div>
+            <div *ngIf="notifications.length === 0" class="dropdown-item">No notifications available.</div>
+          </div>
+        </li> -->
+
+          <li *ngIf="!isLoggedIn()" class="nav-item">
+            <a class="nav-link" routerLink="/user-login" aria-label="Login">{{
+              "NAV.LOGIN" | translate
+            }}</a>
+          </li>
+
+          <li *ngIf="!isLoggedIn()" class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/user-register"
+              routerLinkActive="active"
+              aria-label="Register"
+              >{{ "NAV.REGISTER" | translate }}</a
+            >
+          </li>
+
+          <li *ngIf="isLoggedIn()" class="nav-item">
+            <a class="nav-link" (click)="logout()" aria-label="Logout">{{
+              "NAV.LOGOUT" | translate
+            }}</a>
+          </li>
+
+          <!-- Events dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >{{ "NAV.EVENTS" | translate }}</a
+            >
+            <ul
+              class="dropdown-menu e-drop"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/events"
+                  aria-label="All Events"
+                  >{{ "NAV.ALL_EVENTS" | translate }}</a
+                >
+              </li>
+              <!-- <li *ngFor="let category of categories; let i = index">
+                <a
+                  class="dropdown-item"
+                  routerLink="/events/kids"
+                  aria-label="Kids Events"
+                  >{{ category.name| translate }}</a
+                >
+              </li> -->
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="home#upcoming"
+                  aria-label="Upcoming Events"
+                  >{{ "NAV.UPCOMING_EVENTS" | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="home#HIGHLIGHTED"
+                  aria-label="Upcoming Events"
+                  >{{ "HOME.HIGHLIGHTED" | translate }}</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- Events dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >{{ "HOME.CATEGORIE" | translate }}</a
+            >
+            <ul
+              class="dropdown-menu ee-drop"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li *ngFor="let category of categories; let i = index">
+                <a
+                  class="dropdown-item"
+                  routerLink="/events/kids"
+                  aria-label="Kids Events"
+                  >{{ category.name | translate }}</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- Notification bell, visible only when logged in -->
+          <li
+            *ngIf="isLoggedIn()"
+            class="nav-item dropdown"
+            (click)="toggleDropdown()"
+          >
+            <a class="nav-link" aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="badge" *ngIf="notificationCount > 0">{{
+                notificationCount
+              }}</span>
+            </a>
+            <div
+              *ngIf="showDropdown"
+              class="dropdown-menu  show rtl-show"
+            >
+              <div
+                *ngFor="let notification of notifications"
+                class="dropdown-item"
+                (click)="goToEventDetails(notification.id)"
+              >
+                <strong class="text-white">{{ notification.name }}</strong>
+                <p class="text-white-50">{{ notification.description }}</p>
+              </div>
+              <div *ngIf="notifications.length === 0" class="dropdown-item">
+                No notifications available.
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

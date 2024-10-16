@@ -1,0 +1,13 @@
+<h1>Bus List</h1>
+<ul>
+    <li *ngFor="let bus of buses">
+        <h3>
+            <a [routerLink]="['/buses', bus.id]" class="text-decoration-none bus-link">
+                {{ bus.name }} (Bus Number: {{ bus.bus_number }})
+            </a>
+        </h3>
+        <p>Capacity: {{ bus.capacity }}</p>
+        <p>Bus Line: {{ bus.bus_line }}</p>
+        <!-- Add more details as needed -->
+    </li>
+</ul>

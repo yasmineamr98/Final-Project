@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <h2>{{ "EVENTS.TITLE" | translate }}</h2>
+  <p>{{ "EVENTS.DESCRIPTION" | translate }}</p>
+  <div class="row">
+    <div class="col-md-6 mb-4" *ngFor="let event of userEvents">
+      <div class="card event shadow-sm">
+        <img
+          [src]="event.event_image"
+          class="card-img-top"
+          alt="{{ event.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ event.name }}</h5>
+          <p class="card-text">{{ event.description }}</p>
+          <p class="card-text main-color">
+            <strong>{{ event.date }}</strong
+            ><br />
+            {{ event.location }}
+          </p>
+          <button (click)="attendEvent(event.id)" class="btn book">
+            {{ "EVENTS.LEAVE_BUTTON" | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-links">
+        <a routerLink="/home" aria-label="Home">
+          <img src="assets/images/logo.png" alt="Logo" class="logo" />
+        </a>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a routerLink="/home" aria-label="Home">{{ 'NAV.HOME' | translate }}</a></li>
+          <li><a routerLink="category-details/16" aria-label="Events">{{ 'NAV.WORKSHOPS' | translate }}</a></li>
+          <li><a routerLink="/category-details/19" aria-label="Events">{{ 'NAV.CONCERTS' | translate }}</a></li>
+          <li><a routerLink="/about-us" aria-label="Events">{{ 'FOOTER.ABOUT_US' | translate }}</a></li>
+          <li><a routerLink="/contact-us" aria-label="Events">{{ 'FOOTER.CONTACT_US' | translate }}</a></li>
+        </ul>
+      </div>
+      <div class="footer-subscribe">
+        <h4>{{ 'FOOTER.SUBSCRIBE' | translate }}</h4>
+        <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()">
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="{{ 'FOOTER.EMAIL_PLACEHOLDER' | translate }}"
+          />
+          <button type="submit" class="rtl-btn">{{ 'FOOTER.SEND' | translate }}</button>
+        </form>
+        <!-- Success and Error Messages -->
+        <div *ngIf="subscriptionSuccess" class="alert alert-success mt-3">
+          {{ 'FOOTER.SUBSCRIBE_SUCCESS' | translate }}
+        </div>
+        <div *ngIf="subscriptionError" class="alert alert-danger mt-3">
+          {{ 'FOOTER.SUBSCRIBE_ERROR' | translate }}
+        </div>
+      </div>
+
+
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <p>© 2024 Eventoria. | {{ 'FOOTER.ALL_RIGHTS_RESERVED' | translate }}</p>
+      </div>
+      <div class="footer-right">
+        <img
+          src="https://cdn-ilbiobj.nitrocdn.com/xxdIcTyQeLMIJxNgivmsWAabzERAWXgf/assets/images/optimized/rev-cc3064d/collard-production.s3.eu-west-1.amazonaws.com/wp-content/uploads/2021/09/12182844/mc-visa-2.png"
+          alt="Fawry"
+          class="payment-img"
+        />
+        <img
+          src="https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/lpt5ox5xhjeorf2rryxa"
+          alt="PayMob"
+          class="payment-img rounded-3"
+        />
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,17 @@
+.bus-link {
+    color: inherit; /* Ensures the text color inherits from the parent */
+    text-decoration: none; /* Remove underline */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect */
+.bus-link:hover {
+    text-decoration: underline; /* Optional: add underline on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    color: #007bff; /* Change color on hover, can be adjusted */
+}
+
+/* Optional: Add active link styles */
+.bus-link:active {
+    transform: scale(0.98); /* Slightly shrink the link when clicked */
+}

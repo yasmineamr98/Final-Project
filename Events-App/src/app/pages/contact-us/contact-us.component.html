@@ -1,0 +1,67 @@
+<div class="container mt-5 my-5">
+  <h2>Contact Us</h2>
+  <p>Please fill out the form below to get in touch with us:</p>
+
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Contact Form -->
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form-group mb-3">
+      <label for="first_name">First Name</label>
+      <input type="text" class="form-control" id="first_name" formControlName="first_name" placeholder="Enter your first name" />
+      <div *ngIf="contactForm.get('first_name')?.invalid && contactForm.get('first_name')?.touched" class="text-danger">
+        First name is required and should be at least 3 characters.
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="last_name">Last Name</label>
+      <input type="text" class="form-control" id="last_name" formControlName="last_name" placeholder="Enter your last name" />
+      <div *ngIf="contactForm.get('last_name')?.invalid && contactForm.get('last_name')?.touched" class="text-danger">
+        Last name is required.
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="phone_number">Phone Number</label>
+      <input type="text" class="form-control" id="phone_number" formControlName="phone_number" placeholder="Enter your phone number" />
+      <div *ngIf="contactForm.get('phone_number')?.invalid && contactForm.get('phone_number')?.touched" class="text-danger">
+        Phone number is required.
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="email">Email Address</label>
+      <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter your email" />
+      <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger">
+        Valid email is required.
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="subject">Subject</label>
+      <input type="text" class="form-control" id="subject" formControlName="subject" placeholder="Enter the subject" />
+      <div *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched" class="text-danger">
+        Subject is required.
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="message">Message</label>
+      <textarea class="form-control" id="message" formControlName="message" rows="5" placeholder="Enter your message"></textarea>
+      <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="text-danger">
+        Message is required and should be at least 10 characters.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Send Message</button>
+  </form>
+</div>

@@ -1,0 +1,101 @@
+.fullPage {
+  background-color: var(--red);
+  box-shadow: rgb(0, 0, 0) 0px 2px 8px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4em;
+  background-image: url(../../../assets/images/1.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  margin-left: calc(-50vw + 49%);
+}
+
+.register-form {
+  background-color: #7c0808d3 !important;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.459) 0px 2px 18px 10px;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+h2 {
+  color: #fff;
+  text-align: center;
+}
+
+h2:after {
+  content: " ";
+  display: block;
+  border: 2px solid #5a5a5a;
+  width: 50px;
+  margin: auto;
+  margin-top: 5px;
+  border-radius: 20px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background: #fff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--dark);
+  border-color: var(--red);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #410606;
+  border-color: #410606;
+  width: 100%;
+}
+/* .register-btn {
+  background-color: var(--red) !important;
+  border-color: var(--red) !important;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-btn:hover {
+  background-color: #410606;
+  border-color: #410606;
+  color: White;
+} */

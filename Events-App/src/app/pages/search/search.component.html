@@ -1,0 +1,52 @@
+<div *ngIf="searchQuery">
+  <h2 class="text-center mt-5">Search Results for "{{ searchQuery }}"</h2>
+
+  <!-- Loading indicator -->
+  <div *ngIf="isLoading" class="loading-indicator">Loading...</div>
+
+  <div class="filter-container">
+    <div class="filter-option">
+      <label>Date:</label>
+      <input type="date" [(ngModel)]="selectedDate" (change)="performSearch(searchQuery)" />
+    </div>
+    <div class="filter-option">
+      <label>Category:</label>
+      <select [(ngModel)]="selectedCategory" (change)="performSearch(searchQuery)">
+        <option [ngValue]="undefined">Select a category</option>
+        <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div *ngIf="searchResults.length; else noResults">
+    <div class="row">
+      <div class="col-md-6 mb-4" *ngFor="let result of searchResults">
+        <div class="card event shadow-sm animate__animated animate__fadeIn">
+          <img [src]="result.event_image" class="card-img-top" alt="{{ result.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ result.name }}</h5>
+            <p class="card-text">{{ result.description }}</p>
+            <p class="card-text main-color">
+              <strong>{{ result.date }}</strong><br>
+              {{ result.location }}
+            </p>
+            <!-- Category Display -->
+            <p class="card-text category-label">
+              <strong>Category:</strong> {{ result.category.name }}
+            </p>
+            <div class="d-flex justify-content-between">
+              <a [routerLink]="['/event-details', result.id]" class="btn btn-outline-secondary show-btn">Show Details</a>
+              <button (click)="attendEvent(result.id)" class="btn book">
+                {{ result.attended ? 'Remove' : 'Add to Faviourte' }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noResults>
+    <p class="no-results-message">No results found.</p>
+  </ng-template>
+</div>

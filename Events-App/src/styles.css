@@ -1,0 +1,143 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --dark: #1c1c1c;
+  --red: #901b20;
+  --white: #ffffff;
+}
+body {
+  font-family: 'Cairo', sans-serif;
+  transition: color 0.9s ease !important;
+  overflow-x: hidden;
+  width: 101%;
+  direction: ltr;
+  min-height: 55vh;
+}
+h1, a {
+  font-weight: 700 !important;
+  text-decoration: none;
+  color: var(--white);
+}
+
+p {
+  font-weight: 400 !important;
+}
+button:hover {
+  background-color: #410606 !important; /* White background */
+  color: #f0f0f0; /* Black text */
+  border-color: #343a40; /* Keep the dark grey border */
+  transition: 0.4s ease !important;
+
+}
+button{
+  background-color: var(--red);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: color 0.9s ease !important;
+  text-decoration: none !important;
+}
+i{
+  margin: 0 5px;
+}
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #711414;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--red);
+
+}
+
+
+/* Handling RTL & LTR */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+body[dir="rtl"] .navbar, nav {
+  /* Reverse navbar items for RTL */
+  text-align: right;
+
+}
+body[dir="rtl"] .navbar-nav {
+
+}
+/* Global styles for RTL and LTR */
+body.ltr {
+  text-align: left;
+  direction: ltr;
+}
+
+body.rtl {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Modify flexbox and other containers for RTL */
+body.rtl .container,
+body.rtl .flex-container {
+
+}
+
+/* Adjust specific elements */
+body.rtl nav {
+
+}
+
+
+body.rtl .search-btn {
+  background-color: var(--red);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-left: -40px;
+}
+/* Any other RTL-specific modifications */
+
+body.rtl .navbar, nav {
+  padding-left: 0;
+
+}
+
+
+body.rtl .rtl-landing {
+  margin-right: calc(-50vw + 49%);
+
+}
+body.rtl .rtl-btn {
+  margin-right: -40px;
+  margin-left: 10px;
+}
+
+body.rtl .rtl-show {
+  translate: 150px;
+
+}
+body.rtl .nav-link {
+  font-size: 15px;
+  margin:0 2px;
+  padding: 10px 20px !important;
+}
+body.rtl .carousel-control-next {
+  background-color: #251f1fc5;
+  border-radius: 50%;
+  height: 8%;
+  width: 4%;
+  position: absolute;
+  top: 30rem;
+  right: 63rem;
+}

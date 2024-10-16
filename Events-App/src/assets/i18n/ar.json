@@ -1,0 +1,163 @@
+{
+  "HOME": {
+    "SEARCH_PLACEHOLDER": "ابحث عـــــن فعالية...",
+    "EVENTORIA": "إيــــــفنتوريا",
+    "DESCRIPTION": "استكشف فعاليات معهد تكنولوجيا المعلومات ITI وانضــم للأحداث القادمة",
+    "EXPLORE_UPCOMING": "استكشــف الفعاليات القادمة",
+    "CATEGORIES": "فئات الفعاليات",
+    "CATEGORIE": "الفئات",
+    "EXPLORE_NOW": "استكشـف الآن",
+    "PREVIOUS": "السابق",
+    "NEXT": "التالي",
+    "CALENDAR": "تقويم الفعاليات",
+    "UPCOMING": "الفعاليات القادمة",
+    "HIGHLIGHTED": "الفعاليات المميزة",
+    "BUS_DESCRIPTION": "تعمل خطوط الباصات الخاصة بنا في معظم أنحاء القاهرة؛ لتقلك أينما كنت.",
+    "EXPLORE_BUS": "استكشــف خطوط الباصات",
+    "EVENTS": "فعاليات",
+    "SHOW_DETAILS": "عرض التفاصيل",
+    "GET_TICKETS": "احصل على تذكرة",
+    "SUBSCRIBE_PARAGRAPH": "ابق على اطلاع بآخر الأخبار والأحداث.",
+    "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+    "SUBSCRIBE_BUTTON": "اشترك",
+    "SUBSCRIBE_SUCCESS": "لقد تم الاشتراك بنجاح!",
+    "SUBSCRIBE_ERROR": "حدث خطأ أثناء الاشتراك. حاول مرة أخرى.",
+    "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب.",
+    "EMAIL_INVALID": "يرجى إدخال بريد إلكتروني صالح.",
+    "NEWSLETTER_TAG": "النشرات الإخبارية",
+    "SUBSCRIBE_HEADING": "اشترك في النشرة الإخبارية لدينا للحصول على المزيد من التحديثات",
+    "WEEKLY_UPDATES": "التحديثات الأسبوعية",
+    "MONTHLY_UPDATES": "التحديثات المميزة"
+  },
+  "NAV": {
+    "HOME": "الرئيسية",
+    "PROFILE": "الملف الشخصي",
+    "LOGIN": "تسجيل الدخول",
+    "REGISTER": "تسجيل",
+    "LOGOUT": "تسجيل الخروج",
+    "EVENTS": "الفعاليات",
+    "ALL_EVENTS": "جميع الفعاليات",
+    "KIDS_EVENTS": "فعاليات الأطفال",
+    "UPCOMING_EVENTS": "الفعاليات القادمة",
+    "SEARCH": " بحث  ",
+    "LOADING": "جــار التحمــيل ...",
+    "CONCERTS": " الحفلات  ",
+    "WORKSHOPS": "ورش العمل "
+  },
+  "FOOTER": {
+    "SUBSCRIBE": "اشترك في نشرتنا الإخبارية",
+    "EMAIL_PLACEHOLDER": "اكتب بريدك الإلكتروني هنا...",
+    "SEND": "إرسال",
+    "ABOUT_US": "معلومات عنا",
+    "CONTACT_US": "اتصل بنا",
+    "ALL_RIGHTS_RESERVED": "جميع الحقوق محفوظة",
+    "SUBSCRIBE_ERROR": "حدث خطأ أثناء الاشتراك. الرجاء المحاولة مرة أخرى.",
+    "SUBSCRIBE_SUCCESS": "لقد تم الاشتراك بنجاح!"
+  },
+  "PAYMENT": {
+    "TITLE": "ادفع لحضور الفعاليات المميزة!",
+    "DESCRIPTION": "بعض فعالياتنا الحصرية مثل",
+    "KIDS_WORKSHOP": "ورش عمل الأطفال",
+    "VIP_MEETUP": "لقاءات كبار الشخصيات",
+    "REQUIRE_FEE": "تتطلب دفع رسوم رمزية.",
+    "SECURE_PROCESS": "يمكنك بسهولة دفع رسوم هذه الفعاليات عبر بوابة الدفع الآمنة الخاصة بنا، مع عملية دفع سلسة وآمنة.",
+    "SECURE_PAYMENTS_BY": "المدفوعات الآمنة مقدمة من",
+    "EXPLORE_PAY_NOW": "استكشف واحجز الآن!"
+  },
+  "AND": "و",
+
+  "FORGOT_PASSWORD": {
+    "TITLE": "نسيت كلمة المرور",
+    "DESCRIPTION": "أدخل بريدك الإلكتروني المسجل لتلقي رمز التحقق.",
+    "SEND_OTP": "إرسال رمز التحقق"
+  },
+  "VERIFY_OTP": {
+    "TITLE": "تحقق من رمز OTP",
+    "DESCRIPTION": "أدخل رمز التحقق المرسل إلى بريدك الإلكتروني.",
+    "BUTTON": "تحقق"
+  },
+  "RESET_PASSWORD": {
+    "TITLE": "إعادة تعيين كلمة المرور",
+    "DESCRIPTION": "قم بتعيين كلمة المرور الجديدة أدناه.",
+    "EMAIL_LABEL": "البريد الإلكتروني:",
+    "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب.",
+    "INVALID_EMAIL": "يرجى إدخال بريد إلكتروني صالح.",
+    "PASSWORD_LABEL": "كلمة المرور:",
+    "PASSWORD_REQUIRED": "كلمة المرور مطلوبة.",
+    "PASSWORD_MINLENGTH": "يجب أن تكون كلمة المرور مكونة من 8 أحرف على الأقل.",
+    "BUTTON": "إعادة تعيين كلمة المرور"
+  },
+  "EVENTS": {
+    "TITLE": "الفعاليات",
+    "DESCRIPTION": "تحقق من الفعاليات القادمة وشارك فيها.",
+    "LEAVE_BUTTON": "ازالة من المفضلة"
+  },
+  "LOGIN": {
+    "TITLE": "تسجيل الدخول",
+    "DESCRIPTION": "أدخل بيانات الاعتماد الخاصة بك لتسجيل الدخول.",
+    "EMAIL_LABEL": "البريد الإلكتروني:",
+    "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+    "PASSWORD_LABEL": "كلمة المرور:",
+    "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور الخاصة بك",
+    "FORGOT_PASSWORD": "نسيت كلمة المرور",
+    "BUTTON": "تسجيل الدخول"
+  },
+  "USER_HOMEPAGE": {
+    "SHOW_DETAILS": "عرض التفاصيل",
+    "GET_TICKETS": "احصل على التذاكر"
+  },
+  "USER_NOTIFICATIONS": {
+    "TITLE": "إشعارات المستخدم",
+    "NO_NOTIFICATIONS": "لا توجد إشعارات."
+  },
+  "USER_PROFILE": {
+    "SIDEBAR_TITLE": "ملفي الشخصي",
+    "MY_EVENTS": "فعالياتي",
+    "LOGOUT": "تسجيل الخروج",
+    "CHANGE_PROFILE_IMAGE": "تغيير صورة الملف الشخصي",
+    "USERNAME": "اسم المستخدم",
+    "USER_ID": "معرف المستخدم",
+    "EMAIL": "البريد الإلكتروني",
+    "LOCATION": "الموقع",
+    "BIO": "بيان",
+    "BIRTHDATE": "تاريخ الميلاد",
+    "USER_SETTINGS": "إعدادات المستخدم"
+  },
+  "REGISTER": {
+    "SIGN_UP": "تسجيل جديد",
+    "NAME": "الاسم",
+    "ENTER_NAME": "أدخل اسمك الكامل",
+    "NAME_REQUIRED": "الاسم مطلوب",
+    "NAME_MINLENGTH": "يجب ألا يقل الاسم عن 3 أحرف",
+    "ENTER_EMAIL": "البريد الإلكتروني",
+    "EMAIL_PLACEHOLDER": "أدخل عنوان بريدك الإلكتروني",
+    "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب",
+    "INVALID_EMAIL": "عنوان بريد إلكتروني غير صالح",
+    "ENTER_PASSWORD": "كلمة المرور",
+    "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور الخاصة بك",
+    "PASSWORD_REQUIRED": "كلمة المرور مطلوبة",
+    "PASSWORD_PATTERN": "يجب أن تحتوي كلمة المرور على حرف ورقم ورمز خاص على الأقل",
+    "CONFIRM_PASSWORD": "تأكيد كلمة المرور",
+    "CONFIRM_PASSWORD_PLACEHOLDER": "أعد إدخال كلمة المرور",
+    "ALREADY": "قمت بالتسجيل مسبقاً بالفعل؟",
+    "LOGIN": "تسجيل الدخول"
+  },
+  "SETTINGS": {
+    "ACCOUNT_SETTINGS": "إعدادات الحساب",
+    "CHANGE_NAME": "تغيير الاسم",
+    "ENTER_NEW_NAME": "أدخل الاسم الجديد",
+    "CHANGE_EMAIL": "تغيير البريد الإلكتروني",
+    "ENTER_NEW_EMAIL": "أدخل البريد الإلكتروني الجديد",
+    "GENDER": "الجنس",
+    "MALE": "ذكر",
+    "FEMALE": "أنثى",
+    "OTHER": "آخر",
+    "CHANGE_BIO": "تغيير البيان",
+    "CHANGE_BIRTHDATE": "تغيير تاريخ الميلاد",
+    "ENTER_BIO": "أدخل البيان",
+    "CHANGE_LOCATION": "تغيير الموقع",
+    "ENTER_LOCATION": "أدخل موقعك",
+    "ENTER_BIRTHDATE": " أدخل تاريخ الميلاد",
+    "SAVE_CHANGES": "حفظ التغييرات"
+  }
+}

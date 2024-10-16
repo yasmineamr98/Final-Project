@@ -1,0 +1,118 @@
+<div *ngIf="bus" class="container mt-4">
+    <button class="btn btn-primary mb-4" [routerLink]="['/buses']">
+      Back Bus Details
+    </button>
+     <!-- Download PDF Button -->
+     <button class="btn btn-success mb-4" (click)="downloadPdf()">
+      Download PDF
+    </button>
+  <div class="row mb-4">
+
+    <!-- Bus Information Card -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h1 style="text-align: center; font-weight: bold; color: black">
+            {{ bus.name }}
+          </h1>
+        </div>
+        <div class="card-body">
+          <p><strong>Bus Number:</strong> {{ bus.bus_number }}</p>
+          <p><strong>Capacity:</strong> {{ bus.capacity }}</p>
+          <p><strong>Bus Line:</strong> {{ bus.bus_line }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Driver Information Card -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h2>Driver Information</h2>
+        </div>
+        <div class="card-body">
+          <div *ngIf="driver; else noDriver" class="driver-info">
+            <p><strong>Name:</strong> {{ driver.name }}</p>
+            <p><strong>Phone:</strong> {{ driver.phone_number }}</p>
+            <div *ngIf="driver.profile_image">
+              <img
+                [src]="driver.profile_image"
+                alt="Driver's Profile Image"
+                width="100"
+                class="img-thumbnail"
+              />
+            </div>
+          </div>
+          <ng-template #noDriver>
+            <p>No driver assigned to this bus yet.</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Route Information Card -->
+  <div class="card mb-4">
+    <div class="card-header">
+      <h2>Route</h2>
+    </div>
+    <div class="card-body">
+      <div id="routeMap" style="height: 400px; width: 100%"></div>
+    </div>
+  </div>
+
+  <!-- Points Information Card -->
+  <div class="card mb-4">
+    <div class="card-header">
+      <h2>Points</h2>
+    </div>
+    <div class="card-body">
+      <div *ngIf="points.length > 0; else noPoints">
+        <div class="row">
+          <div
+            *ngFor="let point of points; let i = index"
+            class="col-md-4 mb-3"
+          >
+            <div class="point-info">
+              <h5>{{ getPointLabel(i) }}</h5>
+              <p>{{ point.name }}</p>
+              <p>{{ point.description }}</p>
+              <p><strong>Arrived Time:</strong> {{ point.arrived_time }}</p>
+
+              <!-- Embed Google Maps -->
+              <iframe
+                width="100%"
+                height="150"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                [src]="getSafeUrl(point.latitude, point.longitude)"
+                allowfullscreen
+              >
+              </iframe>
+              <a
+                [href]="
+                  'https://maps.google.com/?q=' +
+                  point.latitude +
+                  ',' +
+                  point.longitude
+                "
+                target="_blank"
+                class="btn btn-primary mt-2"
+                >Open in Google Maps</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #noPoints>
+        <p>No points available for this bus.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!bus" class="container">
+  <p>Loading bus details...</p>
+</div>

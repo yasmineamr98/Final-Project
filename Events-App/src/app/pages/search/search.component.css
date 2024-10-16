@@ -1,0 +1,109 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+body {
+    background-color: #f2f2f2; /* Light background for better contrast */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #cc3333; /* Heading color */
+    font-family: "Roboto", sans-serif;
+}
+
+.loading-indicator {
+    font-size: 20px;
+    color: #cc3333; /* Color for loading text */
+    text-align: center;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-around; /* Space between filter options */
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 15px; /* Rounded corners for the filter container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+}
+
+.filter-option label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.filter-option input,
+.filter-option select {
+    border: 1px solid #ccc; /* Border color for inputs and selects */
+    border-radius: 5px;
+    padding: 5px 10px; /* Padding for inputs and selects */
+    transition: border 0.3s;
+}
+
+.filter-option input:focus,
+.filter-option select:focus {
+    border-color: #cc3333; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.card {
+    border-radius: 15px;
+    font-family: "Roboto", sans-serif;
+    transition: transform 0.3s; /* Animation on hover */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale card on hover */
+}
+
+.card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.event {
+    background-color: #1c1c1c;
+    color: #fff !important;
+    border: none;
+}
+
+.main-color {
+    color: #cc3333;
+}
+
+.show-btn:hover {
+    background-color: #cc3333;
+    border-color: #cc3333;
+}
+
+.book {
+    color: #fff;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    transition: all 0.3s;
+    width: 30%;
+}
+
+.book:hover {
+    color: #fff;
+    background-color: #cc3333;
+    border-color: #cc3333;
+}
+
+.no-results-message {
+    text-align: center;
+    font-size: 18px;
+    color: #cc3333; /* Color for no results text */
+}
+
+.category-label {
+    color: #ffcc00; /* Color for category label */
+    font-weight: bold;
+    margin-top: 10px; /* Margin for spacing */
+}

@@ -1,0 +1,163 @@
+{
+  "HOME": {
+    "EVENTORIA": "EVENTORiA",
+    "DESCRIPTION": "Explore ITI's Great Events and Catch Up on Upcoming Opportunities",
+    "EXPLORE_UPCOMING": "Explore Upcoming Events",
+    "CATEGORIES": "Events Categories",
+    "CATEGORIE": "Categories",
+    "EXPLORE_NOW": "Explore Now",
+    "PREVIOUS": "Previous",
+    "NEXT": "Next",
+    "CALENDAR": "Events Calendar",
+    "UPCOMING": "Upcoming Events",
+    "HIGHLIGHTED": "Highlighted Events",
+    "BUS_DESCRIPTION": "Our Bus lines operate almost overall Cairo to pick you wherever you are.",
+    "EXPLORE_BUS": "Explore Bus lines",
+    "EVENTS": "Events",
+    "SHOW_DETAILS": "Show Details",
+    "GET_TICKETS": "Get Tickets",
+    "SEARCH_PLACEHOLDER": "Search for Event...",
+    "NEWSLETTER_TAG": "Our newsletters",
+    "SUBSCRIBE_HEADING": "Subscribe to our newsletter to receive more updates",
+    "SUBSCRIBE_PARAGRAPH": "",
+    "EMAIL_PLACEHOLDER": "Write your email",
+    "SUBSCRIBE_BUTTON": "subscribe",
+    "WEEKLY_UPDATES": "Weekly updates",
+    "MONTHLY_UPDATES": "Highlighted updates",
+    "SUBSCRIBE_SUCCESS": "You have successfully subscribed!",
+    "SUBSCRIBE_ERROR": "There was an error subscribing. Please try again.",
+    "EMAIL_REQUIRED": "Email is required.",
+    "EMAIL_INVALID": "Please enter a valid email."
+  },
+  "NAV": {
+    "HOME": "Home",
+    "PROFILE": "Profile",
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "LOGOUT": "Logout",
+    "EVENTS": "Events",
+    "ALL_EVENTS": "All Events",
+    "KIDS_EVENTS": "Kids Events",
+    "UPCOMING_EVENTS": "Upcoming Events",
+    "SEARCH": " Search  ",
+    "LOADING": "LOADING...",
+    "CONCERTS": " Concerts  ",
+    "WORKSHOPS": " Workshops "
+  },
+  "FOOTER": {
+    "SUBSCRIBE": "Subscribe to our newsletter",
+    "EMAIL_PLACEHOLDER": "Type your email here...",
+    "SEND": "Send",
+    "ABOUT_US": "About Us",
+    "CONTACT_US": "Contact Us",
+    "ALL_RIGHTS_RESERVED": "All Rights Reserved",
+    "SUBSCRIBE_ERROR": "There was an error subscribing. Please try again.",
+    "SUBSCRIBE_SUCCESS": "You have successfully subscribed!"
+  },
+  "PAYMENT": {
+    "TITLE": "Pay for Premium Events!",
+    "DESCRIPTION": "Some of our exclusive events, like",
+    "KIDS_WORKSHOP": "Kids Workshops",
+    "VIP_MEETUP": "VIP Meetups",
+    "REQUIRE_FEE": "require a nominal fee.",
+    "SECURE_PROCESS": "You can easily pay for these events using our secure payment gateway, with a seamless and safe process.",
+    "SECURE_PAYMENTS_BY": "Secure Payments Powered by",
+    "EXPLORE_PAY_NOW": "Explore & Pay Now!"
+  },
+  "AND": " & "
+,
+  "FORGOT_PASSWORD": {
+    "TITLE": "Forgot Password",
+    "DESCRIPTION": "Enter your registered email to receive an OTP.",
+    "SEND_OTP": "Send OTP"
+  },
+  "VERIFY_OTP": {
+    "TITLE": "Verify OTP",
+    "DESCRIPTION": "Enter the OTP sent to your email.",
+    "BUTTON": "Verify"
+  },
+  "RESET_PASSWORD": {
+    "TITLE": "Reset Password",
+    "DESCRIPTION": "Set your new password below.",
+    "EMAIL_LABEL": "Email:",
+    "EMAIL_REQUIRED": "Email is required.",
+    "INVALID_EMAIL": "Please enter a valid email.",
+    "PASSWORD_LABEL": "Password:",
+    "PASSWORD_REQUIRED": "Password is required.",
+    "PASSWORD_MINLENGTH": "Password must be at least 8 characters long.",
+    "BUTTON": "Reset Password"
+  },
+  "EVENTS": {
+    "TITLE": "Events",
+    "DESCRIPTION": "Check out the upcoming events and attend them.",
+    "LEAVE_BUTTON": "ٌRemove"
+  },
+  "LOGIN": {
+    "TITLE": "User Login",
+    "DESCRIPTION": "Enter your credentials to log in.",
+    "EMAIL_LABEL": "Email:",
+    "EMAIL_PLACEHOLDER": "Enter your email",
+    "PASSWORD_LABEL": "Password:",
+    "PASSWORD_PLACEHOLDER": "Enter your password",
+    "FORGOT_PASSWORD": "Forgot Password?",
+    "BUTTON": "Login"
+  },
+  "USER_HOMEPAGE": {
+    "SHOW_DETAILS": "Show Details",
+    "GET_TICKETS": "Get Tickets"
+  },
+  "USER_NOTIFICATIONS": {
+    "TITLE": "User Notifications",
+    "NO_NOTIFICATIONS": "No notifications available."
+  },
+  "USER_PROFILE": {
+    "SIDEBAR_TITLE": "My Profile",
+    "MY_EVENTS": "My Events",
+    "LOGOUT": "Logout",
+    "CHANGE_PROFILE_IMAGE": "Change Profile Image",
+    "USERNAME": "User Name",
+    "USER_ID": "User ID",
+    "EMAIL": "Email",
+    "LOCATION": "Location",
+    "BIO": "Bio",
+    "BIRTHDATE": "Birth Date",
+    "USER_SETTINGS": "User Settings"
+  },
+  "REGISTER": {
+    "SIGN_UP": "Sign Up",
+    "NAME": "Name",
+    "ENTER_NAME": "Enter your full name",
+    "NAME_REQUIRED": "Name is required",
+    "NAME_MINLENGTH": "Name must be at least 3 characters long",
+    "ENTER_EMAIL": "Email Address",
+    "EMAIL_PLACEHOLDER": "Enter your email address",
+    "EMAIL_REQUIRED": "Email is required",
+    "INVALID_EMAIL": "Invalid email address",
+    "ENTER_PASSWORD": "Password",
+    "PASSWORD_PLACEHOLDER": "Enter your password",
+    "PASSWORD_REQUIRED": "Password is required",
+    "PASSWORD_PATTERN": "Password must include at least one letter, one number, and one special character",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "CONFIRM_PASSWORD_PLACEHOLDER": "Re-enter your password",
+    "ALREADY": "Already signed up?",
+    "LOGIN": "Login"
+  },
+  "SETTINGS": {
+    "ACCOUNT_SETTINGS": "Account Settings",
+    "CHANGE_NAME": "Change Name",
+    "ENTER_NEW_NAME": "Enter new Name",
+    "CHANGE_EMAIL": "Change Email",
+    "ENTER_NEW_EMAIL": "Enter new email",
+    "GENDER": "Gender",
+    "MALE": "Male",
+    "FEMALE": "Female",
+    "OTHER": "Other",
+    "CHANGE_LOCATION": "Change Location",
+    "CHANGE_BIO": "Change Bio",
+    "CHANGE_BIRTHDATE": "Change Birthdate",
+    "ENTER_LOCATION": "Enter your location",
+    "ENTER_BIO": "Enter your Bio",
+    "ENTER_BIRTHDATE": "Enter your Birthdate",
+    "SAVE_CHANGES": "Save Changes"
+  }
+}
