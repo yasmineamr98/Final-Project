@@ -1,70 +1,92 @@
-
 .container {
-    background-color: #121212; /* Dark background */
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .sidebar {
-    background-color: #222; /* Sidebar color */
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .sidebar h4 {
-    margin-bottom: 20px;
-  }
-  
-  .sidebar ul li {
-    margin: 10px 0;
-  }
-  
-  .sidebar ul li a {
-    color: #ffffff; /* White text */
-    text-decoration: none;
-    font-size: 1.1em;
-  }
-  
-  .sidebar ul li a:hover {
-    color: #ff6f61; /* Highlight color on hover */
-  }
-  
-  .profile-details {
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #222; /* Dark profile details background */
-  }
-  
-  .profile-details h6 {
-    margin-bottom: 5px;
-  }
-  
-  .profile-details p {
-    margin: 0;
-  }
+  background-color: #121212; /* Dark background */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative; /* Make the container the reference point for positioning */
+}
 
-  .btn-outline-primary{
-    background-color: var(--red);
-    border-color: var(--red);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-  }
+.sidebar {
+  /* background-color: #222;  */
+  padding: 20px;
+  border-radius: 8px;
+}
 
-  .btn{
-    background-color: var(--red);
-    border-color: var(--red);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    
-    cursor: pointer;
-    text-align: center;
-    
-  }
-  
+.sidebar h4 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.sidebar ul li a:hover {
+  color: #ff6f61; /* Highlight color on hover */
+}
+
+.profile-details {
+  padding: 20px;
+  border-radius: 8px;
+  /* background-color: #222;  */
+  background: linear-gradient(300deg, var(--red) 0%, #1c1c1c 100%);
+}
+
+.profile-details h6 {
+  margin-bottom: 5px;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+
+.profile-details p {
+  margin: 0;
+  color: white;
+}
+
+.btn-outline-primary {
+  background-color: var(--red);
+  border-color: var(--red);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: var(--red);
+  border-color: var(--red);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.subscribe-illustration {
+  position: absolute; /* Position the illustration inside the container */
+  bottom: 1; /* Align it at the bottom */
+  right: -250px; /* Move the image 20px outside the container to the right */
+  z-index: 1; /* Ensure it's on top of other elements */
+}
+
+.subscribe-illustration img {
+  width: 20%;
+  /* border-radius: 50px; */
+  object-fit: cover;
+  filter: drop-shadow(8px 8px 16px rgba(0, 0, 0, 0.746));
+}
+
+/* .text{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+} */

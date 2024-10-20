@@ -6,7 +6,10 @@
         <div class="col-md-3 ms-md-3">
             <ul class="list-unstyled mb-4">
                 <li class="mb-2">
-                    <i class="bi bi-calendar3"></i> {{ eventDetails.date }}
+                    <i class="bi bi-calendar3"></i> {{ eventDetails.name }}
+                </li>
+                <li class="mb-2">
+                    <i class="bi bi-calendar3"></i> {{ eventDetails.date | date }}
                 </li>
                 <li class="mb-2">
                     <i class="bi bi-clock"></i> {{ eventDetails.time }}
@@ -14,14 +17,9 @@
                 <li class="mb-2">
                     <i class="bi bi-geo-alt"></i> {{ eventDetails.location }}
                 </li>
-                <li>
-                    <a href="#" class="text-decoration-none text-white">
-                        <i class="bi bi-geo"></i> Get Directions
-                    </a>
-                </li>
             </ul>
             <button (click)="attendEvent(eventDetails.id)" class="btn btn-outline-secondary show-btn">
-                {{ eventDetails.attended ? 'Remove' : ' Add to Favourite' }}
+                {{ eventDetails.attended ? 'Remove' : 'Attend' }}
             </button>
         </div>
     </div>
@@ -29,8 +27,8 @@
     <div class="event-description mt-4">
         <h1 class="text-danger">{{ eventDetails.name }}</h1>
         <p>{{ eventDetails.description }}</p>
-        <p>{{ eventDetails.date }}</p>
-        <p>{{ eventDetails.time }} – {{ eventDetails.endTime }}</p>
+        <p>{{ eventDetails.date | date}}</p>
+        <!-- <p>{{ eventDetails.time }}  {{ eventDetails.endTime }}</p> -->
 
         <h2>Event Terms and Conditions:</h2>
         <ul class="ps-4">
@@ -41,7 +39,7 @@
         </ul>
 
         <!-- Button to redirect to buses list -->
-        <button (click)="goToBusesList()" class="btn btn-primary mt-4">
+        <button (click)="goToBusesList()" class="btn-bus btn-primary mt-4">
             View Buses List
         </button>
     </div>

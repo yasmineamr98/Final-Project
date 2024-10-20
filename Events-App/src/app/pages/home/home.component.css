@@ -17,8 +17,11 @@
 }
 .landing h1 {
   font-size: 7rem;
-  font-family: "Cairo Play", sans-serif;
+  font-family: "Cairo", sans-serif;
 }
+
+
+
 
 .carousel-item {
   border-radius: 34px;

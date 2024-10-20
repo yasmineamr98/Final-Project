@@ -1,5 +1,5 @@
 .container {
-    background-color: #121212; 
+    /* background-color: #121212;  */
     color: white;
     padding: 20px;
     border-radius: 8px;
@@ -32,11 +32,14 @@
   .settings-details {
     padding: 20px;
     border-radius: 8px;
-    background-color: #1a1a1a; 
+    /* background-color: #1a1a1a;  */
+    background: linear-gradient(300deg, #912820a8 100%, #1c1c1c 100%);
+    color: white;
   }
   
   .settings-details h6 {
     margin-bottom: 5px;
+    
   }
   
   .settings-details input,
@@ -51,4 +54,9 @@
   }
   
 
-  
+  .text{
+    color: white;
+    font-weight: bolder;
+    font-size: 1.rem;
+    
+  }

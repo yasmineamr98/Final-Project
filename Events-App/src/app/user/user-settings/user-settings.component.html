@@ -4,17 +4,26 @@
       <div class="settings-details bg-dark text-white p-4 rounded">
         <h5 class="mb-4">{{ "SETTINGS.ACCOUNT_SETTINGS" | translate }}</h5>
 
+        <!-- Success Alert -->
         <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="successMessage">
           {{ successMessage }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <!-- Error Alert -->
+        <div *ngIf="errorMessage.length > 0" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <h4 class="alert-heading">Error!</h4>
+          <p>Please check the following issues:</p>
+          <ul>
+            <li *ngFor="let error of errorMessage">{{ error }}</li>
+          </ul>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 
         <form class="settings-form" (ngSubmit)="updateUserProfile()">
           <!-- Change Name -->
           <div class="mb-3">
-            <label class="text-danger">{{
-              "SETTINGS.CHANGE_NAME" | translate
-            }}</label>
+            <label class="text">{{ "SETTINGS.CHANGE_NAME" | translate }}</label>
             <input
               [(ngModel)]="user.name"
               type="text"
@@ -26,9 +35,7 @@
 
           <!-- Change Email -->
           <div class="mb-3">
-            <label class="text-danger">{{
-              "SETTINGS.CHANGE_EMAIL" | translate
-            }}</label>
+            <label class="text">{{ "SETTINGS.CHANGE_EMAIL" | translate }}</label>
             <input
               [(ngModel)]="user.email"
               type="email"
@@ -40,27 +47,17 @@
 
           <!-- Gender -->
           <div class="mb-3">
-            <label class="text-danger" for="gender">{{
-              "SETTINGS.GENDER" | translate
-            }}</label>
-            <select
-              [(ngModel)]="user.gender"
-              name="gender"
-              class="form-control"
-            >
+            <label class="text" for="gender">{{ "SETTINGS.GENDER" | translate }}</label>
+            <select [(ngModel)]="user.gender" name="gender" class="form-control">
               <option value="male">{{ "SETTINGS.MALE" | translate }}</option>
-              <option value="female">
-                {{ "SETTINGS.FEMALE" | translate }}
-              </option>
+              <option value="female">{{ "SETTINGS.FEMALE" | translate }}</option>
               <option value="other">{{ "SETTINGS.OTHER" | translate }}</option>
             </select>
           </div>
 
           <!-- Change Location -->
           <div class="mb-3">
-            <label class="text-danger" for="location">{{
-              "SETTINGS.CHANGE_LOCATION" | translate
-            }}</label>
+            <label class="text" for="location">{{ "SETTINGS.CHANGE_LOCATION" | translate }}</label>
             <input
               [(ngModel)]="user.location"
               type="text"
@@ -70,24 +67,23 @@
             />
           </div>
 
+          <!-- Change Bio -->
           <div class="mb-3">
-            <label class="text-danger" for="bio">{{
-              "SETTINGS.CHANGE_BIO" | translate
-            }}</label>
+            <label class="text" for="bio">{{ "SETTINGS.CHANGE_BIO" | translate }}</label>
             <input
               [(ngModel)]="user.bio"
               type="text"
               class="form-control"
-              name="location"
+              name="bio"
               placeholder="{{ 'SETTINGS.ENTER_BIO' | translate }}"
             />
           </div>
+
+          <!-- Change Birthdate -->
           <div class="mb-3">
-            <label class="text-danger" for="birth_date">{{
-              "SETTINGS.CHANGE_BIRTHDATE" | translate
-            }}</label>
+            <label class="text" for="birth_date">{{ "SETTINGS.CHANGE_BIRTHDATE" | translate }}</label>
             <input
-              [(ngModel)]="user.birth_date "
+              [(ngModel)]="user.birth_date"
               type="date"
               class="form-control"
               name="birth_date"
@@ -96,7 +92,7 @@
           </div>
 
           <!-- Save Changes Button -->
-          <button class="btn btn-danger" type="submit" [routerLink]="['/user-profile']">
+          <button class="btn btn-danger" type="submit">
             {{ "SETTINGS.SAVE_CHANGES" | translate }}
           </button>
         </form>
@@ -104,10 +100,3 @@
     </div>
   </div>
 </div>
-
-<div *ngIf="errorMessage">
-  <p class="text-danger">{{ errorMessage }}</p>
-</div>
-
-
-

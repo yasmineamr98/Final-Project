@@ -1,17 +1,54 @@
+/* Custom styles for the bus card */
+.card {
+    transition: transform 0.2s;
+    /* Smooth scale effect */
+    padding: 20px;
+    background-color: #f8f9fa;
+    /* Light background for list items */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+}
+
 .bus-link {
-    color: inherit; /* Ensures the text color inherits from the parent */
-    text-decoration: none; /* Remove underline */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    color: #007bff;
+    /* Bootstrap primary color */
+    font-weight: bold;
 }
 
-/* Hover effect */
 .bus-link:hover {
-    text-decoration: underline; /* Optional: add underline on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
-    color: #007bff; /* Change color on hover, can be adjusted */
+    text-decoration: underline;
+    /* Underline on hover */
+    color: #0056b3;
+    /* Darker shade for hover effect */
 }
 
-/* Optional: Add active link styles */
-.bus-link:active {
-    transform: scale(0.98); /* Slightly shrink the link when clicked */
+.list-group-item {
+    background-color: #f8f9fa;
+    /* Light background for list items */
+}
+
+.list-group-item:hover {
+    background-color: #e2e6ea;
+    /* Slightly darker background on hover */
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    /* Font for title */
+    color: #333;
+    /* Dark color for title */
+    padding: 20px;
+    background-color: #f8f9fa;
+    /* Light background for title */
+}
+
+.container {
+    max-width: 1200px;
+    /* Optional: limit max width for larger screens */
+    padding: 20px;
+    background-color: #f8f9fa;
+    /* Light background for container */
 }

@@ -11,12 +11,12 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   templateUrl: './user-settings.component.html',
   styleUrls: ['./user-settings.component.css'],
-  imports: [CommonModule, FormsModule,TranslateModule,RouterLink],
+  imports: [CommonModule, FormsModule, TranslateModule, RouterLink],
 })
 export class UserSettingsComponent implements OnInit {
   userId: string | null = null;
   user: any = {};
-  errorMessage: string = '';
+  errorMessage: string[] = []; // Change to array to handle multiple errors
   successMessage: string | undefined;
 
   constructor(
@@ -42,15 +42,17 @@ export class UserSettingsComponent implements OnInit {
         console.log('Fetched User Profile:', this.user);
       },
       (error) => {
-        this.errorMessage = 'Error fetching user profile.';
+        this.errorMessage.push('Error fetching user profile.');
         console.error('Error fetching user profile:', error);
       }
     );
   }
 
   updateUserProfile() {
+    this.errorMessage = []; // Clear previous errors
+
     if (!sessionStorage.getItem('authToken')) {
-      this.errorMessage = 'Authentication token is not defined.';
+      this.errorMessage.push('Authentication token is not defined.');
       return;
     }
 
@@ -60,11 +62,8 @@ export class UserSettingsComponent implements OnInit {
       location: this.user.location,
       gender: this.user.gender,
       bio: this.user.bio,
-      birth_date: this.user.birth_date
+      birth_date: this.user.birth_date,
     };
-
-    // Log the updated user data
-    console.log('Updated User Data:', updatedUser);
 
     this.usersService.updateUserProfileWithToken(sessionStorage.getItem('authToken') ?? '', updatedUser).subscribe(
       (response) => {
@@ -75,17 +74,18 @@ export class UserSettingsComponent implements OnInit {
         }, 1000);
       },
       (error) => {
-        // Log the error response for debugging
         console.error('Error updating profile:', error);
-        this.errorMessage =  'Error updating profile.';
-        // Additionally, log the error details if available
-        if (error.error) {
-          console.error('Validation Errors:', error.error.errors);
+        this.errorMessage.push('Error updating profile.'); // General error message
+
+        // If error details are available from the server, display them
+        if (error.error && error.error.errors) {
+          for (const key in error.error.errors) {
+            if (error.error.errors.hasOwnProperty(key)) {
+              this.errorMessage.push(error.error.errors[key]);
+            }
+          }
         }
       }
     );
   }
-
-
-
 }
