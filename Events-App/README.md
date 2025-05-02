@@ -1,27 +1,83 @@
-# EventsApp
+# Eventoria - Event Management Platform
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+Eventoria is a comprehensive event management platform built with Angular 17, offering a modern and intuitive interface for managing events, bus routes, and user interactions.
 
-## Development server
+## 🚀 Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- User Authentication & Authorization
+- Event Management
+- Bus Route Planning
+- Multi-language Support
+- User Profile Management
+- Contact & Support
+- Responsive Design
 
-## Code scaffolding
+## 🛠️ Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 17.3.8
+- TypeScript
+- Angular Material
+- Bootstrap
+- i18n for Internationalization
 
-## Build
+## 📸 Application Screenshots
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Landing Page
+![Landing Page](public/images/evenotria-landing-page.png)
+*The main landing page showcasing featured events and key platform features*
 
-## Running unit tests
+### Landing Page with Translation
+![Landing Page Translation](public/images/evenotria-landing-page-translate.png)
+*Demonstrating the multi-language support feature*
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Events Page
+![Events](public/images/eventoria-events.png)
+*Browse and search through various events*
 
-## Running end-to-end tests
+### Bus Routes
+![Bus Routes](public/images/eventoria-bus-route.png)
+*Interactive bus route planning and visualization*
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Available Buses
+![Buses](public/images/eventoria-buses.png)
+*View and manage available transportation options*
 
-## Further help
+### User Profile
+![Profile](public/images/eventoria-profile.png)
+*Personalized user profile management*
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Registration
+![Register](public/images/eventoria-register.png)
+*User registration interface with form validation*
+
+### About Us
+![About Us](public/images/eventoria-aboutus.png)
+*Learn more about Eventoria and our mission*
+
+### Contact
+![Contact](public/images/eventoria-contact.png)
+*Get in touch with our support team*
+
+## 🚀 Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   ng serve
+   ```
+4. Navigate to `http://localhost:4200/`
+
+## 🔧 Development Commands
+
+- `ng serve` - Run development server
+- `ng build` - Build the project
+- `ng test` - Execute unit tests
+- `ng e2e` - Execute end-to-end tests
+
+## 📚 Additional Resources
+
+For more information about Angular CLI, visit the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
